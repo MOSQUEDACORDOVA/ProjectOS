@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "projectos-666": {
+      "hosting": {
+        "vuexy": [
+          "projectos-666"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "projectos-666"
+  }
+}
