@@ -3,7 +3,7 @@
 Todos los módulos y componentes necesarios para realizar tus tareas ya están aquí 
 
 # Estrcutura de archivos 
-En la carpeta src/personalizacion puedes añadir todos tus múdlos, compenentes adicionales, etc.
+En la carpeta src/personalizacion  puedes añadir todos tus múdlos, compenentes adicionales, etc.
 Cuando recibas una actualización del kit estos módulos no se verán afectados.
 
 # Vuexy - Angular Admin Template
