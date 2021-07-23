@@ -19,6 +19,8 @@
 
 export const environment = {
   production: false,
+  hmr: false,
+  apiUrl: 'http://localhost:4000',
   firebase: {
     apiKey: 'AIzaSyAj670wsQEwEVEqkDKyi5T1UmSCQTs8VaY',
     authDomain: 'projectos-666.firebaseapp.com',
@@ -29,4 +31,5 @@ export const environment = {
     measurementId: 'G-1Q4S86QF2'
   }
 };
+
 //databaseURL: '<your-database-URL>',

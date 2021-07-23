@@ -100,7 +100,7 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    HttpClientModule,AngularFireModule.initializeApp(environment.firebase),
+    HttpClientModule, AngularFireModule.initializeApp(environment.firebase),
     HttpClientInMemoryWebApiModule.forRoot(FakeDbService, {
       delay: 0,
       passThruUnknownUrl: true
