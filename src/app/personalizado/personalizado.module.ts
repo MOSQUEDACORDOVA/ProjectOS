@@ -4,8 +4,6 @@ import { RouterModule } from '@angular/router';
 import { ProyectosModule } from './proyectos/proyectos.module';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 
-import { DatatablesModule } from './datatables/datatables.module';
-
 //aquí añades las direcciones o rutas
 const routes = [
   {
@@ -23,7 +21,7 @@ const routes = [
     UsuariosComponent
   ],
   imports: [
-    CommonModule,DatatablesModule,ProyectosModule,RouterModule.forChild(routes)
+    CommonModule,ProyectosModule,RouterModule.forChild(routes)
   ]
 })
 export class PersonalizadoModule { }

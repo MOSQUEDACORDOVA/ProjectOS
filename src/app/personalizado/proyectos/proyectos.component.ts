@@ -27,6 +27,14 @@ export class ProyectosComponent implements OnInit {
   private tempData = [];
   
   // public
+  public activeIds="ngb-panel-0";
+
+  abrir_listado_de_proyectos()
+  {
+    this.activeIds = "ngb-panel-0";
+    console.log(this.activeIds);
+  }
+
   public isPM: boolean;
   public contentHeader: object;
   public rows: any;
