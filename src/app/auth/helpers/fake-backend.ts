@@ -48,6 +48,24 @@ const users: User[] = [
     lastName: 'Doe',
     avatar: 'avatar-s-3.jpg',
     role: Role.User
+  },
+  {
+    id: 4,
+    email: 'pm@demo.com',
+    password: 'pm@demo.com',
+    firstName: 'Isaac',
+    lastName: 'Mosqueda',
+    avatar: 'avatar-s-11.jpg',
+    role: Role.PM
+  },
+  {
+    id: 5,
+    email: 'programador@demo.com',
+    password: 'programador@demo.com',
+    firstName: 'Isaac',
+    lastName: 'Mosqueda',
+    avatar: 'avatar-s-11.jpg',
+    role: Role.Programador
   }
 ];
 

@@ -1,22 +1,29 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { InicioComponent } from './inicio/inicio.component';
+import { ProyectosModule } from './proyectos/proyectos.module';
+import { UsuariosComponent } from './usuarios/usuarios.component';
+
+import { DatatablesModule } from './datatables/datatables.module';
 
 //aquí añades las direcciones o rutas
 const routes = [
   {
     path: '',
-    component: InicioComponent
+    component: UsuariosComponent
   },
+  {
+    path: 'usuarios',
+    component: UsuariosComponent
+  }
 ];
 
 @NgModule({
   declarations: [
-    InicioComponent
+    UsuariosComponent
   ],
   imports: [
-    CommonModule,RouterModule.forChild(routes)
+    CommonModule,DatatablesModule,ProyectosModule,RouterModule.forChild(routes)
   ]
 })
 export class PersonalizadoModule { }

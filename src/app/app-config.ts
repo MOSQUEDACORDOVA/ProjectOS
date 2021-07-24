@@ -16,8 +16,8 @@ import { CoreConfig } from '@core/types';
 // prettier-ignore
 export const coreConfig: CoreConfig = {
   app: {
-    appName     : 'Nubia',                                        // App Name
-    appTitle    : 'Nubia - Kit de inicio ProjectOS', // App Title
+    appName     : 'ProjectOS',                                        // App Name
+    appTitle    : 'ProjectOS', // App Title
     appLogoImage: 'assets/images/logo/logo.svg',                  // App Logo
     appLanguage : 'en',                                           // App Default Language (en, fr, de, pt etc..)
   },
@@ -27,7 +27,7 @@ export const coreConfig: CoreConfig = {
     animation : 'fadeIn',                     // fadeInLeft, zoomIn , fadeIn, none
     menu : {
       hidden               : false,           // Boolean: true, false
-      collapsed            : false,           // Boolean: true, false
+      collapsed            : true,           // Boolean: true, false
     },
     // ? For horizontal menu, navbar type will work for navMenu type
     navbar: {

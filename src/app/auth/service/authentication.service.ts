@@ -45,6 +45,13 @@ export class AuthenticationService {
   }
 
   /**
+   *  Confirms if user is client
+   */
+   get isPM() {
+    return this.currentUser && this.currentUserSubject.value.role === Role.PM;
+  }
+
+  /**
    * User login
    *
    * @param email
@@ -66,7 +73,7 @@ export class AuthenticationService {
               this._toastrService.success(
                 'You have successfully logged in as an ' +
                   user.role +
-                  ' user to Vuexy. Now you can start to explore. Enjoy! 🎉',
+                  ' user to ProjectOS. Now you can start to explore. Enjoy! 🎉',
                 '👋 Welcome, ' + user.firstName + '!',
                 { toastClass: 'toast ngx-toastr', closeButton: true }
               );

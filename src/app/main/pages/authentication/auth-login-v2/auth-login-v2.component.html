@@ -2,7 +2,7 @@
   <div class="auth-inner row m-0">
     <!-- Brand logo--><a class="brand-logo" href="javascript:void(0);">
       <img src="{{ coreConfig.app.appLogoImage }}" alt="brand-logo" height="28" />
-      <h2 class="brand-text text-primary ml-1">Vuexy</h2></a
+      <h2 class="brand-text text-primary ml-1">ProjectOS</h2></a
     >
     <!-- /Brand logo-->
     <!-- Left Text-->
@@ -23,21 +23,21 @@
     <!-- Login-->
     <div class="d-flex col-lg-4 align-items-center auth-bg px-2 p-lg-5">
       <div class="col-12 col-sm-8 col-md-6 col-lg-12 px-xl-2 mx-auto">
-        <h2 class="card-title font-weight-bold mb-1">Welcome to Vuexy! 👋</h2>
-        <p class="card-text mb-2">Please sign-in to your account and start the adventure</p>
+        <h2 class="card-title font-weight-bold mb-1">Bienvenido a ProjectOS! 👋</h2>
+        <p class="card-text mb-2">Inicia sesión y comienza tu aventura. . .</p>
         <ngb-alert [type]="'primary'" [dismissible]="false">
           <div class="alert-body font-small-2">
             <p>
-              <small class="mr-50"><span class="font-weight-bold">Admin:</span> admin@demo.com | admin</small>
+              <small class="mr-50"><span class="font-weight-bold">Admin:</span> pm@demo.com | pass: pm@demo.com</small>
             </p>
             <p>
-              <small class="mr-50"><span class="font-weight-bold">Client:</span> client@demo.com | client</small>
+              <small class="mr-50"><span class="font-weight-bold">Client:</span> programador@demo.com | pass: programador@demo.com</small>
             </p>
           </div>
           <span
             class="feather icon-help-circle auth-help-icon font-medium-3"
             placement="left"
-            ngbTooltip="This is just for role based JWT authorization demo purpose"
+            ngbTooltip="Esto es solo para fines de demostración de autorización JWT basada en roles"
           ></span>
         </ngb-alert>
 
@@ -55,7 +55,7 @@
               formControlName="email"
               class="form-control"
               [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
-              placeholder="admin@demo.com"
+              placeholder="pm@demo.com"
               aria-describedby="login-email"
               autofocus=""
               tabindex="1"
@@ -68,7 +68,7 @@
           <div class="form-group">
             <div class="d-flex justify-content-between">
               <label for="login-password">Password</label
-              ><a routerLink="/pages/authentication/forgot-password-v2"><small>Forgot Password?</small></a>
+              ><!--<a routerLink="/pages/authentication/forgot-password-v2"><small>Forgot Password?</small></a>-->
             </div>
             <div class="input-group input-group-merge form-password-toggle">
               <input
@@ -76,7 +76,7 @@
                 formControlName="password"
                 class="form-control form-control-merge"
                 [ngClass]="{ 'is-invalid error': submitted && f.password.errors }"
-                placeholder="············"
+                placeholder="pm@demo.com"
                 aria-describedby="login-password"
                 tabindex="2"
               />
@@ -111,6 +111,7 @@
             <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>Sign in
           </button>
         </form>
+        <!--
         <p class="text-center mt-2">
           <span>New on our platform?</span
           ><a routerLink="/pages/authentication/register-v2"><span>&nbsp;Create an account</span></a>
@@ -124,6 +125,7 @@
           ><a class="btn btn-google" href="javascript:void(0)"><i data-feather="mail"></i></a
           ><a class="btn btn-github" href="javascript:void(0)"><i data-feather="github"></i></a>
         </div>
+        -->
       </div>
     </div>
     <!-- /Login-->

@@ -35,8 +35,9 @@ import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 
 const appRoutes: Routes = [
+
   {
-    path: '',
+    path: 'tablero',
     loadChildren: () => import('./personalizado/personalizado.module').then(m => m.PersonalizadoModule),
     canActivate: [AuthGuard]
   },
@@ -82,6 +83,11 @@ const appRoutes: Routes = [
     path: 'charts-and-maps',
     loadChildren: () => import('./main/charts-and-maps/charts-and-maps.module').then(m => m.ChartsAndMapsModule),
     canActivate: [AuthGuard]
+  },
+  {
+    path: '',
+    redirectTo: 'tablero/proyectos',
+    pathMatch: 'full'
   },
   {
     path: '**',
