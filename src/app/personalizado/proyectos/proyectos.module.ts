@@ -11,8 +11,9 @@ import { CardSnippetModule } from '@core/components/card-snippet/card-snippet.mo
 import { ContentHeaderModule } from 'app/layout/components/content-header/content-header.module';
 
 import { ProyectosComponent } from './proyectos.component';
-import { DatatablesService } from './datatables.service';
-
+import { DatatablesService } from './listado/datatables.service';
+import { DetallesComponent } from './detalles/detalles.component';
+import { ListadoComponent } from './listado/listado.component';
 const routes: Routes = [
   {
     path: 'proyectos',
@@ -25,7 +26,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [ProyectosComponent],
+  declarations: [ProyectosComponent,DetallesComponent,ListadoComponent],
   imports: [
     RouterModule.forChild(routes),
     NgbModule,
@@ -38,4 +39,8 @@ const routes: Routes = [
   ],
   providers: [DatatablesService]
 })
-export class ProyectosModule {}
+export class ProyectosModule {
+  constructor(){
+    
+  }
+}
