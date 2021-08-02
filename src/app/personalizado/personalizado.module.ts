@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ProyectosModule } from './proyectos/proyectos.module';
-import { UsuariosModule } from './usuarios/usuarios.module';
+import { Pyt_25_Module } from './PYT_025_ProejctOS/pyt_25.module';
+import { Pyt_21_Module } from './PYT_21/pyt_21.module';
 
 @NgModule({
   declarations: [
   ],
   imports: [
-    CommonModule,ProyectosModule,UsuariosModule
+    CommonModule,Pyt_25_Module,Pyt_21_Module
   ]
 })
 export class PersonalizadoModule { }

@@ -1,0 +1,27 @@
+<!-- Modal -->
+<ng-template #modalVC let-modal >
+  <div class="modal-header">
+    <h5 class="modal-title">Selector de proyecto</h5>
+  </div>
+    <div class="modal-body" tabindex="0" ngbAutofocus>
+      <p>
+        Selecciona el proyecto en el que deseas trabajar para que no te lo pregunte más adelante.
+      </p>
+      <div class="form-group">
+        <select class="form-control" #proyecto_actual>
+          <option>PYT-21</option>
+          <option>PYT-24</option>
+          <option>PYT-25</option>
+          <option>ProjectOS</option>
+        </select>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-primary" (click)="modal.close('Accept click');seleccionarProyectoActual(proyecto_actual.value)" rippleEffect>
+        Fino
+      </button>
+    </div>
+</ng-template>
+<!-- / Modal -->
+<!-- Verificador de proyecto actual -->
+<button type="button" id="VE_PA" class="d-none" (click)="modalOpenVC(modalVC)"></button>

@@ -36,7 +36,6 @@ export class AuthenticationService {
   get isAdmin() {
     return this.currentUser && this.currentUserSubject.value.role === Role.Admin;
   }
-
   /**
    *  Confirms if user is client
    */
@@ -47,9 +46,12 @@ export class AuthenticationService {
   /**
    *  Confirms if user is client
    */
-   get isPM() {
+  get isPM() {
     return this.currentUser && this.currentUserSubject.value.role === Role.PM;
   }
+  /**
+   *  Confirms if user puede acceder a ese modulo 
+   */
 
   /**
    * User login
@@ -95,6 +97,7 @@ export class AuthenticationService {
   logout() {
     // remove user from local storage to log user out
     localStorage.removeItem('currentUser');
+    sessionStorage.removeItem('SS_proyecto_actual');
     // notify
     this.currentUserSubject.next(null);
   }

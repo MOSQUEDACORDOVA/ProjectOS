@@ -33,16 +33,19 @@ import { SubMenuCustomContextMenuComponent } from './main/extensions/context-men
 
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
-
+import { SelectorPAComponent } from './personalizado/selector-pa/selector-pa.component';
+import { PersonalizadoService } from './personalizado/personalizado.service';
+var PSPrincipal=new PersonalizadoService;
+var RutaPrincipal=PSPrincipal.RUT_PRI_PA;
+var ModuloPrincipal=PSPrincipal.MOD_PRI_PA;
 const appRoutes: Routes = [
-
   {
-    path: 'tablero',
-    loadChildren: () => import('./personalizado/personalizado.module').then(m => m.PersonalizadoModule),
+    path: ModuloPrincipal,
+    loadChildren: () => import('app/personalizado/personalizado.module').then(m => m.PersonalizadoModule),
     canActivate: [AuthGuard]
   },
   {
-    path: 'dashboard',
+    path: 'paneles',
     loadChildren: () => import('./main/dashboard/dashboard.module').then(m => m.DashboardModule)
   },
   {
@@ -86,7 +89,7 @@ const appRoutes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'tablero/proyectos',
+    redirectTo: RutaPrincipal,
     pathMatch: 'full'
   },
   {
@@ -101,7 +104,8 @@ const appRoutes: Routes = [
     ContextMenuComponent,
     BasicCustomContextMenuComponent,
     AnimatedCustomContextMenuComponent,
-    SubMenuCustomContextMenuComponent
+    SubMenuCustomContextMenuComponent,
+    SelectorPAComponent
   ],
   imports: [
     BrowserModule,

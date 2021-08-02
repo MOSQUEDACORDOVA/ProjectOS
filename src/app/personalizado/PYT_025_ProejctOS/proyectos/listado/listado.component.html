@@ -1,10 +1,8 @@
 <!-- Kitchen Sink Datatables -->
-<section id="ngx-datatable-kitchen-sink"  *ngIf="isPM">
-    <button class="btn btn-primary " rippleEffect (click)="cerrar_listado_de_proyectos('nuevo')">
-      <i data-feather="plus" class="mr-0 mr-sm-1"></i
-      ><span class="d-none d-sm-inline-block">Agregar proyecto</span>
-    </button><br><br>
-    <div class="card collapse-icon">
+<button class="btn btn-primary " rippleEffect (click)="cerrar_listado_de_proyectos('nuevo')">
+  <i data-feather="plus" class="mr-0 mr-sm-1"></i><span class="d-none d-sm-inline-block">Agregar proyecto</span>
+</button><br><br>
+<div class="card collapse-icon">
       <ngb-accordion #acc="ngbAccordion" activeIds="{{activeIds}}" >
         <ngb-panel>
           <ng-template ngbPanelTitle>
@@ -146,5 +144,5 @@
         </ngb-panel>
       </ngb-accordion>
     </div>
-  </section>
+
   <!--/ Kitchen Sink Datatables -->

@@ -1,6 +1,6 @@
 import { Component, Inject, OnDestroy, OnInit, ElementRef, Renderer2 } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
-import { Title } from '@angular/platform-browser';
+import { Title, Meta } from '@angular/platform-browser';
 
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
@@ -19,20 +19,21 @@ import { locale as menuFrench } from 'app/menu/i18n/fr';
 import { locale as menuGerman } from 'app/menu/i18n/de';
 import { locale as menuPortuguese } from 'app/menu/i18n/pt';
 
+import { PersonalizadoService } from './personalizado/personalizado.service';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit, OnDestroy {
+
   coreConfig: any;
   menu: any;
   defaultLanguage: 'en'; // This language will be used as a fallback when a translation isn't found in the current language
   appLanguage: 'en'; // Set application default language i.e fr
-
   // Private
   private _unsubscribeAll: Subject<any>;
-
   /**
    * Constructor
    *
@@ -48,6 +49,8 @@ export class AppComponent implements OnInit, OnDestroy {
    * @param {TranslateService} _translateService
    */
   constructor(
+    public PersonalizadoService: PersonalizadoService,
+    private _meta: Meta,
     @Inject(DOCUMENT) private document: any,
     private _title: Title,
     private _renderer: Renderer2,
@@ -235,10 +238,17 @@ export class AppComponent implements OnInit, OnDestroy {
       }
     });
 
-    // Set the application page title
-    this._title.setTitle(this.coreConfig.app.appTitle);
+    // Set the application 
+    this.PersonalizadoService.SeleccionarProyecto();
+    this._title.setTitle(this.PersonalizadoService.TITULO);
+    this._meta.updateTag({ name: 'description', content: this.PersonalizadoService.DES_PA });
+    this._meta.updateTag({ name: 'keywords', content: this.PersonalizadoService.KEY_PA });
+    this.document.getElementById('favicon').setAttribute('href', this.PersonalizadoService.FAV_PA );
+    this.document.getElementById('loading').setAttribute('src', this.PersonalizadoService.LOG_PNG_PA );
   }
-
+  
+  
+  
   /**
    * On destroy
    */

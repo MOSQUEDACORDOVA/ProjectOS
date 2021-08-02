@@ -1,6 +1,6 @@
 <div class="content-wrapper container-xxl p-0">
     <div class="content-body">
-      <app-listado></app-listado>
+      <app-listado *ngIf="isPM"></app-listado>
       <app-detalles *ngIf="ProyectosService.idProyecto"></app-detalles>
     </div>
 </div>

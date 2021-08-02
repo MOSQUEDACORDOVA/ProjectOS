@@ -17,9 +17,9 @@ import {
 } from '@angular/common/http';
 import { Observable, of, throwError } from 'rxjs';
 import { delay, mergeMap, materialize, dematerialize } from 'rxjs/operators';
-
 import { User, Role } from 'app/auth/models';
-
+import { PersonalizadoService } from 'app/personalizado/personalizado.service';
+var IDE_PA= new PersonalizadoService;
 // Users with role
 const users: User[] = [
   {
@@ -29,7 +29,8 @@ const users: User[] = [
     firstName: 'Isaac',
     lastName: 'M.',
     avatar: 'avatar-s-11.jpg',
-    role: Role.Admin
+    role: Role.Admin,
+    proyecto:'PYT-21'
   },
   {
     id: 2,
@@ -38,7 +39,8 @@ const users: User[] = [
     firstName: 'Nataly',
     lastName: 'Doe',
     avatar: 'avatar-s-2.jpg',
-    role: Role.Client
+    role: Role.Client,
+    proyecto:'PYT-21'
   },
   {
     id: 3,
@@ -47,25 +49,28 @@ const users: User[] = [
     firstName: 'Rose',
     lastName: 'Doe',
     avatar: 'avatar-s-3.jpg',
-    role: Role.User
+    role: Role.User,
+    proyecto:'PYT-21'
   },
   {
     id: 4,
-    email: 'pm@demo.com',
-    password: 'pm@demo.com',
+    email: 'admin@demo.com',
+    password: 'admin@demo.com',
     firstName: 'Isaac',
     lastName: 'Mosqueda',
     avatar: 'avatar-s-11.jpg',
-    role: Role.PM
+    role: Role.PYT_21_Admin,
+    proyecto:'PYT-21'
   },
   {
     id: 5,
-    email: 'programador@demo.com',
-    password: 'programador@demo.com',
+    email: 'client@demo.com',
+    password: 'client@demo.com',
     firstName: 'Isaac',
     lastName: 'Mosqueda',
     avatar: 'avatar-s-11.jpg',
-    role: Role.Programador
+    role: Role.PYT_21_Inversor,
+    proyecto:'PYT-21'
   }
 ];
 
@@ -98,8 +103,8 @@ export class FakeBackendInterceptor implements HttpInterceptor {
 
     function authenticate() {
       const { email, password } = body;
-      const user = users.find(x => x.email === email && x.password === password);
-      if (!user) return error('Username or password is incorrect');
+      const user = users.find(x => x.email === email && x.password === password && x.proyecto === IDE_PA.IDE_PA);
+      if (!user) return error('Los datos son incorrectos');
       return ok({
         id: user.id,
         email: user.email,
@@ -107,7 +112,8 @@ export class FakeBackendInterceptor implements HttpInterceptor {
         lastName: user.lastName,
         avatar: user.avatar,
         role: user.role,
-        token: `fake-jwt-token.${user.id}`
+        token: `fake-jwt-token.${user.id}`,
+        proyecto: user.proyecto,
       });
     }
 

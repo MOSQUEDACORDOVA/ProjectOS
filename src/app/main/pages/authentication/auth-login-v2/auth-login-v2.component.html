@@ -1,8 +1,8 @@
 <div class="auth-wrapper auth-v2">
   <div class="auth-inner row m-0">
     <!-- Brand logo--><a class="brand-logo" href="javascript:void(0);">
-      <img src="{{ coreConfig.app.appLogoImage }}" alt="brand-logo" height="28" />
-      <h2 class="brand-text text-primary ml-1">ProjectOS</h2></a
+      <img src="{{ coreConfig.app.appLogoImage }}" alt="" height="28" />
+      <h2 class="brand-text text-primary ml-1">{{PersonalizadoService.TITULO}}</h2></a
     >
     <!-- /Brand logo-->
     <!-- Left Text-->
@@ -23,15 +23,15 @@
     <!-- Login-->
     <div class="d-flex col-lg-4 align-items-center auth-bg px-2 p-lg-5">
       <div class="col-12 col-sm-8 col-md-6 col-lg-12 px-xl-2 mx-auto">
-        <h2 class="card-title font-weight-bold mb-1">Bienvenido a ProjectOS! 👋</h2>
+        <h2 class="card-title font-weight-bold mb-1">Bienvenido a {{PersonalizadoService.TITULO}}! 👋</h2>
         <p class="card-text mb-2">Inicia sesión y comienza tu aventura. . .</p>
         <ngb-alert [type]="'primary'" [dismissible]="false">
           <div class="alert-body font-small-2">
             <p>
-              <small class="mr-50"><span class="font-weight-bold">Admin:</span> pm@demo.com | pass: pm@demo.com</small>
+              <small class="mr-50"><span class="font-weight-bold">Admin:</span> admin@demo.com | pass: admin@demo.com</small>
             </p>
             <p>
-              <small class="mr-50"><span class="font-weight-bold">Client:</span> programador@demo.com | pass: programador@demo.com</small>
+              <small class="mr-50"><span class="font-weight-bold">Cliente:</span> client@demo.com | pass: client@demo.com</small>
             </p>
           </div>
           <span
@@ -55,19 +55,19 @@
               formControlName="email"
               class="form-control"
               [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
-              placeholder="pm@demo.com"
+              placeholder="usuario@correo.com"
               aria-describedby="login-email"
               autofocus=""
               tabindex="1"
             />
             <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
-              <div *ngIf="f.email.errors.required">Email is required</div>
-              <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+              <div *ngIf="f.email.errors.required">El email es necesario</div>
+              <div *ngIf="f.email.errors.email">El email debe ser una dirección de correo válida</div>
             </div>
           </div>
           <div class="form-group">
             <div class="d-flex justify-content-between">
-              <label for="login-password">Password</label
+              <label for="login-password">Contraseña</label
               ><!--<a routerLink="/pages/authentication/forgot-password-v2"><small>Forgot Password?</small></a>-->
             </div>
             <div class="input-group input-group-merge form-password-toggle">
@@ -76,7 +76,7 @@
                 formControlName="password"
                 class="form-control form-control-merge"
                 [ngClass]="{ 'is-invalid error': submitted && f.password.errors }"
-                placeholder="pm@demo.com"
+                placeholder="usuario@correo.com"
                 aria-describedby="login-password"
                 tabindex="2"
               />
@@ -98,17 +98,17 @@
               class="invalid-feedback"
               [ngClass]="{ 'd-block': submitted && f.password.errors }"
             >
-              <div *ngIf="f.password.errors.required">Password is required</div>
+              <div *ngIf="f.password.errors.required">La contraseña es necesaria</div>
             </div>
           </div>
           <div class="form-group">
             <div class="custom-control custom-checkbox">
               <input class="custom-control-input" id="remember-me" type="checkbox" tabindex="3" />
-              <label class="custom-control-label" for="remember-me"> Remember Me</label>
+              <label class="custom-control-label" for="remember-me"> Recuerdame</label>
             </div>
           </div>
           <button [disabled]="loading" class="btn btn-primary btn-block" tabindex="4" rippleEffect>
-            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>Sign in
+            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>Ingresar
           </button>
         </form>
         <!--

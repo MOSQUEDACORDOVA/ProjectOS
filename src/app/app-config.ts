@@ -1,4 +1,5 @@
 import { CoreConfig } from '@core/types';
+import { PersonalizadoService } from './personalizado/personalizado.service';
 
 /**
  * Default App Config
@@ -14,11 +15,12 @@ import { CoreConfig } from '@core/types';
  */
 
 // prettier-ignore
+var PREFERENCIAS= new PersonalizadoService;
 export const coreConfig: CoreConfig = {
   app: {
-    appName     : 'ProjectOS',                                        // App Name
-    appTitle    : 'ProjectOS', // App Title
-    appLogoImage: 'assets/images/logo/logo.svg',                  // App Logo
+    appName     : PREFERENCIAS.NOM_PA,                                        // App Name
+    appTitle    : PREFERENCIAS.TITULO, // App Title
+    appLogoImage: PREFERENCIAS.ICO_SVG_PA,                  // App Logo
     appLanguage : 'en',                                           // App Default Language (en, fr, de, pt etc..)
   },
   layout: {
@@ -27,7 +29,7 @@ export const coreConfig: CoreConfig = {
     animation : 'fadeIn',                     // fadeInLeft, zoomIn , fadeIn, none
     menu : {
       hidden               : false,           // Boolean: true, false
-      collapsed            : true,           // Boolean: true, false
+      collapsed            : PREFERENCIAS.MENU_COL_PA,           // Boolean: true, false
     },
     // ? For horizontal menu, navbar type will work for navMenu type
     navbar: {

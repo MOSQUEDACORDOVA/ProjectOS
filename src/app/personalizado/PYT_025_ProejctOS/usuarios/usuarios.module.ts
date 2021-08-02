@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
+import { ListadoComponent } from './listado/listado.component';
+import { UsuariosComponent } from './usuarios.component';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CsvModule } from '@ctrl/ngx-csv';
@@ -9,15 +12,12 @@ import { CoreCardModule } from '@core/components/core-card/core-card.module';
 import { CoreCommonModule } from '@core/common.module';
 import { CardSnippetModule } from '@core/components/card-snippet/card-snippet.module';
 import { ContentHeaderModule } from 'app/layout/components/content-header/content-header.module';
-
-import { ProyectosComponent } from './proyectos.component';
 import { DatatablesService } from './listado/datatables.service';
-import { DetallesComponent } from './detalles/detalles.component';
-import { ListadoComponent } from './listado/listado.component';
+
 const routes: Routes = [
   {
-    path: 'proyectos',
-    component: ProyectosComponent,
+    path: 'usuarios',
+    component: UsuariosComponent,
     resolve: {
       datatables: DatatablesService
     },
@@ -25,10 +25,15 @@ const routes: Routes = [
   }
 ];
 
+
 @NgModule({
-  declarations: [ProyectosComponent,DetallesComponent,ListadoComponent],
+  declarations: [
+    UsuariosComponent,
+    ListadoComponent
+  ],
   imports: [
     RouterModule.forChild(routes),
+    CommonModule,
     NgbModule,
     TranslateModule,
     CoreCommonModule,
@@ -39,8 +44,6 @@ const routes: Routes = [
   ],
   providers: [DatatablesService]
 })
-export class ProyectosModule {
-  constructor(){
-    
-  }
+export class UsuariosModule { 
+  
 }
