@@ -10,5 +10,6 @@ export class User {
   role: Role;
   token?: string;
   proyecto: string;
+  estatus?: string;
   
 }

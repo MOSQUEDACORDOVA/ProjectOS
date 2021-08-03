@@ -1,1 +1,186 @@
-<p>tablero works!</p>
+<div class="content-wrapper container-xxl p-0">
+<div class="content-body">
+<section id="alertas">
+<div class="row">
+<div class="col-xl-12 col-lg-12">
+    <!-- ngb-alert component -->
+        <ngb-alert [dismissible]="false">
+            <div class="alert-body"><strong>¡Cuenta no verificada!</strong> Para poder disfrutar de todos nuestros servicios debes <a href="#">verificar tu cuenta</a>.</div>
+        </ngb-alert>
+    <!--/ ngb-alert component -->
+</div>
+</div>
+</section>
+<!-- Basic Alerts end -->
+<section>
+<div class="row">
+<div class="col-xl-12 col-lg-12">
+    <!-- ngb-alert component -->
+        <ngb-alert [type]="'primary'" [dismissible]="false">
+            <div class="alert-body cursor-pointer" (click)="copyCode(clipboardText)">
+                <i class="feather icon-copy  font-medium-2 float-right" ></i>
+                <strong>Link para referir: </strong> 
+              <div #clipboardText>https://cbfxcapital.com/link_referido</div>
+            </div>
+        </ngb-alert>
+    <!--/ ngb-alert component -->
+</div>
+</div>
+</section>
+<section>
+  <div class="row">
+    <!-- Bar Chart Start -->
+    <div class="col-xl-6  col-12">
+      <div class="card">
+        <div
+          class="card-header d-flex justify-content-between align-items-sm-center align-items-start flex-sm-row flex-column"
+        >
+          <div class="header-left">
+            <h4 class="card-title">Ganancias diarias</h4>
+          </div>
+          <div class="header-right d-flex align-items-right mt-sm-0 mt-1">
+            <i class="font-medium-2" data-feather="calendar"></i>
+            <ng2-flatpickr [config]="DateRangeOptions" name="DateRange"></ng2-flatpickr>
+          </div>
+        </div>
+        <div class="card-body">
+          <div id="chartjs-bar-chart">
+            <canvas
+              baseChart
+              #barChartRef
+              height="400"
+              [datasets]="barChart.datasets"
+              [labels]="barChart.labels"
+              [options]="barChart.options"
+              [legend]="barChart.legend"
+              [chartType]="barChart.chartType"
+            >
+            </canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Bar Chart End -->
+    <div class="col-xl-6 col-12">
+    <div class="row">
+      <div class="col-6">
+        <div class="card card-statistics">
+          <div class="card-body statistics-body">
+            <h4 class="card-title">Saldo</h4>
+            <div class="row">
+              <div class="col-12">
+                <div class="media">
+                  <div class="avatar bg-light-success mr-2">
+                    <div class="avatar-content">
+                      <i data-feather="dollar-sign" class="avatar-icon"></i>
+                    </div>
+                  </div>
+                  <div class="media-body my-auto">
+                    <h4 class="font-weight-bolder mb-0">$100</h4>
+                    <p class="card-text font-small-3 mb-0">Saldo disponible</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-6">
+        <div class="card card-statistics">
+          <div class="card-body statistics-body">
+            <h4 class="card-title">Capital</h4>
+            <div class="row">
+              <div class="col-12">
+                <div class="media">
+                  <div class="avatar bg-light-info mr-2">
+                    <div class="avatar-content">
+                      <i data-feather="box" class="avatar-icon"></i>
+                    </div>
+                  </div>
+                  <div class="media-body my-auto">
+                    <h4 class="font-weight-bolder mb-0">$100</h4>
+                    <p class="card-text font-small-3 mb-0">Capital</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6">
+        <div class="card card-statistics">
+          <div class="card-body statistics-body">
+            <h4 class="card-title">Ganancias</h4>
+            <div class="row">
+              <div class="col-12">
+                <div class="media">
+                  <div class="avatar bg-light-success mr-2">
+                    <div class="avatar-content">
+                      <i data-feather="trending-up" class="avatar-icon"></i>
+                    </div>
+                  </div>
+                  <div class="media-body my-auto">
+                    <h4 class="font-weight-bolder mb-0">$100</h4>
+                    <p class="card-text font-small-3 mb-0">Gananacias generales</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  
+      <div class="col-6">
+        <div class="card card-statistics">
+          <div class="card-body statistics-body">
+            <h4 class="card-title">Referidos</h4>
+            <div class="row">
+              <div class="col-12">
+                <div class="media">
+                  <div class="avatar bg-light-primary mr-2">
+                    <div class="avatar-content">
+                      <i data-feather="user-plus" class="avatar-icon"></i>
+                    </div>
+                  </div>
+                  <div class="media-body my-auto">
+                    <h4 class="font-weight-bolder mb-0">$100</h4>
+                    <p class="card-text font-small-3 mb-0">Pagos para referidos</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12">
+        <div class="card card-statistics">
+          <div class="card-body statistics-body">
+            <div class="row">
+              <div class="col-12">
+                <div class="media">
+                  <div class="avatar bg-light-info mr-2">
+                    <div class="avatar-content">
+                      <i data-feather="book" class="avatar-icon"></i>
+                    </div>
+                  </div>
+                  <div class="media-body my-auto">
+                    <h4 class="font-weight-bolder mb-0">Histórico</h4>
+                    <p class="card-text font-small-3 mb-0">Ganancias por contrato</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    </div>
+  </div>
+</section>
+</div>
+</div>

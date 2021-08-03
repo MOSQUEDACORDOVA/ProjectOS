@@ -1,15 +1,15 @@
 <!-- Error page-->
 <div class="misc-wrapper">
   <a class="brand-logo" href="javascript:void(0);">
-    <img src="{{ coreConfig.app.appLogoImage }}" alt="brand-logo" height="28" />
-    <h2 class="brand-text text-primary ml-1">ProjectOS</h2></a
+    <img src="{{ coreConfig.app.appLogoImage }}" alt="" height="28" />
+    <h2 class="brand-text text-primary ml-1">{{ coreConfig.app.appName }}</h2></a
   >
   <div class="misc-inner p-2 p-sm-3">
     <div class="w-100 text-center">
-      <h2 class="mb-1">Page Not Found 🕵🏻‍♀️</h2>
-      <p class="mb-2">Oops! 😖 The requested URL was not found on this server.</p>
+      <h2 class="mb-1">Página no encontrada 🕵🏻‍♀️</h2>
+      <p class="mb-2">Oops! 😖 esa dirección no está en nuestro servidor.</p>
       <a class="btn btn-primary mb-2 btn-sm-block" routerLink="/pages/authentication/login-v2" rippleEffect
-        >Back to home</a
+        >Volver al inicio</a
       ><img
         class="img-fluid"
         [src]="

@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { TableroModule } from './tablero/tablero.module';
 import { ContratosModule } from './contratos/contratos.module';
 
+
 const routes: Routes = [
   {
     path: 'pyt21',

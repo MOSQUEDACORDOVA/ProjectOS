@@ -52,7 +52,13 @@ export class AuthenticationService {
   /**
    *  Confirms if user puede acceder a ese modulo 
    */
-
+  get usEstatus() {
+    if(this.currentUser && this.currentUserSubject.value.estatus === 'VERIFICADO'){
+      return true;
+    }else{
+      return false;
+    }
+  }
   /**
    * User login
    *
