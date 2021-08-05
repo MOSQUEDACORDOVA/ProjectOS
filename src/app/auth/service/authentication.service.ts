@@ -85,10 +85,10 @@ export class AuthenticationService {
             // Display welcome toast!
             setTimeout(() => {
               this._toastrService.success(
-                'You have successfully logged in as an ' +
+                'Has iniciado sesión con éxito como usuario ' +
                   user.role +
-                  ' user to ProjectOS. Now you can start to explore. Enjoy! 🎉',
-                '👋 Welcome, ' + user.firstName + '!',
+                  '. Ahora puedes empezar a explorar. ¡Disfrutar! 🎉',
+                '👋 Bienvenido, ' + user.firstName + '!',
                 { toastClass: 'toast ngx-toastr', closeButton: true }
               );
             }, 2500);
