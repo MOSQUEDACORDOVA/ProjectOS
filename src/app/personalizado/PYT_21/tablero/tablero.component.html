@@ -1,6 +1,6 @@
 <div class="content-wrapper container-xxl p-0">
 <div class="content-body">
-<section id="alertas">
+<section id="alertas" *ngIf="isPYT_21_Inversor">
 <div class="row">
 <div class="col-xl-12 col-lg-12">
     <!-- ngb-alert component -->
@@ -12,7 +12,7 @@
 </div>
 </section>
 <!-- Basic Alerts end -->
-<section>
+<section *ngIf="isPYT_21_Inversor">
 <div class="row">
 <div class="col-xl-12 col-lg-12">
     <!-- ngb-alert component -->
@@ -30,7 +30,7 @@
 <section>
   <div class="row">
     <!-- Bar Chart Start -->
-    <div class="col-xl-6  col-12">
+    <div class="col-xl-6  col-12" *ngIf="isPYT_21_Inversor">
       <div class="card">
         <div
           class="card-header d-flex justify-content-between align-items-sm-center align-items-start flex-sm-row flex-column"
@@ -61,12 +61,13 @@
       </div>
     </div>
     <!-- Bar Chart End -->
-    <div class="col-xl-6 col-12">
+
+    <div class="{{espacio_ocupado}} col-12">
     <div class="row">
       <div class="col-6">
         <div class="card card-statistics">
           <div class="card-body statistics-body">
-            <h4 class="card-title">Saldo</h4>
+            <h4 class="card-title">{{pagos_pendientes}}</h4>
             <div class="row">
               <div class="col-12">
                 <div class="media">

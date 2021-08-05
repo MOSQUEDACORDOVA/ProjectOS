@@ -8,12 +8,27 @@ import { DOM_PA, PersonalizadoService } from '../personalizado.service';
   styleUrls: ['./selector-pa.component.scss']
 })
 export class SelectorPAComponent implements OnInit {
-
-  constructor(public PersonalizadoService: PersonalizadoService, @Inject(DOCUMENT) private document: any, private modalService: NgbModal) { }
-  
+  public dominio_actual: string;
+  constructor(public PersonalizadoService: PersonalizadoService, @Inject(DOCUMENT) private document: any, private modalService: NgbModal) {
+    if(DOM_PA=="localhost" || DOM_PA=="projectos-666.web.app"){
+      this.dominio_actual="desarrollo";
+    }
+  }
   ngOnInit(): void {
-    if(DOM_PA=="localhost" && sessionStorage.getItem('SS_proyecto_actual')==null){
+    
+    if(this.dominio_actual=="desarrollo" && sessionStorage.getItem('SS_proyecto_actual')==null){
       this.document.getElementById('VE_PA').click(true);
+    }else{
+      switch(DOM_PA){
+        case 'pyt21.mosquedacordova.com' || 'cbfcapital.com': 
+        this.seleccionarProyectoActual('PYT-21');
+        break
+        case 'pyt24.mosquedacordova.com' || 'minner.com': 
+        this.seleccionarProyectoActual('PYT-24');
+        break
+      }
+      //this.seleccionarProyectoActual(id_proyecto_actual);
+      //el problema de hacerlo así es que primero carga todo y luego se vuelve a cargar con los componentes del proyecto seleccionado (luego debemos solucionarlo)
     }
   }
   // modal Open Vertically Centered
@@ -25,7 +40,9 @@ export class SelectorPAComponent implements OnInit {
   seleccionarProyectoActual(id_proyecto_actual){
     sessionStorage.setItem('SS_proyecto_actual', id_proyecto_actual);
     this.PersonalizadoService.SeleccionarProyecto();
-    location.reload();
+    if(this.dominio_actual=="desarrollo"){
+      location.reload();
+    }
   }
 
 }

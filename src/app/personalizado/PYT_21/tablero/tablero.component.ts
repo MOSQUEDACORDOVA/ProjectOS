@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { colors } from 'app/colors.const';
 import { ToastrService, GlobalConfig } from 'ngx-toastr';
+import { AuthenticationService } from 'app/auth/service';
 
 @Component({
   selector: 'app-tablero',
@@ -14,7 +15,10 @@ export class TableroComponent implements OnInit {
   private tooltipShadow = 'rgba(0, 0, 0, 0.25)';
   private labelColor = '#6e6b7b';
   private grid_line_color = 'rgba(200, 200, 200, 0.2)'; // RGBA color helps in dark layout
-
+  public isPYT_21_Admin: boolean;
+  public isPYT_21_Inversor: boolean;
+  public pagos_pendientes: string;
+  public espacio_ocupado: string;
   // ng2-flatpickr options
   public DateRangeOptions = {
     altInput: true,
@@ -110,8 +114,18 @@ export class TableroComponent implements OnInit {
     legend: false
   };
   private options: GlobalConfig;
-  constructor(private toastr: ToastrService) {
+  constructor(private toastr: ToastrService,private _authenticationService: AuthenticationService) {
+    this.isPYT_21_Admin = this._authenticationService.isPYT_21_Admin;
+    this.isPYT_21_Inversor = this._authenticationService.isPYT_21_Inversor;
     this.options = this.toastr.toastrConfig;
+    //pagos_pendientes
+    if(this.isPYT_21_Admin){
+      this.pagos_pendientes="Pagos pendientes";
+      this.espacio_ocupado="";
+    }else{
+      this.pagos_pendientes="Saldo disponible";
+      this.espacio_ocupado="col-xl-6";
+    }
   }
   copyCode(clipboardText) {
     const selectBox = document.createElement('textarea');

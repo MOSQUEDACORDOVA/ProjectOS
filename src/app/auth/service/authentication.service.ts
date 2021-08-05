@@ -49,6 +49,12 @@ export class AuthenticationService {
   get isPM() {
     return this.currentUser && this.currentUserSubject.value.role === Role.PM;
   }
+  get isPYT_21_Admin() {
+    return this.currentUser && this.currentUserSubject.value.role === Role.PYT_21_Admin;
+  }
+  get isPYT_21_Inversor() {
+    return this.currentUser && this.currentUserSubject.value.role === Role.PYT_21_Inversor;
+  }
   /**
    *  Confirms if user puede acceder a ese modulo 
    */

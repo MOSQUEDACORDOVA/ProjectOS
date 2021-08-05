@@ -22,7 +22,6 @@ export class PersonalizadoService {
 
   constructor() { 
     this.SeleccionarProyecto();
-    this.SeleccionarProyecto();
   }
   SeleccionarProyecto(){
     //titulo del proyecto
