@@ -1,6 +1,21 @@
 import { Injectable } from '@angular/core';
+var dominio=window.location.hostname;
+var dominio_actual="";
+if(dominio=="localhost" || dominio=="projectos-666.web.app"){
+  dominio_actual="desarrollo";
+}else{
+  dominio_actual=dominio;
+  switch(dominio){
+    case 'pyt21.mosquedacordova.com' || 'cbfcapital.com': 
+    sessionStorage.setItem('SS_proyecto_actual', 'PYT-21');
+    break
+    case 'pyt24.mosquedacordova.com' || 'minner.com': 
+    sessionStorage.setItem('SS_proyecto_actual', 'PYT-24');
+    break
+  }
+}
+export const DOM_PA=dominio_actual;
 
-export const DOM_PA=window.location.hostname;
 //si es un desarrollador puede escoger el proyecto que desea visualiar
 
 @Injectable({
@@ -24,7 +39,6 @@ export class PersonalizadoService {
     this.SeleccionarProyecto();
   }
   SeleccionarProyecto(){
-    //titulo del proyecto
     var identificador=sessionStorage.getItem('SS_proyecto_actual');
     //var identificador="PYT-21";
     var menu_collapse=false;
