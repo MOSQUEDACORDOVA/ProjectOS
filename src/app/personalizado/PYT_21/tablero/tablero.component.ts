@@ -137,7 +137,7 @@ export class TableroComponent implements OnInit {
   copyCode(clipboardText) {
     const selectBox = document.createElement('textarea');
     selectBox.style.position = 'fixed';
-    selectBox.value = clipboardText;
+    selectBox.value = clipboardText.innerHTML;
     document.body.appendChild(selectBox);
     selectBox.focus();
     selectBox.select();
