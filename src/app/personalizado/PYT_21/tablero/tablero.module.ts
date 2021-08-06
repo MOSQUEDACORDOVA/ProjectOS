@@ -23,4 +23,6 @@ const routes: Routes = [
     CommonModule,CoreCommonModule,RouterModule.forChild(routes),NgbModule,ChartsModule,Ng2FlatpickrModule
   ]
 })
-export class TableroModule { }
+export class TableroModule {
+  
+ }

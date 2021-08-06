@@ -2,6 +2,9 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { colors } from 'app/colors.const';
 import { ToastrService, GlobalConfig } from 'ngx-toastr';
 import { AuthenticationService } from 'app/auth/service';
+//el componente es exclusivo
+import { Router} from '@angular/router';
+import { PersonalizadoService } from 'app/personalizado/personalizado.service';
 
 @Component({
   selector: 'app-tablero',
@@ -10,6 +13,7 @@ import { AuthenticationService } from 'app/auth/service';
   encapsulation: ViewEncapsulation.None
 })
 export class TableroComponent implements OnInit {
+  private exclusivoDE="PYT-21";
   // Color Variables
   private successColorShade = '#28dac6';
   private tooltipShadow = 'rgba(0, 0, 0, 0.25)';
@@ -114,7 +118,10 @@ export class TableroComponent implements OnInit {
     legend: false
   };
   private options: GlobalConfig;
-  constructor(private toastr: ToastrService,private _authenticationService: AuthenticationService) {
+  constructor(private toastr: ToastrService,private _authenticationService: AuthenticationService,private _router: Router, private _idproyecto: PersonalizadoService) {
+    if(this._idproyecto.IDE_PA!=this.exclusivoDE){
+      this._router.navigate(['/pages/miscellaneous/error']);
+    }
     this.isPYT_21_Admin = this._authenticationService.isPYT_21_Admin;
     this.isPYT_21_Inversor = this._authenticationService.isPYT_21_Inversor;
     this.options = this.toastr.toastrConfig;
