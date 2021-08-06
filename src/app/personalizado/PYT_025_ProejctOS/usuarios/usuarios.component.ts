@@ -14,7 +14,7 @@ export class UsuariosComponent implements OnInit {
   public exclusivoDE="PYT-25";
   constructor(private _router: Router, private _idproyecto: PersonalizadoService){
     if(this._idproyecto.IDE_PA!=this.exclusivoDE){
-      this._router.navigate(['/pages/miscellaneous/not-authorized']);
+      this._router.navigate(['/pages/miscellaneous/error']);
     }
   }
 
