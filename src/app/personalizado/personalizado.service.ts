@@ -6,6 +6,9 @@ if(dominio=="localhost" || dominio=="projectos-666.web.app"){
 }else{
   dominio_actual=dominio;
   switch(dominio){
+    case 'pyt4.mosquedacordova.com' || 'bwater.com': 
+    sessionStorage.setItem('SS_proyecto_actual', 'PYT-4');
+    break
     case 'pyt21.mosquedacordova.com' || 'cbfcapital.com': 
     sessionStorage.setItem('SS_proyecto_actual', 'PYT-21');
     break
@@ -15,8 +18,21 @@ if(dominio=="localhost" || dominio=="projectos-666.web.app"){
   }
 }
 export const DOM_PA=dominio_actual;
-
-//si es un desarrollador puede escoger el proyecto que desea visualiar
+var identificador=sessionStorage.getItem('SS_proyecto_actual');
+//obtenemos todos los link del head
+var n_estilos = document.getElementsByTagName("link");
+for(var n=0; n<=n_estilos.length-1; n++){
+  //obtenemos los link que sean estilos de proyectos (pyt_)
+  var estilo=n_estilos[n].href;
+  var estilo_De_proyecto = estilo.indexOf('PYT-');
+  if(estilo_De_proyecto!== -1){
+    //eliminamos todos menos el del proyecto correspondiente
+    var mi_proyecto_actual = estilo.indexOf(identificador);
+    if(mi_proyecto_actual== -1){
+      n_estilos[n].href="";
+    }
+  }
+}
 
 @Injectable({
   providedIn: 'root'
@@ -44,6 +60,18 @@ export class PersonalizadoService {
     var menu_collapse=false;
     var notificaciones=false;
     switch(sessionStorage.getItem('SS_proyecto_actual')){
+      case 'PYT-4': 
+        var nombre="Bwater";
+        var titulo="Bwater | Hidratación consciente";
+        var descripcion="Bwater | Hidratación consciente";
+        var keywords="Agua potable";
+        var favicon="assets/images/ico/pyt_4_favicon.ico";
+        var logo_png="assets/images/logo/pyt_4_logo.png";
+        var icono_svg="assets/images/logo/pyt_4_logo.png";
+        var RutaPrincipal="pyt4/tablero";
+        var ModuloPrincipal="pyt4";
+        notificaciones=true;
+      break
       case 'PYT-21': 
         var nombre="CBFX Capital";
         var titulo="CBFX Capital";

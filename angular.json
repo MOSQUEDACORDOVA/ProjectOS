@@ -44,7 +44,18 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss",
+              {
+                "input": "src/styles.scss",
+                "bundleName": "default"
+              },
+              {
+                "input": "src/pyt_4.scss",
+                "bundleName": "PYT-4"
+              },
+              {
+                "input": "src/pyt_24.scss",
+                "bundleName": "PYT-24"
+              },
               "node_modules/highlight.js/scss/atom-one-dark.scss",
               "src/assets/fonts/feather/iconfont.css",
               "src/assets/fonts/font-awesome/css/font-awesome.min.css",
