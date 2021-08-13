@@ -1,6 +1,7 @@
 export class DatatableFakeData {
   public static rows = [
     {
+      progreso: '50%',
       responsive_id: '',
       id: 1,
       avatar: 'avatar-s-10.jpg',
@@ -9,12 +10,13 @@ export class DatatableFakeData {
       email: 'kocrevy0@thetimes.co.uk',
       city: 'Krasnosilka',
       start_date: '09/23/2016',
-      salary: '$23896.35',
+      salary: '$500.35',
       age: '61',
       experience: '1 Year',
-      status: 2
+      status: 1
     },
     {
+      progreso: '20%',
       responsive_id: '',
       id: 2,
       avatar: 'avatar-s-1.jpg',
@@ -29,6 +31,7 @@ export class DatatableFakeData {
       status: 2
     },
     {
+      progreso: '10%',
       responsive_id: '',
       id: 3,
       avatar: 'avatar-s-9.jpg',
@@ -40,12 +43,13 @@ export class DatatableFakeData {
       salary: '$13076.28',
       age: '66',
       experience: '6 Years',
-      status: 5
+      status: 3
     },
     {
+      progreso: '15%',
       responsive_id: '',
       id: 4,
-      avatar: 'avatar-s-10.jpg',
+      avatar: '',
       full_name: 'Dorolice Crossman',
       post: 'Cost Accountant',
       email: 'dcrossman3@google.co.jp',
@@ -54,9 +58,10 @@ export class DatatableFakeData {
       salary: '$12336.17',
       age: '22',
       experience: '2 Years',
-      status: 2
+      status: 4
     },
     {
+      progreso: '12%',
       responsive_id: '',
       id: 5,
       avatar: '',
@@ -68,9 +73,10 @@ export class DatatableFakeData {
       salary: '$10909.52',
       age: '33',
       experience: '3 Years',
-      status: 2
+      status: 5
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 6,
       avatar: '',
@@ -85,6 +91,7 @@ export class DatatableFakeData {
       status: 1
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 7,
       avatar: '',
@@ -99,6 +106,7 @@ export class DatatableFakeData {
       status: 3
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 8,
       avatar: 'avatar-s-9.jpg',
@@ -113,6 +121,7 @@ export class DatatableFakeData {
       status: 3
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 9,
       avatar: 'avatar-s-2.jpg',
@@ -127,6 +136,7 @@ export class DatatableFakeData {
       status: 5
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 10,
       avatar: 'avatar-s-9.jpg',
@@ -141,6 +151,7 @@ export class DatatableFakeData {
       status: 2
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 11,
       avatar: '',
@@ -155,6 +166,7 @@ export class DatatableFakeData {
       status: 4
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 12,
       avatar: '',
@@ -169,6 +181,7 @@ export class DatatableFakeData {
       status: 4
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 13,
       avatar: '',
@@ -183,6 +196,7 @@ export class DatatableFakeData {
       status: 4
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 14,
       avatar: '',
@@ -197,6 +211,7 @@ export class DatatableFakeData {
       status: 2
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 15,
       avatar: '',
@@ -211,6 +226,7 @@ export class DatatableFakeData {
       status: 5
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 16,
       avatar: 'avatar-s-4.jpg',
@@ -225,6 +241,7 @@ export class DatatableFakeData {
       status: 5
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 17,
       avatar: '',
@@ -239,6 +256,7 @@ export class DatatableFakeData {
       status: 1
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 18,
       avatar: '',
@@ -253,6 +271,7 @@ export class DatatableFakeData {
       status: 1
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 19,
       avatar: 'avatar-s-5.jpg',
@@ -267,6 +286,7 @@ export class DatatableFakeData {
       status: 4
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 20,
       avatar: 'avatar-s-7.jpg',
@@ -281,6 +301,7 @@ export class DatatableFakeData {
       status: 1
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 21,
       avatar: '',
@@ -295,6 +316,7 @@ export class DatatableFakeData {
       status: 2
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 22,
       avatar: '',
@@ -309,6 +331,7 @@ export class DatatableFakeData {
       status: 3
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 23,
       avatar: 'avatar-s-9.jpg',
@@ -323,6 +346,7 @@ export class DatatableFakeData {
       status: 5
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 24,
       avatar: '',
@@ -337,6 +361,7 @@ export class DatatableFakeData {
       status: 1
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 25,
       avatar: '',
@@ -351,6 +376,7 @@ export class DatatableFakeData {
       status: 3
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 26,
       avatar: 'avatar-s-2.jpg',
@@ -365,6 +391,7 @@ export class DatatableFakeData {
       status: 4
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 27,
       avatar: '',
@@ -379,6 +406,7 @@ export class DatatableFakeData {
       status: 3
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 28,
       avatar: '',
@@ -393,6 +421,7 @@ export class DatatableFakeData {
       status: 4
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 29,
       avatar: '',
@@ -407,6 +436,7 @@ export class DatatableFakeData {
       status: 3
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 30,
       avatar: 'avatar-s-6.jpg',
@@ -421,6 +451,7 @@ export class DatatableFakeData {
       status: 2
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 31,
       avatar: '',
@@ -435,6 +466,7 @@ export class DatatableFakeData {
       status: 5
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 32,
       avatar: '',
@@ -449,6 +481,7 @@ export class DatatableFakeData {
       status: 2
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 33,
       avatar: 'avatar-s-7.jpg',
@@ -463,6 +496,7 @@ export class DatatableFakeData {
       status: 5
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 34,
       avatar: 'avatar-s-6.jpg',
@@ -477,6 +511,7 @@ export class DatatableFakeData {
       status: 3
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 35,
       avatar: 'avatar-s-1.jpg',
@@ -491,6 +526,7 @@ export class DatatableFakeData {
       status: 4
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 36,
       avatar: '',
@@ -505,6 +541,7 @@ export class DatatableFakeData {
       status: 4
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 37,
       avatar: 'avatar-s-8.jpg',
@@ -519,6 +556,7 @@ export class DatatableFakeData {
       status: 3
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 38,
       avatar: 'avatar-s-3.jpg',
@@ -533,6 +571,7 @@ export class DatatableFakeData {
       status: 1
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 39,
       avatar: 'avatar-s-2.jpg',
@@ -547,6 +586,7 @@ export class DatatableFakeData {
       status: 2
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 40,
       avatar: 'avatar-s-4.jpg',
@@ -561,6 +601,7 @@ export class DatatableFakeData {
       status: 4
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 41,
       avatar: '',
@@ -575,6 +616,7 @@ export class DatatableFakeData {
       status: 5
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 42,
       avatar: '',
@@ -589,6 +631,7 @@ export class DatatableFakeData {
       status: 1
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 43,
       avatar: 'avatar-s-10.jpg',
@@ -603,6 +646,7 @@ export class DatatableFakeData {
       status: 2
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 44,
       avatar: '',
@@ -617,6 +661,7 @@ export class DatatableFakeData {
       status: 1
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 45,
       avatar: 'avatar-s-7.jpg',
@@ -631,6 +676,7 @@ export class DatatableFakeData {
       status: 4
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 46,
       avatar: 'avatar-s-1.jpg',
@@ -645,6 +691,7 @@ export class DatatableFakeData {
       status: 5
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 47,
       avatar: 'avatar-s-5.jpg',
@@ -659,6 +706,7 @@ export class DatatableFakeData {
       status: 4
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 48,
       avatar: '',
@@ -673,6 +721,7 @@ export class DatatableFakeData {
       status: 1
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 49,
       avatar: 'avatar-s-8.jpg',
@@ -687,6 +736,7 @@ export class DatatableFakeData {
       status: 1
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 50,
       avatar: 'avatar-s-4.jpg',
@@ -701,6 +751,7 @@ export class DatatableFakeData {
       status: 1
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 51,
       avatar: '',
@@ -715,6 +766,7 @@ export class DatatableFakeData {
       status: 3
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 52,
       avatar: 'avatar-s-9.jpg',
@@ -729,6 +781,7 @@ export class DatatableFakeData {
       status: 3
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 53,
       avatar: '',
@@ -743,6 +796,7 @@ export class DatatableFakeData {
       status: 5
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 54,
       avatar: '',
@@ -757,6 +811,7 @@ export class DatatableFakeData {
       status: 3
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 55,
       avatar: '',
@@ -771,6 +826,7 @@ export class DatatableFakeData {
       status: 1
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 56,
       avatar: 'avatar-s-1.jpg',
@@ -785,6 +841,7 @@ export class DatatableFakeData {
       status: 1
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 57,
       avatar: 'avatar-s-6.jpg',
@@ -799,6 +856,7 @@ export class DatatableFakeData {
       status: 4
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 58,
       avatar: '',
@@ -813,6 +871,7 @@ export class DatatableFakeData {
       status: 5
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 59,
       avatar: '',
@@ -827,6 +886,7 @@ export class DatatableFakeData {
       status: 2
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 60,
       avatar: '',
@@ -841,6 +901,7 @@ export class DatatableFakeData {
       status: 4
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 61,
       avatar: 'avatar-s-3.jpg',
@@ -855,6 +916,7 @@ export class DatatableFakeData {
       status: 3
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 62,
       avatar: 'avatar-s-1.jpg',
@@ -869,6 +931,7 @@ export class DatatableFakeData {
       status: 5
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 63,
       avatar: 'avatar-s-9.jpg',
@@ -883,6 +946,7 @@ export class DatatableFakeData {
       status: 5
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 64,
       avatar: '',
@@ -897,6 +961,7 @@ export class DatatableFakeData {
       status: 5
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 65,
       avatar: '',
@@ -911,6 +976,7 @@ export class DatatableFakeData {
       status: 1
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 66,
       avatar: 'avatar-s-9.jpg',
@@ -925,6 +991,7 @@ export class DatatableFakeData {
       status: 1
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 67,
       avatar: 'avatar-s-7.jpg',
@@ -939,6 +1006,7 @@ export class DatatableFakeData {
       status: 5
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 68,
       avatar: '',
@@ -953,6 +1021,7 @@ export class DatatableFakeData {
       status: 1
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 69,
       avatar: 'avatar-s-7.jpg',
@@ -967,6 +1036,7 @@ export class DatatableFakeData {
       status: 2
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 70,
       avatar: '',
@@ -981,6 +1051,7 @@ export class DatatableFakeData {
       status: 5
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 71,
       avatar: '',
@@ -995,6 +1066,7 @@ export class DatatableFakeData {
       status: 1
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 72,
       avatar: '',
@@ -1009,6 +1081,7 @@ export class DatatableFakeData {
       status: 4
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 73,
       avatar: 'avatar-s-5.jpg',
@@ -1023,6 +1096,7 @@ export class DatatableFakeData {
       status: 2
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 74,
       avatar: 'avatar-s-2.jpg',
@@ -1037,6 +1111,7 @@ export class DatatableFakeData {
       status: 3
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 75,
       avatar: '',
@@ -1051,6 +1126,7 @@ export class DatatableFakeData {
       status: 3
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 76,
       avatar: '',
@@ -1065,6 +1141,7 @@ export class DatatableFakeData {
       status: 1
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 77,
       avatar: 'avatar-s-10.jpg',
@@ -1079,6 +1156,7 @@ export class DatatableFakeData {
       status: 4
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 78,
       avatar: '',
@@ -1093,6 +1171,7 @@ export class DatatableFakeData {
       status: 3
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 79,
       avatar: 'avatar-s-9.jpg',
@@ -1107,6 +1186,7 @@ export class DatatableFakeData {
       status: 2
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 80,
       avatar: '',
@@ -1121,6 +1201,7 @@ export class DatatableFakeData {
       status: 1
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 81,
       avatar: 'avatar-s-2.jpg',
@@ -1135,6 +1216,7 @@ export class DatatableFakeData {
       status: 2
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 82,
       avatar: 'avatar-s-8.jpg',
@@ -1149,6 +1231,7 @@ export class DatatableFakeData {
       status: 4
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 83,
       avatar: '',
@@ -1163,6 +1246,7 @@ export class DatatableFakeData {
       status: 4
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 84,
       avatar: 'avatar-s-5.jpg',
@@ -1177,6 +1261,7 @@ export class DatatableFakeData {
       status: 3
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 85,
       avatar: '',
@@ -1191,6 +1276,7 @@ export class DatatableFakeData {
       status: 2
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 86,
       avatar: 'avatar-s-4.jpg',
@@ -1205,6 +1291,7 @@ export class DatatableFakeData {
       status: 5
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 87,
       avatar: '',
@@ -1219,6 +1306,7 @@ export class DatatableFakeData {
       status: 3
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 88,
       avatar: '',
@@ -1233,6 +1321,7 @@ export class DatatableFakeData {
       status: 1
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 89,
       avatar: 'avatar-s-10.jpg',
@@ -1247,6 +1336,7 @@ export class DatatableFakeData {
       status: 1
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 90,
       avatar: 'avatar-s-6.jpg',
@@ -1261,6 +1351,7 @@ export class DatatableFakeData {
       status: 1
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 91,
       avatar: '',
@@ -1275,6 +1366,7 @@ export class DatatableFakeData {
       status: 3
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 92,
       avatar: 'avatar-s-3.jpg',
@@ -1289,6 +1381,7 @@ export class DatatableFakeData {
       status: 4
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 93,
       avatar: 'avatar-s-8.jpg',
@@ -1303,6 +1396,7 @@ export class DatatableFakeData {
       status: 4
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 94,
       avatar: '',
@@ -1317,6 +1411,7 @@ export class DatatableFakeData {
       status: 4
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 95,
       avatar: 'avatar-s-2.jpg',
@@ -1331,6 +1426,7 @@ export class DatatableFakeData {
       status: 1
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 96,
       avatar: '',
@@ -1345,6 +1441,7 @@ export class DatatableFakeData {
       status: 4
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 97,
       avatar: '',
@@ -1359,6 +1456,7 @@ export class DatatableFakeData {
       status: 4
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 98,
       avatar: 'avatar-s-7.jpg',
@@ -1373,6 +1471,7 @@ export class DatatableFakeData {
       status: 2
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 99,
       avatar: 'avatar-s-10.jpg',
@@ -1387,6 +1486,7 @@ export class DatatableFakeData {
       status: 4
     },
     {
+      progreso: '',
       responsive_id: '',
       id: 100,
       avatar: '',

@@ -3,35 +3,25 @@ export class NotificationsFakeData {
     messages: [
       {
         image: 'assets/images/portrait/small/avatar-s-15.jpg',
-        heading: '<span class="font-weight-bolder">Congratulation Sam 🎉</span> winner!',
-        text: 'Won the monthly best seller badge.'
-      },
-      {
-        image: 'assets/images/portrait/small/avatar-s-3.jpg',
-        heading: '<span class="font-weight-bolder">New message</span>  received',
-        text: 'You have 10 unread messages'
-      },
-      {
-        image: 'assets/images/portrait/small/avatar-s-12.jpg',
-        heading: '<span class="font-weight-bolder">Revised Order 👋</span>  checkout',
-        text: 'MD Inc. order updated'
+        heading: '<span class="font-weight-bolder">Bienvenido 🎉</span>!',
+        text: 'Estamos comprometidos a brindarte el mejor servicio.'
       }
     ],
     systemMessages: [
       {
         icon: 'x',
-        heading: '<span class="font-weight-bolder">Server down</span> registered',
-        text: 'USA Server is down due to hight CPU usage'
+        heading: '<span class="font-weight-bolder">Pago no aprobado</span> Verifícalo',
+        text: 'Verifica tu comprobante de pago. . .'
       },
       {
         icon: 'check',
-        heading: '<span class="font-weight-bolder">Sales report</span> generated',
-        text: 'Last month sales report generated'
+        heading: '<span class="font-weight-bolder">Cuenta verificada</span>',
+        text: 'Ahora puedes acceder a todos los beneficios.'
       },
       {
         icon: 'alert-triangle',
-        heading: '<span class="font-weight-bolder">High memory</span> usage',
-        text: 'BLR Server using high memory'
+        heading: '<span class="font-weight-bolder">Renueva tu contrato</span> Ahora',
+        text: 'No dejes de ganar pasivos, renueva tu contrato. . .'
       }
     ],
     system: true

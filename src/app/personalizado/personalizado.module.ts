@@ -1,22 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
-import { InicioComponent } from './inicio/inicio.component';
-
-//aquí añades las direcciones o rutas
-const routes = [
-  {
-    path: '',
-    component: InicioComponent
-  },
-];
+import { Pyt_25_Module } from './PYT_025_ProejctOS/pyt_25.module';
+import { Pyt_21_Module } from './PYT_21/pyt_21.module';
 
 @NgModule({
   declarations: [
-    InicioComponent
   ],
   imports: [
-    CommonModule,RouterModule.forChild(routes)
+    CommonModule,Pyt_25_Module,Pyt_21_Module
   ]
 })
 export class PersonalizadoModule { }

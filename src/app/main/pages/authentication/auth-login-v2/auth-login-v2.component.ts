@@ -6,6 +6,7 @@ import { Subject } from 'rxjs';
 
 import { AuthenticationService } from 'app/auth/service';
 import { CoreConfigService } from '@core/services/config.service';
+import { PersonalizadoService } from 'app/personalizado/personalizado.service';
 
 @Component({
   selector: 'app-auth-login-v2',
@@ -32,6 +33,7 @@ export class AuthLoginV2Component implements OnInit {
    * @param {CoreConfigService} _coreConfigService
    */
   constructor(
+    public PersonalizadoService: PersonalizadoService,
     private _coreConfigService: CoreConfigService,
     private _formBuilder: FormBuilder,
     private _route: ActivatedRoute,
@@ -107,8 +109,8 @@ export class AuthLoginV2Component implements OnInit {
    */
   ngOnInit(): void {
     this.loginForm = this._formBuilder.group({
-      email: ['admin@demo.com', [Validators.required, Validators.email]],
-      password: ['admin', Validators.required]
+      email: ['client@demo.com', [Validators.required, Validators.email]],
+      password: ['client@demo.com', Validators.required]
     });
 
     // get return url from route parameters or default to '/'

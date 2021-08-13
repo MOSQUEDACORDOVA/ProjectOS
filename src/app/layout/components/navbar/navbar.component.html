@@ -60,9 +60,9 @@
     <app-navbar-cart></app-navbar-cart>
     Cart -->
 
-    <!-- Notification 
-    <app-navbar-notification></app-navbar-notification>
-    Notification -->
+    
+    <app-navbar-notification *ngIf="NOTIFICACIONES"></app-navbar-notification>
+    
 
     <!-- User Dropdown -->
     <li ngbDropdown class="nav-item dropdown-user">
@@ -91,9 +91,11 @@
         </ng-container>
       </a>
       <div ngbDropdownMenu aria-labelledby="navbarUserDropdown" class="dropdown-menu dropdown-menu-right">
-        <a ngbDropdownItem [routerLink]="['/pages/profile']"
-          ><span [data-feather]="'user'" [class]="'mr-50'"></span> Profile</a
+        <!--[routerLink]="#['/pages/profile']"-->
+        <a ngbDropdownItem [routerLink]="['/']"
+          ><span [data-feather]="'user'" [class]="'mr-50'"></span> Perfil</a
         >
+        <a ngbDropdownItem ><span [data-feather]="'check-circle'" [class]="'mr-50'"></span> Verificar cuenta</a>
         <!--
         <a ngbDropdownItem [routerLink]="['/apps/email']">
         <span [data-feather]="'mail'" [class]="'mr-50'"></span> Inbox</a
@@ -111,7 +113,7 @@
         ><a ngbDropdownItem [routerLink]="['/pages/faq']"
           ><span [data-feather]="'help-circle'" [class]="'mr-50'"></span> FAQ</a>-->
           
-          <a ngbDropdownItem (click)="logout()"><span [data-feather]="'power'" [class]="'mr-50'"></span> Logout</a>
+          <a ngbDropdownItem (click)="logout()"><span [data-feather]="'power'" [class]="'mr-50'"></span> Salir</a>
       </div>
     </li>
     <!--/ User Dropdown -->

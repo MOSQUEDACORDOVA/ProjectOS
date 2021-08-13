@@ -5,6 +5,7 @@ import { Subject } from 'rxjs';
 
 import { CoreConfigService } from '@core/services/config.service';
 
+
 @Component({
   selector: 'app-error',
   templateUrl: './error.component.html',

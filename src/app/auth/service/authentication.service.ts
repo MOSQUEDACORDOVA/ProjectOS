@@ -36,7 +36,6 @@ export class AuthenticationService {
   get isAdmin() {
     return this.currentUser && this.currentUserSubject.value.role === Role.Admin;
   }
-
   /**
    *  Confirms if user is client
    */
@@ -44,6 +43,28 @@ export class AuthenticationService {
     return this.currentUser && this.currentUserSubject.value.role === Role.Client;
   }
 
+  /**
+   *  Confirms if user is client
+   */
+  get isPM() {
+    return this.currentUser && this.currentUserSubject.value.role === Role.PM;
+  }
+  get isPYT_21_Admin() {
+    return this.currentUser && this.currentUserSubject.value.role === Role.PYT_21_Admin;
+  }
+  get isPYT_21_Inversor() {
+    return this.currentUser && this.currentUserSubject.value.role === Role.PYT_21_Inversor;
+  }
+  /**
+   *  Confirms if user puede acceder a ese modulo 
+   */
+  get usEstatus() {
+    if(this.currentUser && this.currentUserSubject.value.estatus === 'VERIFICADO'){
+      return true;
+    }else{
+      return false;
+    }
+  }
   /**
    * User login
    *
@@ -64,10 +85,10 @@ export class AuthenticationService {
             // Display welcome toast!
             setTimeout(() => {
               this._toastrService.success(
-                'You have successfully logged in as an ' +
+                'Has iniciado sesión con éxito como usuario ' +
                   user.role +
-                  ' user to Vuexy. Now you can start to explore. Enjoy! 🎉',
-                '👋 Welcome, ' + user.firstName + '!',
+                  '. Ahora puedes empezar a explorar. ¡Disfrutar! 🎉',
+                '👋 Bienvenido, ' + user.firstName + '!',
                 { toastClass: 'toast ngx-toastr', closeButton: true }
               );
             }, 2500);
@@ -88,6 +109,7 @@ export class AuthenticationService {
   logout() {
     // remove user from local storage to log user out
     localStorage.removeItem('currentUser');
+    sessionStorage.removeItem('SS_proyecto_actual');
     // notify
     this.currentUserSubject.next(null);
   }
