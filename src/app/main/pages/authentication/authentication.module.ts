@@ -19,6 +19,10 @@ import { AuthRegisterV2Component } from 'app/main/pages/authentication/auth-regi
 import { AuthResetPasswordV1Component } from 'app/main/pages/authentication/auth-reset-password-v1/auth-reset-password-v1.component';
 import { AuthResetPasswordV2Component } from 'app/main/pages/authentication/auth-reset-password-v2/auth-reset-password-v2.component';
 
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { environment } from 'environments/environment';
+
 // routing
 const routes: Routes = [
   {
@@ -66,6 +70,6 @@ const routes: Routes = [
     AuthResetPasswordV1Component,
     AuthResetPasswordV2Component
   ],
-  imports: [CommonModule, RouterModule.forChild(routes), NgbModule, FormsModule, ReactiveFormsModule, CoreCommonModule]
+  imports: [CommonModule, RouterModule.forChild(routes), NgbModule, FormsModule, ReactiveFormsModule, CoreCommonModule, AngularFireModule.initializeApp(environment.firebase), AngularFirestoreModule]
 })
 export class AuthenticationModule {}

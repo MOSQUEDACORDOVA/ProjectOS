@@ -2,7 +2,7 @@
   <div class="auth-inner row m-0">
     <!-- Brand logo--><a class="brand-logo" href="javascript:void(0);">
       <img src="{{ coreConfig.app.appLogoImage }}" alt="brand-logo" height="28" />
-      <h2 class="brand-text text-primary ml-1">ProjectOS</h2></a
+      <h2 class="brand-text text-primary ml-1">{{ coreConfig.app.appName }}</h2></a
     >
     <!-- /Brand logo-->
     <!-- Left Text-->
@@ -23,11 +23,11 @@
     <!-- Register-->
     <div class="d-flex col-lg-4 align-items-center auth-bg px-2 p-lg-5">
       <div class="col-12 col-sm-8 col-md-6 col-lg-12 px-xl-2 mx-auto">
-        <h2 class="card-title font-weight-bold mb-1">Adventure starts here 🚀</h2>
-        <p class="card-text mb-2">Make your app management easy and fun!</p>
+        <h2 class="card-title font-weight-bold mb-1">Hoy es un gran día 🚀</h2>
+        <p class="card-text mb-2">¡Un mundo de posibilidades te espera!</p>
         <form class="auth-register-form mt-2" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
           <div class="form-group">
-            <label for="register-username" class="form-label">Username</label>
+            <label for="register-username" class="form-label">¿Cómo te llamas?</label>
             <input
               type="text"
               formControlName="username"
@@ -43,7 +43,7 @@
             </div>
           </div>
           <div class="form-group">
-            <label for="register-email" class="form-label">Email</label>
+            <label for="register-email" class="form-label">¿Cúal es tu correo?</label>
             <input
               type="text"
               formControlName="email"
@@ -60,7 +60,7 @@
           </div>
 
           <div class="form-group">
-            <label for="register-password" class="form-label">Password</label>
+            <label for="register-password" class="form-label">Coloca una contraseña</label>
 
             <div class="input-group input-group-merge form-password-toggle">
               <input
@@ -97,17 +97,17 @@
             <div class="custom-control custom-checkbox">
               <input class="custom-control-input" type="checkbox" id="register-privacy-policy" tabindex="4" />
               <label class="custom-control-label" for="register-privacy-policy">
-                I agree to <a href="javascript:void(0);">privacy policy & terms</a>
+                Debes aceptar nuestras <a href="javascript:void(0);">políticas de privacidad</a>
               </label>
             </div>
           </div>
-          <button class="btn btn-primary btn-block" tabindex="5" rippleEffect>Sign up</button>
+          <button class="btn btn-primary btn-block" tabindex="5" rippleEffect>Registrarte</button>
         </form>
         <p class="text-center mt-2">
-          <span>Already have an account?</span
-          ><a routerLink="/pages/authentication/login-v2"><span>&nbsp;Sign in instead</span></a>
+          <span>¿Ya tienes una cuenta?</span
+          ><a routerLink="/pages/authentication/login-v2"><span>&nbsp;¡Ingresa!</span></a>
         </p>
-        <div class="divider my-2">
+        <!--<div class="divider my-2">
           <div class="divider-text">or</div>
         </div>
         <div class="auth-footer-btn d-flex justify-content-center">
@@ -115,7 +115,7 @@
           ><a class="btn btn-twitter white" href="javascript:void(0)"><i data-feather="twitter"></i></a
           ><a class="btn btn-google" href="javascript:void(0)"><i data-feather="mail"></i></a
           ><a class="btn btn-github" href="javascript:void(0)"><i data-feather="github"></i></a>
-        </div>
+        </div>-->
       </div>
     </div>
     <!-- /Register-->

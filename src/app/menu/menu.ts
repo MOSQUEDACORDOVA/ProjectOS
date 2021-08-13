@@ -4,11 +4,26 @@ import { CoreMenu } from '@core/types';
 
 export const menu: CoreMenu[] = [
   {
+    id: 'secciones',
+    type: 'section',
+    title: 'Opciones',
+    translate: 'MENU.APPS.SECTION'
+  },
+  {
+    id: 'pty_4_tablero',
+    title: 'Tablero',
+    type: 'item',
+    icon: 'home',
+    url: 'pyt4/tablero',
+    proyecto: 'PYT-4'
+  },
+  {
     id: 'pty_21_tablero',
     title: 'Tablero',
     type: 'item',
     icon: 'home',
-    url: 'pyt21/tablero'
+    url: 'pyt21/tablero',
+    proyecto: 'PYT-21'
   },
   {
     id: 'pty_21_contratos',

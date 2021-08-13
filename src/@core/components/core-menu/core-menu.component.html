@@ -45,7 +45,7 @@
     <li
       core-menu-vertical-item
       *ngIf="
-        item.type == 'item' && (item.role ? item.role.includes(currentUser.role) : false || item.role == undefined)
+        item.type == 'item' && item.proyecto == currentUser.proyecto && (item.role ? item.role.includes(currentUser.role) : false || item.role == undefined)
       "
       [item]="item"
       [ngClass]="{ disabled: item.disabled === true }"

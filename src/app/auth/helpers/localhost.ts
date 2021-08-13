@@ -19,6 +19,46 @@ import { Observable, of, throwError } from 'rxjs';
 import { delay, mergeMap, materialize, dematerialize } from 'rxjs/operators';
 import { User, Role } from 'app/auth/models';
 import { PersonalizadoService } from 'app/personalizado/personalizado.service';
+import firebase from "firebase/app";
+import "firebase/firestore";
+import { environment } from 'environments/environment';
+var mi_firebase=firebase.initializeApp(environment.firebase);
+var db = mi_firebase.firestore();
+class Mis_Usuarios {
+  constructor (public id, public email, public firstName, public lastName, public avatar, public role, public token, public proyecto ) {
+          this.id = id;
+          this.email = email;
+          this.firstName = firstName;
+          this.lastName = lastName;
+          this.avatar = avatar;
+          this.role = role;
+          this.token = `fake-jwt-token.${id}`;
+          this.proyecto = proyecto;
+      }
+  toString() {
+          return this.id + ', ' + this.email+ '';
+      }
+}
+// Firestore data converter
+var usuariosConverter = {
+  toFirestore: function(usuario) {
+      return {
+          id: usuario.id,
+          email: usuario.email,
+          firstName: usuario.firstName,
+          lastName: usuario.lastName,
+          avatar: usuario.avatar,
+          role: usuario.role,
+          token: `fake-jwt-token.${usuario.id}`,
+          proyecto: usuario.proyecto,
+          };
+  },
+  fromFirestore: function(snapshot, options){
+      const data = snapshot.data(options);
+      return new Mis_Usuarios(data.id, data.email, data.firstName, data.lastName, data.avatar, data.role, data.token, data.proyecto );
+  }
+};
+
 var IDE_PA= new PersonalizadoService;
 // Users with role
 const users: User[] = [
@@ -71,6 +111,26 @@ const users: User[] = [
     avatar: 'avatar-s-11.jpg',
     role: Role.PYT_21_Inversor,
     proyecto:'PYT-21'
+  },
+  {
+    id: 6,
+    email: 'admin@demo.com',
+    password: 'admin@demo.com',
+    firstName: 'Isaac',
+    lastName: 'M.',
+    avatar: 'avatar-s-11.jpg',
+    role: Role.PYT_4_Director,
+    proyecto:'PYT-4'
+  },
+  {
+    id: 7,
+    email: 'client@demo.com',
+    password: 'client@demo.com',
+    firstName: 'Isaac',
+    lastName: 'Mosqueda',
+    avatar: 'avatar-s-11.jpg',
+    role: Role.PYT_4_Cliente,
+    proyecto:'PYT-4'
   }
 ];
 
@@ -100,20 +160,55 @@ export class FakeBackendInterceptor implements HttpInterceptor {
     }
 
     // route functions
-
+    
     function authenticate() {
+      /*/FIREBASE
+
+      db.collection("usuarios").where("email", "==", 'client@demo.com')
+      .withConverter(usuariosConverter)
+      .get()
+      .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+        // Convert to USUARIO object 
+        var usuario = doc.data();
+              console.log(usuario.toString());  
+              
+              sessionStorage.setItem('firstName', usuario.firstName);
+        });
+      })
+      .catch((error) => {
+          
+          console.log("Algo falló");
+      });
+
+      //FIN FIREBASE*/
+      
       const { email, password } = body;
-      const user = users.find(x => x.email === email && x.password === password && x.proyecto === IDE_PA.IDE_PA);
+      const fire_users: User[] = [
+        {
+          id: sessionStorage.getItem('aut_id'),
+          password: sessionStorage.getItem('aut_password'),
+          email: sessionStorage.getItem('aut_email'),
+          firstName: sessionStorage.getItem('aut_firstName'),
+          lastName: sessionStorage.getItem('aut_lastName'),
+          avatar: sessionStorage.getItem('aut_avatar'),
+          role: sessionStorage.getItem('aut_role'),
+          token: `fake-jwt-token.${sessionStorage.getItem('aut_id')}`,
+          proyecto: sessionStorage.getItem('aut_proyecto'),
+        },
+      ];
+      const user = fire_users.find(x => x.email === email && x.password === password && x.proyecto === IDE_PA.IDE_PA);
+      
       if (!user) return error('Los datos son incorrectos');
       return ok({
-        id: user.id,
-        email: user.email,
-        firstName: user.firstName,
-        lastName: user.lastName,
-        avatar: user.avatar,
-        role: user.role,
-        token: `fake-jwt-token.${user.id}`,
-        proyecto: user.proyecto,
+        id: sessionStorage.getItem('aut_id'),
+        email: sessionStorage.getItem('aut_email'),
+        firstName: sessionStorage.getItem('aut_firstName'),
+        lastName: sessionStorage.getItem('aut_lastName'),
+        avatar: sessionStorage.getItem('aut_avatar'),
+        role: sessionStorage.getItem('aut_role'),
+        token: `fake-jwt-token.${sessionStorage.getItem('aut_id')}`,
+        proyecto: sessionStorage.getItem('aut_proyecto'),
       });
     }
 
