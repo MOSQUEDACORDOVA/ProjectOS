@@ -50,13 +50,6 @@ export class AuthLoginV2Component implements OnInit {
     private _authenticationService: AuthenticationService,
     private afs: AngularFirestore
   ) {
-    //FIREBASE FIRESTORE
-    
-    
-    this.itemDoc = afs.doc<Item>('usuarios/EvVsDZNGGW0nI0koTw1P');
-    this.item = this.itemDoc.valueChanges();
-    this.itemsCollection = this.afs.collection('usuarios', ref => ref.where('nombre', '==', 'hector'));
-    this.items = this.itemsCollection.valueChanges();
     
     // redirect to home if already logged in
     if (this._authenticationService.currentUserValue) {
@@ -82,9 +75,7 @@ export class AuthLoginV2Component implements OnInit {
       }
     };
   }
-  async prueba(param){
-    var x = this.items;
-
+  async los_datos(param){
     return new Promise(resolve =>{
       param.pipe().subscribe((data):any =>{
         console.log(data)
@@ -107,50 +98,55 @@ export class AuthLoginV2Component implements OnInit {
     this.passwordTextType = !this.passwordTextType;
   }
 
-  onSubmit() {
+  onSubmit() { 
     this.submitted = true;
+    //this.itemDoc = this.afs.doc<Item>('usuarios/'+this.f.email.value+'');
+    //this.item = this.itemDoc.valueChanges();
     this.itemsCollection = this.afs.collection('usuarios', ref => ref.where('email', '==', this.f.email.value).where('password', '==', this.f.password.value));
     this.items = this.itemsCollection.valueChanges();
     
-    this.prueba(this.items).then((res)=>{ 
+    this.los_datos(this.items).then((res)=>{ 
       //detectar si viene vacío
       var valido=res.toString();
       if(valido.length>1){
-        var id= res[0]['id'];
-        var email= res[0]['email'];
-        var firstName= res[0]['firstName'];
-        var lastName= res[0]['lastName'];
-        var avatar= res[0]['avatar'];
-        var role= res[0]['role'];
-        var proyecto= res[0]['proyecto'];
-        var password= res[0]['password'];
-        sessionStorage.setItem('aut_id', id);
-        sessionStorage.setItem('aut_email', email);
-        sessionStorage.setItem('aut_firstName', firstName);
-        sessionStorage.setItem('aut_lastName', lastName);
-        sessionStorage.setItem('aut_avatar', avatar);
-        sessionStorage.setItem('aut_role', role);
-        sessionStorage.setItem('aut_proyecto', proyecto);
-        sessionStorage.setItem('aut_password', password);
-        //flujo con datos
-        // stop here if form is invalid
-        if (this.loginForm.invalid) {
-          return;
+        //detectar datos
+        if(this.f.email.value==res[0]['email'] && this.f.password.value==res[0]['password'] && this.PersonalizadoService.IDE_PA==res[0]['proyecto']){
+          var id= res[0]['id'];
+          var email= res[0]['email'];
+          var firstName= res[0]['firstName'];
+          var lastName= res[0]['lastName'];
+          var avatar= res[0]['avatar'];
+          var role= res[0]['role'];
+          var proyecto= res[0]['proyecto'];
+          var password= res[0]['password'];
+          sessionStorage.setItem('aut_id', id);
+          sessionStorage.setItem('aut_email', email);
+          sessionStorage.setItem('aut_firstName', firstName);
+          sessionStorage.setItem('aut_lastName', lastName);
+          sessionStorage.setItem('aut_avatar', avatar);
+          sessionStorage.setItem('aut_role', role);
+          sessionStorage.setItem('aut_proyecto', proyecto);
+          sessionStorage.setItem('aut_password', password);
+          //flujo con datos
+          // stop here if form is invalid
+          if (this.loginForm.invalid) {
+            return;
+          }
+          // Login
+          this.loading = true;
+          this._authenticationService
+            .login(this.f.email.value, this.f.password.value)
+            .pipe(first())
+            .subscribe(
+              data => {
+                this._router.navigate([this.returnUrl]);
+              },
+              error => {
+                this.error = error;
+                this.loading = false;
+              }
+            );
         }
-        // Login
-        this.loading = true;
-        this._authenticationService
-          .login(this.f.email.value, this.f.password.value)
-          .pipe(first())
-          .subscribe(
-            data => {
-              this._router.navigate([this.returnUrl]);
-            },
-            error => {
-              this.error = error;
-              this.loading = false;
-            }
-          );
       }else{
         //flujo normal
         // stop here if form is invalid
@@ -177,6 +173,7 @@ export class AuthLoginV2Component implements OnInit {
     })
     
   }
+  
 
   // Lifecycle Hooks
   // -----------------------------------------------------------------------------------------------------
@@ -197,12 +194,7 @@ export class AuthLoginV2Component implements OnInit {
     this._coreConfigService.config.pipe(takeUntil(this._unsubscribeAll)).subscribe(config => {
       this.coreConfig = config;
     });
-    /*this.prueba().then((res)=>{
-
-      var nombre= res[0]['nombre'];
-      alert(nombre);
-
-     })*/
+    
 
   }
 

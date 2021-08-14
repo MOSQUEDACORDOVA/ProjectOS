@@ -26,7 +26,7 @@ import { environment } from 'environments/environment';
 // routing
 const routes: Routes = [
   {
-    path: 'authentication/login-v1',
+    path: 'authentication-OCULTO/login-v1',
     component: AuthLoginV1Component
   },
   {
@@ -34,7 +34,7 @@ const routes: Routes = [
     component: AuthLoginV2Component
   },
   {
-    path: 'authentication/register-v1',
+    path: 'authentication-OCULTO/register-v1',
     component: AuthRegisterV1Component
   },
   {

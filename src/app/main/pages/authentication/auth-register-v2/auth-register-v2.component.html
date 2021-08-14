@@ -32,14 +32,14 @@
               type="text"
               formControlName="username"
               class="form-control"
-              placeholder="johndoe"
+              placeholder="Pedro"
               aria-describedby="register-username"
               tabindex="1"
               autofocus
               [ngClass]="{ 'is-invalid': submitted && f.username.errors }"
             />
             <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
-              <div *ngIf="f.username.errors.required">Username is required</div>
+              <div *ngIf="f.username.errors.required">Tu nombre es necesario</div>
             </div>
           </div>
           <div class="form-group">
@@ -48,14 +48,14 @@
               type="text"
               formControlName="email"
               class="form-control"
-              placeholder="john@example.com"
+              placeholder="pedro@example.com"
               aria-describedby="register-email"
               tabindex="2"
               [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
             />
             <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
-              <div *ngIf="f.email.errors.required">Email is required</div>
-              <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+              <div *ngIf="f.email.errors.required">El correo es necesario</div>
+              <div *ngIf="f.email.errors.email">Ingresa una dirección de correo válida</div>
             </div>
           </div>
 
@@ -64,7 +64,7 @@
 
             <div class="input-group input-group-merge form-password-toggle">
               <input
-                [type]="passwordTextType ? 'text' : 'password'"
+                [type]="passwordTextType ? 'password' : 'text'"
                 formControlName="password"
                 class="form-control form-control-merge"
                 placeholder="············"
@@ -77,8 +77,8 @@
                   ><i
                     class="feather font-small-4"
                     [ngClass]="{
-                      'icon-eye-off': passwordTextType,
-                      'icon-eye': !passwordTextType
+                      'icon-eye': passwordTextType,
+                      'icon-eye-off': !passwordTextType
                     }"
                     (click)="togglePasswordTextType()"
                   ></i
@@ -90,7 +90,7 @@
               class="invalid-feedback"
               [ngClass]="{ 'd-block': submitted && f.password.errors }"
             >
-              <div *ngIf="f.password.errors.required">Password is required</div>
+              <div *ngIf="f.password.errors.required">La contraseña es necesaria</div>
             </div>
           </div>
           <div class="form-group">
@@ -101,8 +101,22 @@
               </label>
             </div>
           </div>
-          <button class="btn btn-primary btn-block" tabindex="5" rippleEffect>Registrarte</button>
+          <button class="btn btn-primary btn-block" tabindex="5" rippleEffect *ngIf="!permitir_envio || registerForm.invalid">Regístrate</button>
+          <button class="btn btn-primary btn-block" type="button" disabled rippleEffect *ngIf="permitir_envio && !registerForm.invalid">
+            <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+            <span class="ml-25 align-middle">Registrando...</span>
+          </button>
         </form>
+
+        <!-- ngb-alert component -->
+        <ngb-alert [type]="'danger'" *ngIf="existencia" class="mt-1" [dismissible]="false">
+          <div class="alert-body">
+            <span [data-feather]="'info'" [class]="'mr-50 align-middle'"></span>
+            <span>¡Estos datos ya existen!</span>
+          </div>
+        </ngb-alert>
+        <!--/ ngb-alert component -->
+        
         <p class="text-center mt-2">
           <span>¿Ya tienes una cuenta?</span
           ><a routerLink="/pages/authentication/login-v2"><span>&nbsp;¡Ingresa!</span></a>

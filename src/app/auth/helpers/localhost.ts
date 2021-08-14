@@ -198,6 +198,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
         },
       ];
       const user = fire_users.find(x => x.email === email && x.password === password && x.proyecto === IDE_PA.IDE_PA);
+      //const user = fire_users.find(x => 'client@demo.com' === email && 'client@demo.com' === password && 'PYT-4' === IDE_PA.IDE_PA);
       
       if (!user) return error('Los datos son incorrectos');
       return ok({

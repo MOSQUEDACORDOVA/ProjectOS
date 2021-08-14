@@ -49,6 +49,7 @@ export class PersonalizadoService {
   public MENU_COL_PA; 
   public RUT_PRI_PA; 
   public MOD_PRI_PA; 
+  public REGISTRO_PERSONALIZADO;
   public NOTIFICACIONES; 
 
   constructor() { 
@@ -61,15 +62,16 @@ export class PersonalizadoService {
     var notificaciones=false;
     switch(sessionStorage.getItem('SS_proyecto_actual')){
       case 'PYT-4': 
-        var nombre="Bwater";
-        var titulo="Bwater | Hidratación consciente";
-        var descripcion="Bwater | Hidratación consciente";
+        var nombre="B•Water";
+        var titulo="B•Water | Hidratación consciente";
+        var descripcion="B•Water | Hidratación consciente";
         var keywords="Agua potable";
         var favicon="assets/images/ico/pyt_4_favicon.ico";
         var logo_png="assets/images/logo/pyt_4_logo.png";
         var icono_svg="assets/images/logo/pyt_4_logo.png";
         var RutaPrincipal="pyt4/tablero";
         var ModuloPrincipal="pyt4";
+        var Registro_personalizado=true;
         notificaciones=true;
       break
       case 'PYT-21': 
@@ -82,6 +84,7 @@ export class PersonalizadoService {
         var icono_svg="";
         var RutaPrincipal="pyt21/tablero";
         var ModuloPrincipal="pyt21";
+        var Registro_personalizado=false;
         notificaciones=true;
       break
       case 'PYT-24': 
@@ -94,6 +97,7 @@ export class PersonalizadoService {
         var icono_svg="assets/images/logo/logo.svg";
         var RutaPrincipal="dashboard/proyectos";
         var ModuloPrincipal="dashboard";
+        var Registro_personalizado=false;
       break
       case 'PYT-25': 
         var nombre="ProjectOS";
@@ -106,6 +110,7 @@ export class PersonalizadoService {
         var RutaPrincipal="tablero/proyectos";
         menu_collapse=true;
         var ModuloPrincipal="tablero";
+        var Registro_personalizado=false;
       break
       default: 
         var nombre="localhost";
@@ -117,6 +122,7 @@ export class PersonalizadoService {
         var icono_svg="assets/images/logo/logo.svg";
         var RutaPrincipal="tablero/proyectos";
         var ModuloPrincipal="tablero";
+        var Registro_personalizado=false;
       break
     }
     this.IDE_PA=identificador;
@@ -130,6 +136,7 @@ export class PersonalizadoService {
     this.MENU_COL_PA=menu_collapse;
     this.RUT_PRI_PA=RutaPrincipal;
     this.MOD_PRI_PA=ModuloPrincipal;
+    this.REGISTRO_PERSONALIZADO=Registro_personalizado;
     this.NOTIFICACIONES=notificaciones;
   }
 }
