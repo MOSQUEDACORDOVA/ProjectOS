@@ -3,13 +3,14 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CoreCommonModule } from '@core/common.module';
-import { TableroComponent } from './tablero.component';
+import { TableroComponent } from 'app/personalizado/PYT_21/tablero/tablero.component';
+
 import { ChartsModule } from 'ng2-charts';
 import { Ng2FlatpickrModule } from 'ng2-flatpickr';
 
 const routes: Routes = [
   {
-    path: 'tablero',
+    path: 'pyt_21_tablero',
     component: TableroComponent,
     data: { animation: 'chartJS, clipboard, statistics' }
   }

@@ -87,7 +87,7 @@ export class AuthenticationService {
               this._toastrService.success(
                 'Has iniciado sesión con éxito como usuario ' +
                   user.role +
-                  '. Ahora puedes empezar a explorar. ¡Disfrutar! 🎉',
+                  '. Ahora puedes empezar a explorar. ¡Disfruta! 🎉',
                 '👋 Bienvenido, ' + user.firstName + '!',
                 { toastClass: 'toast ngx-toastr', closeButton: true }
               );

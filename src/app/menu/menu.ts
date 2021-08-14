@@ -30,21 +30,24 @@ export const menu: CoreMenu[] = [
     title: 'Contratos',
     type: 'item',
     icon: 'trending-up',
-    url: 'pyt21/contratos'
+    url: 'pyt21/contratos',
+    proyecto: 'PYT-21'
   },
   {
     id: 'pty_21_tablero',
     title: 'Ingresos',
     type: 'item',
     icon: 'dollar-sign',
-    url: 'pyt21tablero/tablero'
+    url: 'pyt21tablero/tablero',
+    proyecto: 'PYT-21'
   },
   {
     id: 'pty_21_tablero',
     title: 'Retiros',
     type: 'item',
     icon: 'check',
-    url: 'pyt21tablero/tablero'
+    url: 'pyt21tablero/tablero',
+    proyecto: 'PYT-21'
   },
   {
     id: 'pty_21_tablero',
@@ -52,6 +55,7 @@ export const menu: CoreMenu[] = [
     type: 'item',
     icon: 'credit-card',
     url: 'pyt21tablero/tablero',
+    proyecto: 'PYT-21',
     role: ['Administrador']
   },
   {
@@ -60,6 +64,7 @@ export const menu: CoreMenu[] = [
     type: 'item',
     icon: 'star',
     url: 'pyt21tablero/tablero',
+    proyecto: 'PYT-21',
     role: ['Administrador']
   },
   {
@@ -68,6 +73,7 @@ export const menu: CoreMenu[] = [
     type: 'item',
     icon: 'alert-triangle',
     url: 'pyt21tablero/tablero',
+    proyecto: 'PYT-21',
     role: ['Administrador']
   },
   {
@@ -76,6 +82,7 @@ export const menu: CoreMenu[] = [
     type: 'item',
     icon: 'users',
     url: 'pyt21tablero/tablero',
+    proyecto: 'PYT-21',
     role: ['Administrador']
   },
   {
@@ -84,6 +91,7 @@ export const menu: CoreMenu[] = [
     type: 'item',
     icon: 'user-plus',
     url: 'pyt21tablero/tablero',
+    proyecto: 'PYT-21',
     role: ['Administrador']
   }
 ];

@@ -82,7 +82,7 @@ export class PersonalizadoService {
         var favicon="assets/images/ico/pyt_25_favicon.ico";
         var logo_png="assets/images/logo/pyt_25_logo.png";
         var icono_svg="";
-        var RutaPrincipal="pyt21/tablero";
+        var RutaPrincipal="pyt21/pyt_21_tablero";
         var ModuloPrincipal="pyt21";
         var Registro_personalizado=false;
         notificaciones=true;

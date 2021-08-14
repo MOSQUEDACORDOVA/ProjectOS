@@ -23,6 +23,13 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from 'environments/environment';
 
+//CAMPOS DE CADA PROYECTO
+import { Default_Campos } from 'app/main/pages/authentication/auth-register-v2/default_campos/default_campos.component';
+import { Pty_4_Campos } from 'app/main/pages/authentication/auth-register-v2/pty_4_Campos/pty_4_Campos.component';
+
+//CAMPOS ESPECIALES
+import { NgxMaskModule } from 'ngx-mask';
+
 // routing
 const routes: Routes = [
   {
@@ -68,8 +75,20 @@ const routes: Routes = [
     AuthForgotPasswordV1Component,
     AuthForgotPasswordV2Component,
     AuthResetPasswordV1Component,
-    AuthResetPasswordV2Component
+    AuthResetPasswordV2Component,
+    Default_Campos,
+    Pty_4_Campos
   ],
-  imports: [CommonModule, RouterModule.forChild(routes), NgbModule, FormsModule, ReactiveFormsModule, CoreCommonModule, AngularFireModule.initializeApp(environment.firebase), AngularFirestoreModule]
+  imports: [
+    CommonModule, 
+    RouterModule.forChild(routes), 
+    NgbModule, 
+    FormsModule, 
+    ReactiveFormsModule, 
+    CoreCommonModule, 
+    AngularFireModule.initializeApp(environment.firebase), 
+    AngularFirestoreModule,
+    NgxMaskModule.forRoot()
+  ]
 })
 export class AuthenticationModule {}
