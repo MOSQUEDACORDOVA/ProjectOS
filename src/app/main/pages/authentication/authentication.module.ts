@@ -25,7 +25,7 @@ import { environment } from 'environments/environment';
 
 //CAMPOS DE CADA PROYECTO
 import { Default_Campos } from 'app/main/pages/authentication/auth-register-v2/default_campos/default_campos.component';
-import { Pty_4_Campos } from 'app/main/pages/authentication/auth-register-v2/pty_4_Campos/pty_4_Campos.component';
+//import { Pty_4_Campos } from 'app/main/pages/authentication/auth-register-v2/pty_4_Campos/pty_4_Campos.component';
 
 //CAMPOS ESPECIALES
 import { NgxMaskModule } from 'ngx-mask';
@@ -76,8 +76,7 @@ const routes: Routes = [
     AuthForgotPasswordV2Component,
     AuthResetPasswordV1Component,
     AuthResetPasswordV2Component,
-    Default_Campos,
-    Pty_4_Campos
+    Default_Campos
   ],
   imports: [
     CommonModule, 
