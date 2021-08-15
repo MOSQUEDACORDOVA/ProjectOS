@@ -12,12 +12,12 @@ export interface Emails { email: any };
 export interface Campos { id: any; };
 
 @Component({
-  selector: 'pty_4_campos',
-  templateUrl: './pty_4_campos.component.html',
-  styleUrls: ['./pty_4_campos.component.scss'],
+  selector: 'pyt_4_campos',
+  templateUrl: './pyt_4_campos.component.html',
+  styleUrls: ['./pyt_4_campos.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class Pty_4_Campos implements OnInit {
+export class Pyt_4_Campos implements OnInit {
 
 
    //FIREBASE
