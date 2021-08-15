@@ -9,7 +9,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class TableroComponent implements OnInit {
 
-
+ 
   constructor() {
 
 
