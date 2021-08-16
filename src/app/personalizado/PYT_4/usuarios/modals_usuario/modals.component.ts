@@ -119,6 +119,11 @@ export class ModalsComponent implements OnInit {
         this.existencia=true;
         return;
       }else{
+        this._CamposService.myCallback = () => {
+          this.submitted = false;
+          this.modal.close('Accept click');
+          this.registerForm.reset();
+        }
         //registrar datos
         this._CamposService.registrarUsuario_pyt4(
           'id',
@@ -153,7 +158,6 @@ export class ModalsComponent implements OnInit {
           'activo',
           'app-modals'
         );
-        this.modal.close('Accept click');
       }
     });
   }

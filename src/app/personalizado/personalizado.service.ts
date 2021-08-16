@@ -51,6 +51,7 @@ export class PersonalizadoService {
   public MOD_PRI_PA; 
   public REGISTRO_PERSONALIZADO;
   public NOTIFICACIONES; 
+  public PRODUCCION; 
 
   constructor() { 
     this.SeleccionarProyecto();
@@ -73,6 +74,7 @@ export class PersonalizadoService {
         var ModuloPrincipal="pyt4";
         var Registro_personalizado=true;
         notificaciones=true;
+        var produccion=true;
       break
       case 'PYT-21': 
         var nombre="CBFX Capital";
@@ -86,6 +88,7 @@ export class PersonalizadoService {
         var ModuloPrincipal="pyt21";
         var Registro_personalizado=false;
         notificaciones=true;
+        var produccion=false;
       break
       case 'PYT-24': 
         var nombre="Miner";
@@ -98,6 +101,7 @@ export class PersonalizadoService {
         var RutaPrincipal="dashboard/proyectos";
         var ModuloPrincipal="dashboard";
         var Registro_personalizado=false;
+        var produccion=false;
       break
       case 'PYT-25': 
         var nombre="ProjectOS";
@@ -111,6 +115,7 @@ export class PersonalizadoService {
         menu_collapse=true;
         var ModuloPrincipal="tablero";
         var Registro_personalizado=false;
+        var produccion=false;
       break
       default: 
         var nombre="localhost";
@@ -123,6 +128,7 @@ export class PersonalizadoService {
         var RutaPrincipal="tablero/proyectos";
         var ModuloPrincipal="tablero";
         var Registro_personalizado=false;
+        var produccion=false;
       break
     }
     this.IDE_PA=identificador;
@@ -138,5 +144,6 @@ export class PersonalizadoService {
     this.MOD_PRI_PA=ModuloPrincipal;
     this.REGISTRO_PERSONALIZADO=Registro_personalizado;
     this.NOTIFICACIONES=notificaciones;
+    this.PRODUCCION=produccion;
   }
 }

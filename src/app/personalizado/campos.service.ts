@@ -51,6 +51,7 @@ export interface Campos_pyt4 {
   providedIn: 'root'
 })
 export class CamposService {
+  public myCallback: {(): void;};
   private Usuarios: AngularFirestoreCollection<Campos_pyt4>;
   public returnUrl: string;
   public loquesea="aaa";
@@ -168,12 +169,15 @@ export class CamposService {
             );
       }else{
           // Success
-          this.toastr.success('👍🏻 Usuario registrado con éxito.', 'Success!', {
+          this.toastr.success('👍🏻 Usuario registrado con éxito.', '¡Listo!', {
               toastClass: 'toast ngx-toastr',
               closeButton: true
           });
+          //doing some work...
+          this.myCallback(); //calling callback
           
       }
+      
       
     });
   }
