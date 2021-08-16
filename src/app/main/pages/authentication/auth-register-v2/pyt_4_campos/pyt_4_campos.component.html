@@ -374,7 +374,7 @@
       </select>
 
       <div *ngIf="submitted && f.tipo_cliente.errors" class="invalid-feedback">
-        <div *ngIf="f.tipo_cliente.errors.required">El tipo de cliente es necesaria</div>
+        <div *ngIf="f.tipo_cliente.errors.required">El tipo de cliente es necesario</div>
       </div>
     </div>
     <div class="form-group">
@@ -407,6 +407,26 @@
       />
     </div>
 
+    <div class="form-group">
+      <label for="register-sucursal" class="form-label">Sucursal</label>
+
+      <select 
+        class="form-control"
+        aria-describedby="register-sucursal"
+        tabindex="23"
+        [ngClass]="{ 'is-invalid': submitted && f.sucursal.errors }"
+        formControlName="sucursal"
+      >
+      <option selected>	Bugambilias	</option>
+      <option>	Patria	</option>
+      <option>	Adamar	</option>
+      </select>
+
+      <div *ngIf="submitted && f.sucursal.errors" class="invalid-feedback">
+        <div *ngIf="f.sucursal.errors.required">La sucursal es necesaria</div>
+      </div>
+    </div>
+
     <div class="divider">
       <div class="divider-text">Acceso</div>
     </div>
@@ -419,7 +439,7 @@
         class="form-control"
         placeholder="pedro@example.com"
         aria-describedby="register-email"
-        tabindex="23"
+        tabindex="24"
         [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
       />
       <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
@@ -438,7 +458,7 @@
           class="form-control form-control-merge"
           placeholder="············"
           aria-describedby="register-password"
-          tabindex="24"
+          tabindex="25"
           [ngClass]="{ 'is-invalid error': submitted && f.password.errors }"
         />
         <div class="input-group-append">
@@ -470,7 +490,7 @@
         </label>
       </div>
     </div>-->
-    <button class="btn btn-primary btn-block" tabindex="25" rippleEffect *ngIf="!permitir_envio || registerForm.invalid">Regístrate</button>
+    <button class="btn btn-primary btn-block" tabindex="26" rippleEffect *ngIf="!permitir_envio || registerForm.invalid">Regístrate</button>
     <button class="btn btn-primary btn-block" type="button" disabled rippleEffect *ngIf="permitir_envio && !registerForm.invalid">
       <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
       <span class="ml-25 align-middle">Registrando...</span>

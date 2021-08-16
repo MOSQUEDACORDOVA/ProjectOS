@@ -10,11 +10,19 @@ export const menu: CoreMenu[] = [
     translate: 'MENU.APPS.SECTION'
   },
   {
-    id: 'pty_4_tablero',
+    id: 'pyt_4_tablero',
     title: 'Tablero',
     type: 'item',
     icon: 'home',
     url: 'pyt4/tablero',
+    proyecto: 'PYT-4'
+  },
+  {
+    id: 'pyt_4_usuarios',
+    title: 'Usuarios',
+    type: 'item',
+    icon: 'users',
+    url: 'pyt4/pyt_4_usuarios',
     proyecto: 'PYT-4'
   },
   {

@@ -154,6 +154,7 @@ export class Pyt_4_Campos implements OnInit {
                   this.f.tipo_cliente.value,
                   this.f.cliente_nuevo.value,
                   this.f.fecha_ultimo_pedido.value,
+                  this.f.sucursal.value,
                   'activo'
                 );
                 //si todo está ok que me retorne el ingreso
@@ -197,6 +198,7 @@ export class Pyt_4_Campos implements OnInit {
       tipo_cliente: ['', [Validators.required]],
       cliente_nuevo: [''],
       fecha_ultimo_pedido: [''],
+      sucursal: [''],
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required]
     });

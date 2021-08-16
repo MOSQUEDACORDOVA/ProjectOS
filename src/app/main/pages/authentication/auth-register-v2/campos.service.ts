@@ -42,6 +42,7 @@ export interface Campos_pyt4 {
   pyt4_tipo_cliente: string,
   pyt4_cliente_nuevo: string,
   pyt4_fecha_ultimo_pedido: string,
+  pyt4_sucursal: string,
 
   estatus?: string,
   };
@@ -97,6 +98,7 @@ export class CamposService {
     pyt4_tipo_cliente: string,
     pyt4_cliente_nuevo: string,
     pyt4_fecha_ultimo_pedido: string,
+    pyt4_sucursal: string,
 
     estatus?: string,
   ){
@@ -137,6 +139,7 @@ export class CamposService {
       pyt4_tipo_cliente,
       pyt4_cliente_nuevo,
       pyt4_fecha_ultimo_pedido,
+      pyt4_sucursal,
 
       estatus
     };

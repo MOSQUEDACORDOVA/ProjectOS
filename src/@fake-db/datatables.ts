@@ -5,7 +5,7 @@ export class DatatableFakeData {
       responsive_id: '',
       id: 1,
       avatar: 'avatar-s-10.jpg',
-      full_name: "Korrie O'Crevy",
+      full_name: "Magdalena O'Crevy",
       post: 'Nuclear Power Engineer',
       email: 'kocrevy0@thetimes.co.uk',
       city: 'Krasnosilka',
