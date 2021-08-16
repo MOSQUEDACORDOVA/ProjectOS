@@ -109,7 +109,10 @@ export class AuthenticationService {
   logout() {
     // remove user from local storage to log user out
     localStorage.removeItem('currentUser');
-    sessionStorage.removeItem('SS_proyecto_actual');
+    var dominio=window.location.hostname;
+    if(dominio=="localhost" || dominio=="projectos-666.web.app"){
+      sessionStorage.removeItem('SS_proyecto_actual');
+    }
     // notify
     this.currentUserSubject.next(null);
   }
