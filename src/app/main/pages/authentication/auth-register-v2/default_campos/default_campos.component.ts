@@ -10,7 +10,7 @@ import { PersonalizadoService } from 'app/personalizado/personalizado.service';
 
 import { AngularFirestore,AngularFirestoreDocument,AngularFirestoreCollection } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
-import { CamposService } from '../campos.service';
+import { CamposService } from '../../../../../personalizado/campos.service';
 export interface Item { id: any; name: any; }
 export interface Emails { email: any };
 export interface Campos { id: any; };

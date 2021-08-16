@@ -6,7 +6,7 @@ import { PersonalizadoService } from 'app/personalizado/personalizado.service';
 //FIREBASE
 import { AngularFirestore,AngularFirestoreDocument,AngularFirestoreCollection } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
-import { CamposService } from '../campos.service';
+import { CamposService } from '../../../../../personalizado/campos.service';
 export interface Item { id: any; name: any; }
 export interface Emails { email: any };
 export interface Campos { id: any; };
@@ -155,7 +155,8 @@ export class Pyt_4_Campos implements OnInit {
                   this.f.cliente_nuevo.value,
                   this.f.fecha_ultimo_pedido.value,
                   this.f.sucursal.value,
-                  'activo'
+                  'activo',
+                  'pyt_4_campos'
                 );
                 //si todo está ok que me retorne el ingreso
                 break

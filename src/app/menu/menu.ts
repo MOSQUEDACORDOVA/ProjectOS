@@ -23,7 +23,8 @@ export const menu: CoreMenu[] = [
     type: 'item',
     icon: 'users',
     url: 'pyt4/pyt_4_usuarios',
-    proyecto: 'PYT-4'
+    proyecto: 'PYT-4',
+    role: ['Director','Gerente','Logistica','Chofer']
   },
   {
     id: 'pty_21_tablero',

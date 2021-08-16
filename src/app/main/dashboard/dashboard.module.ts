@@ -39,7 +39,7 @@ const routes = [
     resolve: {
       css: DashboardService
     },
-    data: { animation: 'decommerce' }
+    data: { roles: [Role.Admin],animation: 'decommerce' }
   }
 ];
 

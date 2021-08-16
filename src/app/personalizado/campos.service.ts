@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { AuthenticationService } from 'app/auth/service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { first } from 'rxjs/operators';
+import { ToastrService } from 'ngx-toastr';
 
 export interface Item { id: any; name: any; }
 export interface Campos_pyt4 {
@@ -58,6 +59,7 @@ export class CamposService {
     public _authenticationService: AuthenticationService,
     private _route: ActivatedRoute,
     public _router: Router,
+    private toastr: ToastrService
     ) {  
 
   }
@@ -99,8 +101,11 @@ export class CamposService {
     pyt4_cliente_nuevo: string,
     pyt4_fecha_ultimo_pedido: string,
     pyt4_sucursal: string,
-
+    
     estatus?: string,
+
+    componente?: string,
+    
   ){
     this.Usuarios = this.afs.collection<Campos_pyt4>('usuarios');
     const campos: Campos_pyt4 = { 
@@ -147,7 +152,9 @@ export class CamposService {
     this.returnUrl = this._route.snapshot.queryParams['returnUrl'] || '/';
     
     this.Usuarios.doc().set(campos).finally(()=>{
-      this._authenticationService
+      //verificar si es llamado desde externo o interno
+      if(componente=="pyt_4_campos"){
+        this._authenticationService
             .login(campos.email, campos.password)
             .pipe(first())
             .subscribe(
@@ -159,6 +166,15 @@ export class CamposService {
 
               }
             );
+      }else{
+          // Success
+          this.toastr.success('👍🏻 Usuario registrado con éxito.', 'Success!', {
+              toastClass: 'toast ngx-toastr',
+              closeButton: true
+          });
+          
+      }
+      
     });
   }
 }
