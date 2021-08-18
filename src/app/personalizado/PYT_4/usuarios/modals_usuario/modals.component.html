@@ -200,24 +200,6 @@
                   </div>
               
                   <div class="form-group">
-                    <label for="register-estado" class="form-label">Estado</label>
-                    <input
-                      type="text"
-                      formControlName="estado"
-                      class="form-control"
-                      aria-describedby="register-estado"
-                      tabindex="4"
-                      [ngClass]="{ 'is-invalid': submitted && f.estado.errors }"
-                      disabled
-                      value="Jalisco"
-                    />
-              
-                    <div *ngIf="submitted && f.estado.errors" class="invalid-feedback">
-                      <div *ngIf="f.estado.errors.required">El estado donde vive es necesario</div>
-                    </div>
-                  </div>
-              
-                  <div class="form-group">
                     <label for="register-fraccionamiento" class="form-label">Fraccionamiento</label>
                     <input
                       type="text"
@@ -496,7 +478,7 @@
                   </div>
 
                   <div class="form-group">
-                    <label for="register-utimos_botellones" class="form-label">Cantidad botellones en el último pedido</label>
+                    <label for="register-utimos_botellones" class="form-label">Cantidad de garrafones en el último pedido</label>
                     <input 
                       class="form-control" 
                       type="text" 
