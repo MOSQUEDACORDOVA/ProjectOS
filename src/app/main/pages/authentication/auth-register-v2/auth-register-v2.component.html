@@ -1,13 +1,15 @@
 <div class="auth-wrapper auth-v2">
   <div class="auth-inner row m-0">
-    <!-- Brand logo--><a class="brand-logo" href="javascript:void(0);">
+    <!-- Brand logo-->
+    <a *ngIf="PREFERENCIAS.MOSTRAR_LOGO" class="brand-logo" href="javascript:void(0);">
       <img src="{{ coreConfig.app.appLogoImage }}" alt="brand-logo" height="28" />
-      <h2 class="brand-text text-primary ml-1">{{ coreConfig.app.appName }}</h2></a
-    >
+      <h2 class="brand-text text-primary ml-1">{{ coreConfig.app.appName }}</h2>
+    </a>
     <!-- /Brand logo-->
     <!-- Left Text-->
-    <div class="d-none d-lg-flex col-lg-8 align-items-center p-5">
-      <div class="w-100 d-lg-flex align-items-center justify-content-center px-5">
+    <div class="d-none d-lg-flex col-lg-8 align-items-center p-5" [style]="PREFERENCIAS.BACKGROUND">
+      <app-login-brand-pyt4 *ngIf="PREFERENCIAS.AUT_PERSONALIZADA && PREFERENCIAS.IDE_PA=='PYT-4'" style="margin: 0 auto;"></app-login-brand-pyt4>
+      <div *ngIf="!PREFERENCIAS.AUT_PERSONALIZADA" class="w-100 d-lg-flex align-items-center justify-content-center px-5">
         <img
           class="img-fluid"
           [src]="
@@ -23,15 +25,18 @@
     <!-- Register-->
     <div class="d-flex col-lg-4 align-items-center auth-bg px-2 p-lg-5 ">
       <div class="col-12 col-sm-8 col-md-6 col-lg-12 px-xl-2 mx-auto overflow-auto" style="height: 80vh;">
-        <h2 class="card-title font-weight-bold mb-1">Hoy es un gran día 🚀</h2>
-        <p class="card-text mb-2">¡Un mundo de beneficios te espera!</p>
+        <img *ngIf="PREFERENCIAS.IDE_PA=='PYT-4'"
+          class="d-lg-none img-fluid"
+          src="assets/images/logo/pyt_4_logo_azul.png" />
+        <h2 *ngIf="PREFERENCIAS.MOSTRAR_LOGO" class="card-title font-weight-bold mb-1">Hoy es un gran día 🚀</h2>
+        <p *ngIf="PREFERENCIAS.MOSTRAR_LOGO" class="card-text mb-2">¡Un mundo de beneficios te espera!</p>
         <default_campos *ngIf="!PREFERENCIAS.REGISTRO_PERSONALIZADO"></default_campos>
         <pyt_4_campos *ngIf="PREFERENCIAS.REGISTRO_PERSONALIZADO && PREFERENCIAS.IDE_PA == 'PYT-4'"></pyt_4_campos>
-        <p class="text-center mt-2">
+        <!--<p class="text-center mt-2">
           <span>¿Ya tienes una cuenta?</span
           ><a routerLink="/pages/authentication/login-v2"><span>&nbsp;¡Ingresa!</span></a>
         </p>
-        <!--<div class="divider my-2">
+        <div class="divider my-2">
           <div class="divider-text">or</div>
         </div>
         <div class="auth-footer-btn d-flex justify-content-center">

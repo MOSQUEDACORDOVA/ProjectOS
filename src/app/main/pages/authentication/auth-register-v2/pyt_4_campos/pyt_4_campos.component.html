@@ -37,15 +37,144 @@
 
     <div class="form-group">
       <label for="register-ciudad" class="form-label">Ciudad</label>
-      <input
-        type="text"
+
+      <select
         formControlName="ciudad"
         class="form-control"
         placeholder="Ciudad"
         aria-describedby="register-ciudad"
         tabindex="3"
         [ngClass]="{ 'is-invalid': submitted && f.ciudad.errors }"
-      />
+      >
+        <option>	Guadalajara	</option>
+        <option>	Zapopan	</option>
+        <option>	Tlaquepaque	</option>
+        <option>	Tonalá	</option>
+        <option>	Puerto Vallarta	</option>
+        <option>	Lagos de Moreno	</option>
+        <option>	Ciudad Guzmán	</option>
+        <option>	Tepatitlán de Morelos	</option>
+        <option>	Hacienda Santa Fe	</option>
+        <option>	Ocotlán	</option>
+        <option>	Tesistán (San Francisco Tesistán)	</option>
+        <option>	Arandas	</option>
+        <option>	San Juan de los Lagos	</option>
+        <option>	Autlán de Navarro	</option>
+        <option>	Ameca	</option>
+        <option>	Tala	</option>
+        <option>	La Barca	</option>
+        <option>	Zapotlanejo	</option>
+        <option>	San Agustín	</option>
+        <option>	Tlajomulco de Zúñiga	</option>
+        <option>	Coyula	</option>
+        <option>	Tequila	</option>
+        <option>	Ixtapa	</option>
+        <option>	San Sebastián el Grande	</option>
+        <option>	Tuxpan	</option>
+        <option>	Atotonilco el Alto	</option>
+        <option>	Santa Cruz del Valle	</option>
+        <option>	Sayula	</option>
+        <option>	Las Pintitas	</option>
+        <option>	Encarnación de Díaz	</option>
+        <option>	Jalostotitlán	</option>
+        <option>	San Miguel el Alto	</option>
+        <option>	Teocaltiche	</option>
+        <option>	Las Pintas	</option>
+        <option>	Zapotiltic	</option>
+        <option>	El Salto	</option>
+        <option>	Chapala	</option>
+        <option>	El Grullo	</option>
+        <option>	Santa Anita	</option>
+        <option>	Lomas del Sur	</option>
+        <option>	Jocotepec	</option>
+        <option>	Tamazula de Gordiano	</option>
+        <option>	Zacoalco de Torres	</option>
+        <option>	Cihuatlán	</option>
+        <option>	El Quince (San José El Quince)	</option>
+        <option>	Jamay	</option>
+        <option>	San José El Verde (El Verde)	</option>
+        <option>	Magdalena	</option>
+        <option>	Ahualulco de Mercado	</option>
+        <option>	Villa Hidalgo	</option>
+        <option>	Tizapán el Alto	</option>
+        <option>	Cocula	</option>
+        <option>	Real del Valle	</option>
+        <option>	Yahualica de González Gallo	</option>
+        <option>	Poncitlán	</option>
+        <option>	Etzatlán	</option>
+        <option>	Capilla de Guadalupe	</option>
+        <option>	Colotlán	</option>
+        <option>	San José del Castillo	</option>
+        <option>	San Julián	</option>
+        <option>	Tototlán	</option>
+        <option>	La Tijera	</option>
+        <option>	Tecalitlán	</option>
+        <option>	Acatic	</option>
+        <option>	Ojuelos de Jalisco	</option>
+        <option>	Lomas de San Agustín	</option>
+        <option>	Ayotlán	</option>
+        <option>	El Arenal	</option>
+        <option>	Degollado	</option>
+        <option>	Santa Cruz de las Flores	</option>
+        <option>	La Resolana	</option>
+        <option>	Villas de la Hacienda (Fraccionamiento)	</option>
+        <option>	Amatitán	</option>
+        <option>	Ajijic	</option>
+        <option>	Acatlán de Juárez	</option>
+        <option>	Valle Dorado Inn	</option>
+        <option>	San Ignacio Cerro Gordo	</option>
+        <option>	Tecolotlán	</option>
+        <option>	Juanacatlán	</option>
+        <option>	Galaxia Bonito Jalisco	</option>
+        <option>	Unión de Tula	</option>
+        <option>	Las Juntas	</option>
+        <option>	Tomatlán	</option>
+        <option>	La Alameda	</option>
+        <option>	Talpa de Allende	</option>
+        <option>	Mascota	</option>
+        <option>	El Capulín	</option>
+        <option>	Rancho Alegre (Fraccionamiento)	</option>
+        <option>	Jesús María	</option>
+        <option>	San Martín Hidalgo	</option>
+        <option>	La Huerta	</option>
+        <option>	Mazamitla	</option>
+        <option>	La Ribera	</option>
+        <option>	Los Olivos	</option>
+        <option>	Unión de San Antonio	</option>
+        <option>	Villa Corona	</option>
+        <option>	San Patricio Melaque	</option>
+        <option>	San Miguel Cuyutlán	</option>
+        <option>	Los Ruiseñores	</option>
+        <option>	Usmajac	</option>
+        <option>	Atotonilquillo	</option>
+        <option>	Ayutla	</option>
+        <option>	Bellavista	</option>
+        <option>	San Sebastián del Sur	</option>
+        <option>	San Juan Cosalá	</option>
+        <option>	Pihuamo	</option>
+        <option>	Atequiza	</option>
+        <option>	Zapote del Valle (Zapote de Santa Cruz)	</option>
+        <option>	El Refugio	</option>
+        <option>	Ixtlahuacán del Río	</option>
+        <option>	Ixtlahuacán de los Membrillos	</option>
+        <option>	Colinas del Roble	</option>
+        <option>	Tapalpa	</option>
+        <option>	Galaxia la Noria	</option>
+        <option>	Puente Grande	</option>
+        <option>	La Venta del Astillero	</option>
+        <option>	Cuitzeo (La Estancia)	</option>
+        <option>	Atemajac de Brizuela	</option>
+        <option>	San Juanito de Escobedo	</option>
+        <option>	Cajititlán	</option>
+        <option>	San Diego de Alejandría	</option>
+        <option>	San Francisco de Asis	</option>
+        <option>	Villa Purificación	</option>
+        <option>	San Andrés Ixtlán	</option>
+        <option>	San Pedro Itzicán	</option>
+        <option>	Atoyac	</option>
+        <option>	Mezcala	</option>
+      </select>
+
       <div *ngIf="submitted && f.ciudad.errors" class="invalid-feedback">
         <div *ngIf="f.ciudad.errors.required">Tu ciudad es necesaria</div>
       </div>
@@ -53,47 +182,16 @@
 
     <div class="form-group">
       <label for="register-estado" class="form-label">Estado</label>
-      <select 
+      <input
+        type="text"
+        formControlName="estado"
         class="form-control"
         aria-describedby="register-estado"
         tabindex="4"
         [ngClass]="{ 'is-invalid': submitted && f.estado.errors }"
-        formControlName="estado"
-      >
-      <option selected>	Aguascalientes	</option>
-      <option>	Baja California	</option>
-      <option>	Baja California Sur	</option>
-      <option>	Campeche	</option>
-      <option>	Coahuila de Zaragoza	</option>
-      <option>	Colima	</option>
-      <option>	Chiapas	</option>
-      <option>	Chihuahua	</option>
-      <option>	Distrito Federal	</option>
-      <option>	Durango	</option>
-      <option>	Guanajuato	</option>
-      <option>	Guerrero	</option>
-      <option>	Hidalgo	</option>
-      <option>	Jalisco	</option>
-      <option>	México	</option>
-      <option>	Michoacán de Ocampo	</option>
-      <option>	Morelos	</option>
-      <option>	Nayarit	</option>
-      <option>	Nuevo León	</option>
-      <option>	Oaxaca	</option>
-      <option>	Puebla	</option>
-      <option>	Querétaro	</option>
-      <option>	Quintana Roo	</option>
-      <option>	San Luis Potosí	</option>
-      <option>	Sinaloa	</option>
-      <option>	Sonora	</option>
-      <option>	Tabasco	</option>
-      <option>	Tamaulipas	</option>
-      <option>	Tlaxcala	</option>
-      <option>	Veracruz de Ignacio de la Llave	</option>
-      <option>	Yucatán	</option>
-      <option>	Zacatecas	</option>
-
-      </select>
+        disabled
+        value="Jalisco"
+      />
 
       <div *ngIf="submitted && f.estado.errors" class="invalid-feedback">
         <div *ngIf="f.estado.errors.required">El estado donde vives es necesario</div>
@@ -176,21 +274,6 @@
       </div>
     </div>
     <div class="form-group">
-      <label for="register-referencia" class="form-label">Referencia</label>
-      <input
-        type="text"
-        formControlName="referencia"
-        class="form-control"
-        placeholder="Referencia"
-        aria-describedby="register-referencia"
-        tabindex="10"
-        [ngClass]="{ 'is-invalid': submitted && f.referencia.errors }"
-      />
-      <div *ngIf="submitted && f.referencia.errors" class="invalid-feedback">
-        <div *ngIf="f.referencia.errors.required">La referencia es necesaria</div>
-      </div>
-    </div>
-    <div class="form-group">
       <label for="register-telefono" class="form-label">Teléfono</label>
       
       <div class="input-group">
@@ -216,7 +299,14 @@
     <div class="divider">
       <div class="divider-text">Familiares</div>
     </div>
-
+      <!-- ngb-alert component -->
+      <ngb-alert [type]="'primary'" class="mt-1" [dismissible]="false">
+        <div class="alert-body">
+          <span [data-feather]="'info'" [class]="'mr-50 align-middle'"></span>
+          Agrega a 2 de familiares que viven contigo que podrían pedir agua.
+        </div>
+      </ngb-alert>
+      <!--/ ngb-alert component -->
     
     <div class="form-group">
       <label for="register-nombre_familiar_1" class="form-label">Nombre del familiar 1</label>
@@ -322,24 +412,9 @@
     </div>
 
     <div class="divider">
-      <div class="divider-text">Facturación</div>
+      <div class="divider-text">Ubicación y pedido</div>
     </div>
 
-    <div class="form-group">
-      <label for="register-rfc" class="form-label">RFC</label>
-      <input
-        type="text"
-        formControlName="rfc"
-        class="form-control"
-        placeholder="RFC"
-        aria-describedby="register-rfc"
-        tabindex="18"
-        [ngClass]="{ 'is-invalid': submitted && f.rfc.errors }"
-      />
-      <div *ngIf="submitted && f.rfc.errors" class="invalid-feedback">
-        <div *ngIf="f.rfc.errors.required">El RFC es necesario</div>
-      </div>
-    </div>
     <div class="form-group">
       <label for="register-codigo_postal" class="form-label">Código postal</label>
       <input
@@ -355,45 +430,7 @@
         <div *ngIf="f.codigo_postal.errors.required">El código postal es necesario</div>
       </div>
     </div>
-    <div class="form-group">
-      <label for="register-tipo_cliente" class="form-label">Tipo de cliente</label>
 
-      <select 
-        class="form-control"
-        aria-describedby="register-tipo_cliente"
-        tabindex="20"
-        [ngClass]="{ 'is-invalid': submitted && f.tipo_cliente.errors }"
-        formControlName="tipo_cliente"
-      >
-      <option selected>	Residencial 	</option>
-      <option>	Negocio	</option>
-      <option>	Punto de venta	</option>
-      <option>	Sucursal	</option>
-      <option>	Independiente	</option>
-
-      </select>
-
-      <div *ngIf="submitted && f.tipo_cliente.errors" class="invalid-feedback">
-        <div *ngIf="f.tipo_cliente.errors.required">El tipo de cliente es necesario</div>
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="register-cliente_nuevo" class="form-label">¿Eres un nuevo cliente?</label>
-      <div class="custom-control custom-checkbox">
-        <input 
-          type="checkbox" 
-          class="custom-control-input" 
-          id="customCheck1" 
-          formControlName="cliente_nuevo"
-          aria-describedby="register-cliente_nuevo"
-          tabindex="21"
-          />
-        <label class="custom-control-label" for="customCheck1">Sí</label>
-      </div>
-      <div *ngIf="submitted && f.cliente_nuevo.errors" class="invalid-feedback">
-        <div *ngIf="f.cliente_nuevo.errors.required">Esta información es necesaria</div>
-      </div>
-    </div>
     <div class="form-group">
       <label for="register-fecha_ultimo_pedido" class="form-label">Fecha de tu último pedido</label>
       <input 
@@ -408,23 +445,26 @@
     </div>
 
     <div class="form-group">
-      <label for="register-sucursal" class="form-label">Sucursal</label>
-
-      <select 
-        class="form-control"
-        aria-describedby="register-sucursal"
+      <label for="register-utimos_botellones" class="form-label">Cantidad botellones en el último pedido</label>
+      <input 
+        class="form-control" 
+        type="text" 
+        formControlName="utimos_botellones"
+        placeholder="10" 
+        aria-describedby="register-utimos_botellones"
         tabindex="23"
-        [ngClass]="{ 'is-invalid': submitted && f.sucursal.errors }"
-        formControlName="sucursal"
-      >
-      <option selected>	Bugambilias	</option>
-      <option>	Patria	</option>
-      <option>	Adamar	</option>
-      </select>
+      />
+    </div>
 
-      <div *ngIf="submitted && f.sucursal.errors" class="invalid-feedback">
-        <div *ngIf="f.sucursal.errors.required">La sucursal es necesaria</div>
-      </div>
+    <div class="form-group">
+      <label for="register-sucursal" class="form-label">Sucursal</label>
+      <input
+        type="text"
+        class="form-control"
+        aria-describedby="register-estado"
+        disabled
+        value="Zona Sur"
+      />
     </div>
 
     <div class="divider">
@@ -448,40 +488,6 @@
       </div>
     </div>
 
-    <div class="form-group">
-      <label for="register-password" class="form-label">Coloca una contraseña</label>
-
-      <div class="input-group input-group-merge form-password-toggle">
-        <input
-          [type]="passwordTextType ? 'password' : 'text'"
-          formControlName="password"
-          class="form-control form-control-merge"
-          placeholder="············"
-          aria-describedby="register-password"
-          tabindex="25"
-          [ngClass]="{ 'is-invalid error': submitted && f.password.errors }"
-        />
-        <div class="input-group-append">
-          <span class="input-group-text cursor-pointer"
-            ><i
-              class="feather font-small-4"
-              [ngClass]="{
-                'icon-eye': passwordTextType,
-                'icon-eye-off': !passwordTextType
-              }"
-              (click)="togglePasswordTextType()"
-            ></i
-          ></span>
-        </div>
-      </div>
-      <div
-        *ngIf="submitted && f.password.errors"
-        class="invalid-feedback"
-        [ngClass]="{ 'd-block': submitted && f.password.errors }"
-      >
-        <div *ngIf="f.password.errors.required">La contraseña es necesaria</div>
-      </div>
-    </div>
     <!--<div class="form-group">
       <div class="custom-control custom-checkbox">
         <input class="custom-control-input" type="checkbox" id="register-privacy-policy" tabindex="4" />

@@ -6,8 +6,7 @@ export const menu: CoreMenu[] = [
   {
     id: 'secciones',
     type: 'section',
-    title: 'Opciones',
-    translate: 'MENU.APPS.SECTION'
+    title: 'Opciones'
   },
   {
     id: 'pyt_4_tablero',

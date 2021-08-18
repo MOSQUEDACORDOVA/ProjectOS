@@ -1,30 +1,36 @@
 <div class="auth-wrapper auth-v2">
   <div class="auth-inner row m-0">
-    <!-- Brand logo--><a class="brand-logo" href="javascript:void(0);">
+    <!-- Brand logo-->
+    <a *ngIf="PersonalizadoService.MOSTRAR_LOGO" class="brand-logo" href="javascript:void(0);">
       <img src="{{ coreConfig.app.appLogoImage }}" alt="" height="28" />
-      <h2 class="brand-text text-primary ml-1">{{PersonalizadoService.NOM_PA}}</h2></a
-    >
+      <h2 class="brand-text text-primary ml-1">{{PersonalizadoService.NOM_PA}}</h2>
+    </a>
     <!-- /Brand logo-->
     <!-- Left Text-->
-    <div class="d-none d-lg-flex col-lg-8 align-items-center p-5">
-      <div class="w-100 d-lg-flex align-items-center justify-content-center px-5">
+    <div class="d-none d-lg-flex col-lg-8 align-items-center p-5" [style]="PersonalizadoService.BACKGROUND">
+      <app-login-brand-pyt4 *ngIf="PersonalizadoService.AUT_PERSONALIZADA && PersonalizadoService.IDE_PA=='PYT-4'" style="margin: 0 auto;"></app-login-brand-pyt4>
+      <div *ngIf="!PersonalizadoService.AUT_PERSONALIZADA" class="w-100 d-lg-flex align-items-center justify-content-center px-5">
         <img
-          class="img-fluid"
-          [src]="
-            coreConfig.layout.skin === 'dark'
-              ? 'assets/images/pages/login-v2-dark.svg'
-              : 'assets/images/pages/login-v2.svg'
-          "
-          alt="Login V2"
-        />
+        class="img-fluid"
+        [src]="
+          coreConfig.layout.skin === 'dark'
+            ? 'assets/images/pages/login-v2-dark.svg'
+            : 'assets/images/pages/login-v2.svg'
+        "
+        alt="Login V2"
+      />
       </div>
     </div>
     <!-- /Left Text-->
     <!-- Login-->
     <div class="d-flex col-lg-4 align-items-center auth-bg px-2 p-lg-5">
       <div class="col-12 col-sm-8 col-md-6 col-lg-12 px-xl-2 mx-auto">
-        <h2 class="card-title font-weight-bold mb-1">Bienvenido a {{PersonalizadoService.NOM_PA}}! 👋</h2>
-        <p class="card-text mb-2">Inicia sesión y comienza tu aventura. . .</p>
+        <img *ngIf="PersonalizadoService.IDE_PA=='PYT-4'"
+          class="d-lg-none img-fluid"
+          src="assets/images/logo/pyt_4_logo_azul.png" />
+        
+        <h2 *ngIf="PersonalizadoService.MOSTRAR_LOGO" class="card-title font-weight-bold mb-1">Bienvenido a {{PersonalizadoService.NOM_PA}}! 👋</h2>
+        <p *ngIf="PersonalizadoService.MOSTRAR_LOGO" class="card-text mb-2">Inicia sesión y comienza tu aventura. . .</p>
         <ngb-alert *ngIf="!PersonalizadoService.PRODUCCION" [type]="'primary'" [dismissible]="false">
           <div class="alert-body font-small-2">
             <p>

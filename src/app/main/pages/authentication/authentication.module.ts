@@ -29,6 +29,9 @@ import { Pyt_4_Campos } from 'app/main/pages/authentication/auth-register-v2/pyt
 
 //CAMPOS ESPECIALES
 import { NgxMaskModule } from 'ngx-mask';
+import { LoginBrandPyt4Component } from 'app/main/pages/authentication/auth-login-v2/PYT-4/auth-login-v2.component';
+
+import { ToastrModule } from 'ngx-toastr';
 
 // routing
 const routes: Routes = [
@@ -77,7 +80,8 @@ const routes: Routes = [
     AuthResetPasswordV1Component,
     AuthResetPasswordV2Component,
     Default_Campos,
-    Pyt_4_Campos
+    Pyt_4_Campos,
+    LoginBrandPyt4Component
   ],
   imports: [
     CommonModule, 
@@ -88,7 +92,8 @@ const routes: Routes = [
     CoreCommonModule, 
     AngularFireModule.initializeApp(environment.firebase), 
     AngularFirestoreModule,
-    NgxMaskModule.forRoot()
+    NgxMaskModule.forRoot(),
+    ToastrModule
   ]
 })
 export class AuthenticationModule {}

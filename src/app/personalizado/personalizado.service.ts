@@ -18,21 +18,25 @@ if(dominio=="localhost" || dominio=="projectos-666.web.app"){
   }
 }
 export const DOM_PA=dominio_actual;
-var identificador=sessionStorage.getItem('SS_proyecto_actual');
-//obtenemos todos los link del head
-var n_estilos = document.getElementsByTagName("link");
-for(var n=0; n<=n_estilos.length-1; n++){
-  //obtenemos los link que sean estilos de proyectos (pyt_)
-  var estilo=n_estilos[n].href;
-  var estilo_De_proyecto = estilo.indexOf('PYT-');
-  if(estilo_De_proyecto!== -1){
-    //eliminamos todos menos el del proyecto correspondiente
-    var mi_proyecto_actual = estilo.indexOf(identificador);
-    if(mi_proyecto_actual== -1){
-      n_estilos[n].href="";
+if(sessionStorage.getItem('SS_proyecto_actual')){
+  var identificador=sessionStorage.getItem('SS_proyecto_actual');
+  //obtenemos todos los link del head
+  var n_estilos = document.getElementsByTagName("link");
+  for(var n=0; n<=n_estilos.length-1; n++){
+    //obtenemos los link que sean estilos de proyectos (pyt_)
+    var estilo=n_estilos[n].href;
+    var estilo_De_proyecto = estilo.indexOf('PYT-');
+    var estilo_por_defecto = estilo.indexOf('por_defecto');
+    if(estilo_De_proyecto!== -1 || estilo_por_defecto!== -1){
+      //eliminamos todos menos el del proyecto correspondiente
+      var mi_proyecto_actual = estilo.indexOf(identificador);
+      if(mi_proyecto_actual== -1){
+        n_estilos[n].href="";
+      }
     }
   }
 }
+
 
 @Injectable({
   providedIn: 'root'
@@ -52,6 +56,13 @@ export class PersonalizadoService {
   public REGISTRO_PERSONALIZADO;
   public NOTIFICACIONES; 
   public PRODUCCION; 
+  public SKIN;
+  public MODO_OSCURO;
+  public TOGGLE;
+  public MOSTRAR_NOMBRE;
+  public MOSTRAR_LOGO;
+  public AUT_PERSONALIZADA;
+  public BACKGROUND;
 
   constructor() { 
     this.SeleccionarProyecto();
@@ -68,13 +79,20 @@ export class PersonalizadoService {
         var descripcion="B•Water | Hidratación consciente";
         var keywords="Agua potable";
         var favicon="assets/images/ico/pyt_4_favicon.ico";
-        var logo_png="assets/images/logo/pyt_4_logo.png";
-        var icono_svg="assets/images/logo/pyt_4_logo.png";
+        var logo_png="assets/images/logo/pyt_4_logo_blanco.png";
+        var icono_svg="assets/images/logo/pyt_4_logo_blanco.png";
         var RutaPrincipal="pyt4/tablero";
         var ModuloPrincipal="pyt4";
         var Registro_personalizado=true;
-        notificaciones=true;
+        notificaciones=false;
         var produccion=true;
+        var skin="semi-dark";
+        var modo_oscuro=false;
+        var toggle=false;
+        var mostrar_nombre=false;
+        var mostrar_logo=false;
+        var autenticacion_personalizada=true;
+        var background="background:linear-gradient(to bottom, #001867 0%, #010c70 51%, #0092ae 100%);";
       break
       case 'PYT-21': 
         var nombre="CBFX Capital";
@@ -89,6 +107,13 @@ export class PersonalizadoService {
         var Registro_personalizado=false;
         notificaciones=true;
         var produccion=false;
+        var skin="default";
+        var modo_oscuro=true;
+        var toggle=true;
+        var mostrar_nombre=true;
+        var mostrar_logo=true;
+        var autenticacion_personalizada=false;
+        var background="";
       break
       case 'PYT-24': 
         var nombre="Miner";
@@ -102,6 +127,13 @@ export class PersonalizadoService {
         var ModuloPrincipal="dashboard";
         var Registro_personalizado=false;
         var produccion=false;
+        var skin="default";
+        var modo_oscuro=true;
+        var toggle=true;
+        var mostrar_nombre=true;
+        var mostrar_logo=true;
+        var autenticacion_personalizada=false;
+        var background="";
       break
       case 'PYT-25': 
         var nombre="ProjectOS";
@@ -116,6 +148,13 @@ export class PersonalizadoService {
         var ModuloPrincipal="tablero";
         var Registro_personalizado=false;
         var produccion=false;
+        var skin="default";
+        var modo_oscuro=true;
+        var toggle=true;
+        var mostrar_nombre=true;
+        var mostrar_logo=true;
+        var autenticacion_personalizada=false;
+        var background="";
       break
       default: 
         var nombre="localhost";
@@ -129,6 +168,13 @@ export class PersonalizadoService {
         var ModuloPrincipal="tablero";
         var Registro_personalizado=false;
         var produccion=false;
+        var skin="default";
+        var modo_oscuro=true;
+        var toggle=true;
+        var mostrar_nombre=true;
+        var mostrar_logo=true;
+        var autenticacion_personalizada=false;
+        var background="";
       break
     }
     this.IDE_PA=identificador;
@@ -145,5 +191,12 @@ export class PersonalizadoService {
     this.REGISTRO_PERSONALIZADO=Registro_personalizado;
     this.NOTIFICACIONES=notificaciones;
     this.PRODUCCION=produccion;
+    this.SKIN= skin;
+    this.MODO_OSCURO= modo_oscuro;
+    this.TOGGLE= toggle;
+    this.MOSTRAR_NOMBRE= mostrar_nombre;
+    this.MOSTRAR_LOGO= mostrar_logo;
+    this.AUT_PERSONALIZADA= autenticacion_personalizada;
+    this.BACKGROUND= background;
   }
 }

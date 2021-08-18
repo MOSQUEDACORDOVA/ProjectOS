@@ -2,6 +2,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { PersonalizadoService } from 'app/personalizado/personalizado.service';
+import { ToastrService } from 'ngx-toastr';
 
 //FIREBASE
 import { AngularFirestore,AngularFirestoreDocument,AngularFirestoreCollection } from '@angular/fire/firestore';
@@ -141,7 +142,6 @@ export class Pyt_4_Campos implements OnInit {
                   this.f.casa.value,
                   this.f.calle.value,
                   this.f.avenida.value,
-                  this.f.referencia.value,
                   this.f.telefono.value,
                   this.f.nombre_familiar_1.value,
                   this.f.apellido_familiar_1.value,
@@ -154,6 +154,7 @@ export class Pyt_4_Campos implements OnInit {
                   this.f.tipo_cliente.value,
                   this.f.cliente_nuevo.value,
                   this.f.fecha_ultimo_pedido.value,
+                  this.f.utimos_botellones.value,
                   this.f.sucursal.value,
                   'activo',
                   'pyt_4_campos'
@@ -180,13 +181,12 @@ export class Pyt_4_Campos implements OnInit {
       firstName: ['', [Validators.required]],
       lastName: ['', [Validators.required]],
       ciudad: ['', [Validators.required]],
-      estado: ['', [Validators.required]],
+      estado: ['Jalisco'],
       fraccionamiento: ['', [Validators.required]],
-      coto: ['', [Validators.required]],
+      coto: [''],
       casa: ['', [Validators.required]],
       calle: ['', [Validators.required]],
-      avenida: ['', [Validators.required]],
-      referencia: ['', [Validators.required]],
+      avenida: [''],
       telefono: ['', [Validators.required]],
       nombre_familiar_1: ['', [Validators.required]],
       apellido_familiar_1: ['', [Validators.required]],
@@ -194,14 +194,15 @@ export class Pyt_4_Campos implements OnInit {
       nombre_familiar_2: [''],
       apellido_familiar_2: [''],
       telefono_familiar_2: [''],
-      rfc: ['', [Validators.required]],
-      codigo_postal: ['', [Validators.required]],
-      tipo_cliente: ['', [Validators.required]],
+      rfc: [''],
+      codigo_postal: [''],
+      tipo_cliente: ['Residencial'],
       cliente_nuevo: [''],
       fecha_ultimo_pedido: [''],
-      sucursal: [''],
+      utimos_botellones: [''],
+      sucursal: ['Adamar'],
       email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required]
+      password: ['***************************']
     });
   }
 }

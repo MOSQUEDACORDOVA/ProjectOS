@@ -7,13 +7,13 @@
         <span class="brand-logo">
           <img src="{{ coreConfig.app.appLogoImage }}" alt="" />
         </span>
-        <h2 class="brand-text mb-0">{{ coreConfig.app.appName }}</h2>
+        <h2 *ngIf="PREFERENCIAS.MOSTRAR_NOMBRE" class="brand-text mb-0">{{ coreConfig.app.appName }}</h2>
       </a>
     </li>
 
     <!-- Menu Toggler -->
     <li class="nav-item nav-toggle">
-      <a class="nav-link modern-nav-toggle d-none d-xl-block pr-0" (click)="toggleSidebarCollapsible()">
+      <a *ngIf="PREFERENCIAS.TOGGLE" class="nav-link modern-nav-toggle d-none d-xl-block pr-0" (click)="toggleSidebarCollapsible()">
         <i
           [ngClass]="isCollapsed === true ? 'icon-circle' : 'icon-disc'"
           class="toggle-icon feather font-medium-4 collapse-toggle-icon text-primary"

@@ -15,8 +15,8 @@
 @import 'functions'; // Bootstrap extended function
 
 // Variables
-@import 'scss/variables/variables_pyt_4'; // Bootstrap custom variable override (for user purpose)
-@import 'variables'; // Bootstrap extended variable override
+@import 'scss/variables/variables'; // Bootstrap custom variable override (for user purpose)
+@import 'variables_pyt_4'; // Bootstrap extended variable override
 @import 'bootstrap/scss/variables'; // Bootstrap core variable
 
 // Mixins

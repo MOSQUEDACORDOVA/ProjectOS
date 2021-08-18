@@ -62,7 +62,6 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
   // Private
   private _unsubscribeAll: Subject<any>;
-  public NOTIFICACIONES;
   /**
    * Constructor
    *
@@ -75,7 +74,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
    * @param {TranslateService} _translateService
    */
   constructor(
-    private PersonalizadoService: PersonalizadoService,
+    public PREFERENCIAS: PersonalizadoService,
     private _router: Router,
     private _authenticationService: AuthenticationService,
     private _coreConfigService: CoreConfigService,
@@ -84,7 +83,6 @@ export class NavbarComponent implements OnInit, OnDestroy {
     private _mediaObserver: MediaObserver,
     public _translateService: TranslateService
   ) {
-    this.NOTIFICACIONES=this.PersonalizadoService.NOTIFICACIONES;
     this._authenticationService.currentUser.subscribe(x => (this.currentUser = x));
 
     this.languageOptions = {

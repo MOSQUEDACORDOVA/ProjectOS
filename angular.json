@@ -45,16 +45,24 @@
             ],
             "styles": [
               {
-                "input": "src/styles.scss",
-                "bundleName": "default"
-              },
-              {
                 "input": "src/pyt_4.scss",
                 "bundleName": "PYT-4"
               },
               {
+                "input": "src/pyt_21.scss",
+                "bundleName": "PYT-21"
+              },
+              {
                 "input": "src/pyt_24.scss",
                 "bundleName": "PYT-24"
+              },
+              {
+                "input": "src/pyt_25.scss",
+                "bundleName": "PYT-25"
+              },
+              {
+                "input": "src/styles.scss",
+                "bundleName": "por_defecto"
               },
               "node_modules/highlight.js/scss/atom-one-dark.scss",
               "src/assets/fonts/feather/iconfont.css",

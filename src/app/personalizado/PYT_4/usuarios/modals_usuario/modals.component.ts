@@ -24,7 +24,7 @@ import { ToastrService } from 'ngx-toastr';
 export class ModalsComponent implements OnInit {
     @ViewChild("modalForm") modalForm: ElementRef;  
     public modal: NgbModalRef;
-  
+    opcionSeleccionado: string  = '0';
     //FIREBASE
     //private itemDoc: AngularFirestoreDocument<Item>;
     //item: Observable<Item>;
@@ -39,6 +39,7 @@ export class ModalsComponent implements OnInit {
     public submitted = false;
     public permitir_envio = false;
     public existencia = false;
+    public facturacion =false;
 
     // Private
     private PREFERENCIAS= new PersonalizadoService;
@@ -67,6 +68,15 @@ export class ModalsComponent implements OnInit {
     this.modal.result.then((e) => {
         console.log("dialogo cerrado")
     });      
+  }
+
+  capturar() {
+    // Pasamos el valor seleccionado a la variable verSeleccion
+    if(this.opcionSeleccionado=="Negocio" || this.opcionSeleccionado=="Punto de venta"){
+      this.facturacion=true;
+    }else{
+      this.facturacion=false;
+    }
   }
 
   // Lifecycle Hooks
@@ -141,7 +151,6 @@ export class ModalsComponent implements OnInit {
           this.f.casa.value,
           this.f.calle.value,
           this.f.avenida.value,
-          this.f.referencia.value,
           this.f.telefono.value,
           this.f.nombre_familiar_1.value,
           this.f.apellido_familiar_1.value,
@@ -154,6 +163,7 @@ export class ModalsComponent implements OnInit {
           this.f.tipo_cliente.value,
           this.f.cliente_nuevo.value,
           this.f.fecha_ultimo_pedido.value,
+          this.f.utimos_botellones.value,
           this.f.sucursal.value,
           'activo',
           'app-modals'
@@ -162,6 +172,10 @@ export class ModalsComponent implements OnInit {
     });
   }
 }
+tipo_cliente(){
+  alert('');
+}
+
 
   /**
    * On init
@@ -175,26 +189,26 @@ export class ModalsComponent implements OnInit {
     ciudad: ['', [Validators.required]],
     estado: ['', [Validators.required]],
     fraccionamiento: ['', [Validators.required]],
-    coto: ['', [Validators.required]],
+    coto: [''],
     casa: ['', [Validators.required]],
     calle: ['', [Validators.required]],
-    avenida: ['', [Validators.required]],
-    referencia: ['', [Validators.required]],
+    avenida: [''],
     telefono: ['', [Validators.required]],
-    nombre_familiar_1: ['', [Validators.required]],
-    apellido_familiar_1: ['', [Validators.required]],
-    telefono_familiar_1: ['', [Validators.required]],
+    nombre_familiar_1: [''],
+    apellido_familiar_1: [''],
+    telefono_familiar_1: [''],
     nombre_familiar_2: [''],
     apellido_familiar_2: [''],
     telefono_familiar_2: [''],
-    rfc: ['', [Validators.required]],
-    codigo_postal: ['', [Validators.required]],
+    rfc: [''],
+    codigo_postal: [''],
     tipo_cliente: ['', [Validators.required]],
     cliente_nuevo: [''],
     fecha_ultimo_pedido: [''],
+    utimos_botellones: [''],
     sucursal: [''],
     email: ['', [Validators.required, Validators.email]],
-    password: ['', Validators.required]
+    password: ['***************************']
   });
   }
 }

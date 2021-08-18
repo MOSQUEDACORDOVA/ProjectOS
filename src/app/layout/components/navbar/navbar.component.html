@@ -45,7 +45,7 @@
     Language selection -->
 
     <!-- Toggle skin -->
-    <li class="nav-item d-none d-lg-block">
+    <li *ngIf="PREFERENCIAS.MODO_OSCURO" class="nav-item d-none d-lg-block">
       <a class="nav-link nav-link-style btn" (click)="toggleDarkSkin()">
         <span [ngClass]="currentSkin === 'dark' ? 'icon-sun' : 'icon-moon'" class="ficon font-medium-5 feather"></span>
       </a>
@@ -61,7 +61,7 @@
     Cart -->
 
     
-    <!--<app-navbar-notification *ngIf="NOTIFICACIONES"></app-navbar-notification>-->
+    <app-navbar-notification *ngIf="PREFERENCIAS.NOTIFICACIONES"></app-navbar-notification>
     
 
     <!-- User Dropdown -->

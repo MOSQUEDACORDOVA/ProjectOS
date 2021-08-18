@@ -27,7 +27,6 @@ export interface Campos_pyt4 {
   casa: string,
   calle: string,
   avenida: string,
-  referencia: string,
   telefono: string,
 
   pyt4_nombre_familiar_1: string,
@@ -43,6 +42,7 @@ export interface Campos_pyt4 {
   pyt4_tipo_cliente: string,
   pyt4_cliente_nuevo: string,
   pyt4_fecha_ultimo_pedido: string,
+  pyt4_utimos_botellones: string,
   pyt4_sucursal: string,
 
   estatus?: string,
@@ -85,7 +85,6 @@ export class CamposService {
     casa: string,
     calle: string,
     avenida: string,
-    referencia: string,
     telefono: string,
 
     pyt4_nombre_familiar_1: string,
@@ -101,6 +100,7 @@ export class CamposService {
     pyt4_tipo_cliente: string,
     pyt4_cliente_nuevo: string,
     pyt4_fecha_ultimo_pedido: string,
+    pyt4_utimos_botellones: string,
     pyt4_sucursal: string,
     
     estatus?: string,
@@ -129,7 +129,6 @@ export class CamposService {
       casa,
       calle,
       avenida,
-      referencia,
       telefono,
 
       pyt4_nombre_familiar_1,
@@ -145,6 +144,7 @@ export class CamposService {
       pyt4_tipo_cliente,
       pyt4_cliente_nuevo,
       pyt4_fecha_ultimo_pedido,
+      pyt4_utimos_botellones,
       pyt4_sucursal,
 
       estatus
@@ -155,7 +155,13 @@ export class CamposService {
     this.Usuarios.doc().set(campos).finally(()=>{
       //verificar si es llamado desde externo o interno
       if(componente=="pyt_4_campos"){
-        this._authenticationService
+        // Success
+        this.toastr.success('👍🏻 Te has registrado con éxito.', '¡Listo!', {
+          toastClass: 'toast ngx-toastr',
+          closeButton: true
+        });
+        location.reload();
+        /*this._authenticationService
             .login(campos.email, campos.password)
             .pipe(first())
             .subscribe(
@@ -166,7 +172,7 @@ export class CamposService {
                 alert(error);
 
               }
-            );
+            );*/
       }else{
           // Success
           this.toastr.success('👍🏻 Usuario registrado con éxito.', '¡Listo!', {
