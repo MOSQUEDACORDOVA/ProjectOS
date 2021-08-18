@@ -76,7 +76,7 @@ export class DatatablesComponent implements OnInit {
     ) {
     this._unsubscribeAll = new Subject();
     this._coreTranslationService.translate(english, french, german, portuguese);
-    this.items = firestore.collection('usuarios', ref => ref.where('role', '==', 'Cliente')).valueChanges({ idField: 'IdDocumento' });
+    this.items = firestore.collection('usuarios', ref => ref.where('role', '==', 'Cliente').where('proyecto', '==', 'PYT-4')).valueChanges({ idField: 'IdDocumento' });
     
   }
 

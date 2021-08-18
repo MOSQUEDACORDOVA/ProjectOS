@@ -5,6 +5,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { PersonalizadoService } from 'app/personalizado/personalizado.service';
 
+import { AuthenticationService } from 'app/auth/service';
+
 //FIREBASE
 import { AngularFirestore,AngularFirestoreDocument,AngularFirestoreCollection } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
@@ -33,6 +35,7 @@ export class ModalsComponent implements OnInit {
     Email: Observable<Emails[]>;
     
     // Public
+    public isPYT_4_Director: boolean;
     public coreConfig: any;
     public passwordTextType: boolean;
     public registerForm: FormGroup;
@@ -54,9 +57,10 @@ export class ModalsComponent implements OnInit {
     private _formBuilder: FormBuilder,
     private readonly afs: AngularFirestore,
     private _CamposService : CamposService,
-    private renderer: Renderer2
+    private renderer: Renderer2,
+    private _authenticationService: AuthenticationService
     ) {
- 
+      this.isPYT_4_Director = this._authenticationService.isPYT_21_Admin;
   }
 
   // Public Methods
@@ -172,9 +176,7 @@ export class ModalsComponent implements OnInit {
     });
   }
 }
-tipo_cliente(){
-  alert('');
-}
+
 
 
   /**

@@ -21,18 +21,22 @@ export const DOM_PA=dominio_actual;
 if(sessionStorage.getItem('SS_proyecto_actual')){
   var identificador=sessionStorage.getItem('SS_proyecto_actual');
   //obtenemos todos los link del head
+  var cabecera=document.getElementsByTagName("head")[0];
+  
   var n_estilos = document.getElementsByTagName("link");
-  for(var n=0; n<=n_estilos.length-1; n++){
+
+
+  for(var n=n_estilos.length-1; n>0; n--){
     //obtenemos los link que sean estilos de proyectos (pyt_)
     var estilo=n_estilos[n].href;
+    //alert("todos: "+n_estilos[n].href);
     var estilo_De_proyecto = estilo.indexOf('PYT-');
     var estilo_por_defecto = estilo.indexOf('por_defecto');
-    if(estilo_De_proyecto!== -1 || estilo_por_defecto!== -1){
-      //eliminamos todos menos el del proyecto correspondiente
-      var mi_proyecto_actual = estilo.indexOf(identificador);
-      if(mi_proyecto_actual== -1){
-        n_estilos[n].href="";
-      }
+    var mi_proyecto_actual = estilo.indexOf(identificador);
+    if(mi_proyecto_actual!== -1){n_estilos[n].title=identificador;}
+    if(mi_proyecto_actual=== -1){
+        cabecera.removeChild(n_estilos[n]);
+        //n=n_estilos.length;
     }
   }
 }

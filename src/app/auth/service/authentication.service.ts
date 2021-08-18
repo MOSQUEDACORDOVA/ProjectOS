@@ -49,6 +49,9 @@ export class AuthenticationService {
   get isPM() {
     return this.currentUser && this.currentUserSubject.value.role === Role.PM;
   }
+  get isPYT_4_Director() {
+    return this.currentUser && this.currentUserSubject.value.role === Role.PYT_4_Director;
+  }
   get isPYT_21_Admin() {
     return this.currentUser && this.currentUserSubject.value.role === Role.PYT_21_Admin;
   }
