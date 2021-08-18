@@ -36,6 +36,7 @@ export class ModalsComponent implements OnInit {
     
     // Public
     public isPYT_4_Director: boolean;
+    public isPYT_4_Logistica: boolean;
     public coreConfig: any;
     public passwordTextType: boolean;
     public registerForm: FormGroup;
@@ -62,6 +63,7 @@ export class ModalsComponent implements OnInit {
     private _authenticationService: AuthenticationService
     ) {
       this.isPYT_4_Director = this._authenticationService.isPYT_4_Director;
+      this.isPYT_4_Logistica= this._authenticationService.isPYT_4_Logistica;
   }
 
   // Public Methods

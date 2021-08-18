@@ -30,6 +30,7 @@ export class DatatablesComponent implements OnInit {
 
   // public
   public isPYT_4_Director: boolean;
+  public isPYT_4_Logistica: boolean;
   public contentHeader: object;
   public rows: any;
   public selected = [];
@@ -80,11 +81,12 @@ export class DatatablesComponent implements OnInit {
     private _authenticationService: AuthenticationService
     ) {
       this.isPYT_4_Director = this._authenticationService.isPYT_4_Director;
+      this.isPYT_4_Logistica= this._authenticationService.isPYT_4_Logistica;
     this._unsubscribeAll = new Subject();
     this._coreTranslationService.translate(english, french, german, portuguese);
-    //si es director consulta todas las sucursales
+    //si es director o logistica consulta todas las sucursales
     //sino entonces solo puede ver su sucursal
-    if(this.isPYT_4_Director){
+    if(this.isPYT_4_Director || this.isPYT_4_Logistica){
       this.items = firestore.collection('usuarios', ref => ref.where('role', '==', 'Cliente').where('proyecto', '==', 'PYT-4')).valueChanges({ idField: 'IdDocumento' });
     }else{
       this.items = firestore.collection('usuarios', ref => ref.where('role', '==', 'Cliente').where('proyecto', '==', 'PYT-4').where('pyt4_sucursal', '==', this.mi_sucursal)).valueChanges({ idField: 'IdDocumento' });

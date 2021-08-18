@@ -52,6 +52,9 @@ export class AuthenticationService {
   get isPYT_4_Director() {
     return this.currentUser && this.currentUserSubject.value.role === Role.PYT_4_Director;
   }
+  get isPYT_4_Logistica() {
+    return this.currentUser && this.currentUserSubject.value.role === Role.PYT_4_Logistica;
+  }
   get isPYT_21_Admin() {
     return this.currentUser && this.currentUserSubject.value.role === Role.PYT_21_Admin;
   }
