@@ -11,6 +11,8 @@ import { locale as english } from './i18n/en';
 import { locale as french } from './i18n/fr';
 import { locale as portuguese } from './i18n/pt';
 
+import { AuthenticationService } from 'app/auth/service';
+
 //FIREBASE
 import { AngularFirestore,AngularFirestoreCollection } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
@@ -27,6 +29,7 @@ export class DatatablesComponent implements OnInit {
   private tempData = [];
 
   // public
+  public isPYT_4_Director: boolean;
   public contentHeader: object;
   public rows: any;
   public selected = [];
@@ -43,11 +46,12 @@ export class DatatablesComponent implements OnInit {
   public SelectionType = SelectionType;
   public exportCSVData;
   public nombre_completo;
+  public mi_sucursal=sessionStorage.getItem('pyt4_sucursal');
 
   @ViewChild(DatatableComponent) table: DatatableComponent;
   @ViewChild('tableRowDetails') tableRowDetails: any;
 
-
+  
   // Public Methods
   // -----------------------------------------------------------------------------------------------------
 
@@ -72,11 +76,19 @@ export class DatatablesComponent implements OnInit {
 
   constructor(
     private _coreTranslationService: CoreTranslationService,
-    public firestore: AngularFirestore
+    public firestore: AngularFirestore,
+    private _authenticationService: AuthenticationService
     ) {
+      this.isPYT_4_Director = this._authenticationService.isPYT_4_Director;
     this._unsubscribeAll = new Subject();
     this._coreTranslationService.translate(english, french, german, portuguese);
-    this.items = firestore.collection('usuarios', ref => ref.where('role', '==', 'Cliente').where('proyecto', '==', 'PYT-4')).valueChanges({ idField: 'IdDocumento' });
+    //si es director consulta todas las sucursales
+    //sino entonces solo puede ver su sucursal
+    if(this.isPYT_4_Director){
+      this.items = firestore.collection('usuarios', ref => ref.where('role', '==', 'Cliente').where('proyecto', '==', 'PYT-4')).valueChanges({ idField: 'IdDocumento' });
+    }else{
+      this.items = firestore.collection('usuarios', ref => ref.where('role', '==', 'Cliente').where('proyecto', '==', 'PYT-4').where('pyt4_sucursal', '==', this.mi_sucursal)).valueChanges({ idField: 'IdDocumento' });
+    }
     
   }
 

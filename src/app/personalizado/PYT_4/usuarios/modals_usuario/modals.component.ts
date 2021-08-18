@@ -43,6 +43,7 @@ export class ModalsComponent implements OnInit {
     public permitir_envio = false;
     public existencia = false;
     public facturacion =false;
+    public mi_sucursal=sessionStorage.getItem('pyt4_sucursal');
 
     // Private
     private PREFERENCIAS= new PersonalizadoService;
@@ -60,7 +61,7 @@ export class ModalsComponent implements OnInit {
     private renderer: Renderer2,
     private _authenticationService: AuthenticationService
     ) {
-      this.isPYT_4_Director = this._authenticationService.isPYT_21_Admin;
+      this.isPYT_4_Director = this._authenticationService.isPYT_4_Director;
   }
 
   // Public Methods
@@ -115,7 +116,7 @@ export class ModalsComponent implements OnInit {
   this.submitted = true;
   this.existencia=false;
   // stop here if form is invalid
-  if (this.registerForm.invalid) {
+  if (this.registerForm.invalid) {  
     this.permitir_envio = false;
     return;
   }else{
@@ -147,7 +148,7 @@ export class ModalsComponent implements OnInit {
           this.f.lastName.value,
           'avatar-s-pyt4.jpg',
           'Cliente',
-          this.PREFERENCIAS.IDE_PA,
+          'PYT-4',
           this.f.ciudad.value,
           this.f.estado.value,
           this.f.fraccionamiento.value,
@@ -188,8 +189,8 @@ export class ModalsComponent implements OnInit {
    this.registerForm = this._formBuilder.group({
     firstName: ['', [Validators.required]],
     lastName: ['', [Validators.required]],
-    ciudad: ['', [Validators.required]],
-    estado: ['', [Validators.required]],
+    ciudad: [[Validators.required]],
+    estado: ['Jalisco'],
     fraccionamiento: ['', [Validators.required]],
     coto: [''],
     casa: ['', [Validators.required]],
@@ -208,8 +209,8 @@ export class ModalsComponent implements OnInit {
     cliente_nuevo: [''],
     fecha_ultimo_pedido: [''],
     utimos_botellones: [''],
-    sucursal: [''],
-    email: ['', [Validators.required, Validators.email]],
+    sucursal: [this.mi_sucursal],
+    email: [''],
     password: ['***************************']
   });
   }

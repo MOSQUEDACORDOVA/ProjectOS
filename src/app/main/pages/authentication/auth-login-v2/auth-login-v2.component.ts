@@ -127,6 +127,12 @@ export class AuthLoginV2Component implements OnInit {
           sessionStorage.setItem('aut_role', role);
           sessionStorage.setItem('aut_proyecto', proyecto);
           sessionStorage.setItem('aut_password', password);
+          //varialbs gogales de proyecto específico
+          switch(res[0]['proyecto']){
+            case 'PYT-4':
+              sessionStorage.setItem('pyt4_sucursal', res[0]['pyt4_sucursal']);
+              break
+          }
           //flujo con datos
           // stop here if form is invalid
           if (this.loginForm.invalid) {

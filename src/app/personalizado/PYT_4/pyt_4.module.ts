@@ -34,6 +34,6 @@ const routes: Routes = [
 })
 export class Pyt_4_Module { 
   constructor(public Pyt_4_Service: Pyt_4_Service){
-
+    
   }
 }
