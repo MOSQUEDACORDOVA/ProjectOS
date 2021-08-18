@@ -29,7 +29,7 @@
           class="d-lg-none img-fluid"
           src="assets/images/logo/pyt_4_logo_azul.png" />
         
-        <h2 *ngIf="PersonalizadoService.MOSTRAR_LOGO" class="card-title font-weight-bold mb-1">Bienvenido a {{PersonalizadoService.NOM_PA}}! 👋</h2>
+        <h2 *ngIf="PersonalizadoService.MOSTRAR_LOGO" class="card-title font-weight-bold mb-1">Bienvenid@ a {{PersonalizadoService.NOM_PA}}! 👋</h2>
         <p *ngIf="PersonalizadoService.MOSTRAR_LOGO" class="card-text mb-2">Inicia sesión y comienza tu aventura. . .</p>
         <ngb-alert *ngIf="!PersonalizadoService.PRODUCCION" [type]="'primary'" [dismissible]="false">
           <div class="alert-body font-small-2">

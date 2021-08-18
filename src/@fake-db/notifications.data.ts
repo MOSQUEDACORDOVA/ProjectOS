@@ -3,7 +3,7 @@ export class NotificationsFakeData {
     messages: [
       {
         image: 'assets/images/portrait/small/avatar-s-15.jpg',
-        heading: '<span class="font-weight-bolder">Bienvenido 🎉</span>!',
+        heading: '<span class="font-weight-bolder">Bienvenid@ 🎉</span>!',
         text: 'Estamos comprometidos a brindarte el mejor servicio.'
       }
     ],
