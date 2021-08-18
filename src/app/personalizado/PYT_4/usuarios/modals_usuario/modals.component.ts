@@ -122,7 +122,7 @@ export class ModalsComponent implements OnInit {
   }else{
     this.permitir_envio = true;
     //verificar si el usuario no existen para poder registrar
-    this.Emails = this.afs.collection('usuarios', ref => ref.where('email', '==', this.f.email.value));
+    this.Emails = this.afs.collection('usuarios', ref => ref.where('telefono', '==', this.f.telefono.value));
     this.Email = this.Emails.valueChanges();
     //this.itemDoc = this.afs.doc<Item>('usuarios/'+this.f.email.value+'');
     //this.item = this.itemDoc.valueChanges();
