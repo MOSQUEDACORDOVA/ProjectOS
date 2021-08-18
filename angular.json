@@ -44,9 +44,13 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/highlight.js/scss/atom-one-dark.scss",
+              "src/assets/fonts/feather/iconfont.css",
+              "src/assets/fonts/font-awesome/css/font-awesome.min.css",
+              "src/assets/fonts/flag-icon-css/css/flag-icon.min.css",
               {
-                "input": "src/pyt_4.scss",
-                "bundleName": "PYT-4"
+                "input": "src/styles.scss",
+                "bundleName": "por_defecto"
               },
               {
                 "input": "src/pyt_21.scss",
@@ -61,13 +65,9 @@
                 "bundleName": "PYT-25"
               },
               {
-                "input": "src/styles.scss",
-                "bundleName": "por_defecto"
-              },
-              "node_modules/highlight.js/scss/atom-one-dark.scss",
-              "src/assets/fonts/feather/iconfont.css",
-              "src/assets/fonts/font-awesome/css/font-awesome.min.css",
-              "src/assets/fonts/flag-icon-css/css/flag-icon.min.css"
+                "input": "src/pyt_4.scss",
+                "bundleName": "PYT-4"
+              }
             ],
             "stylePreprocessorOptions": {
               "includePaths": [
