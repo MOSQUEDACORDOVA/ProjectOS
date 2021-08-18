@@ -276,6 +276,22 @@
                   </div>
 
                   <div class="form-group">
+                    <label for="register-referencia" class="form-label">Referencia</label>
+                    <input
+                      type="text"
+                      formControlName="referencia"
+                      class="form-control"
+                      placeholder="Referencia"
+                      aria-describedby="register-referencia"
+                      tabindex="9"
+                      [ngClass]="{ 'is-invalid': submitted && f.referencia.errors }"
+                    />
+                    <div *ngIf="submitted && f.referencia.errors" class="invalid-feedback">
+                      <div *ngIf="f.referencia.errors.required">La referencia es necesaria</div>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
                     <label for="register-telefono" class="form-label">Teléfono</label>
                     
                     <div class="input-group">

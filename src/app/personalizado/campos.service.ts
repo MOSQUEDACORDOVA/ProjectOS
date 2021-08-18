@@ -27,6 +27,7 @@ export interface Campos_pyt4 {
   casa: string,
   calle: string,
   avenida: string,
+  referencia: string,
   telefono: string,
 
   pyt4_nombre_familiar_1: string,
@@ -85,6 +86,7 @@ export class CamposService {
     casa: string,
     calle: string,
     avenida: string,
+    referencia: string,
     telefono: string,
 
     pyt4_nombre_familiar_1: string,
@@ -129,6 +131,7 @@ export class CamposService {
       casa,
       calle,
       avenida,
+      referencia,
       telefono,
 
       pyt4_nombre_familiar_1,
