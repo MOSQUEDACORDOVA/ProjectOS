@@ -156,7 +156,7 @@ export class Pyt_4_Campos implements OnInit {
                   this.f.fecha_ultimo_pedido.value,
                   this.f.utimos_botellones.value,
                   this.f.sucursal.value,
-                  'activo',
+                  '1',
                   'pyt_4_campos'
                 );
                 //si todo está ok que me retorne el ingreso

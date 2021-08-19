@@ -173,7 +173,7 @@ export class ModalsComponent implements OnInit {
           this.f.fecha_ultimo_pedido.value,
           this.f.utimos_botellones.value,
           this.f.sucursal.value,
-          'activo',
+          '1',
           'app-modals'
         );
       }

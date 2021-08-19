@@ -8,7 +8,7 @@ import { CoreCommonModule } from '@core/common.module';
 
 const routes: Routes = [
   {
-    path: 'tablero',
+    path: 'pyt_4_tablero',
     component: TableroComponent,
     data: { animation: 'clipboard' }
   }

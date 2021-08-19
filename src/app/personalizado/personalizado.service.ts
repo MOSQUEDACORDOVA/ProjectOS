@@ -32,9 +32,10 @@ if(sessionStorage.getItem('SS_proyecto_actual')){
     //alert("todos: "+n_estilos[n].href);
     var estilo_De_proyecto = estilo.indexOf('PYT-');
     var estilo_por_defecto = estilo.indexOf('por_defecto');
+    var estilo_importante = estilo.indexOf('styles.css');
     var mi_proyecto_actual = estilo.indexOf(identificador);
     if(mi_proyecto_actual!== -1){n_estilos[n].title=identificador;}
-    if(mi_proyecto_actual=== -1){
+    if(mi_proyecto_actual=== -1 && estilo_importante=== -1){
         cabecera.removeChild(n_estilos[n]);
         //n=n_estilos.length;
     }
@@ -85,7 +86,7 @@ export class PersonalizadoService {
         var favicon="assets/images/ico/pyt_4_favicon.ico";
         var logo_png="assets/images/logo/pyt_4_logo_blanco.png";
         var icono_svg="assets/images/logo/pyt_4_logo_blanco.png";
-        var RutaPrincipal="pyt4/tablero";
+        var RutaPrincipal="pyt4/pyt_4_tablero";
         var ModuloPrincipal="pyt4";
         var Registro_personalizado=true;
         notificaciones=false;

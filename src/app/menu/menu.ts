@@ -13,7 +13,7 @@ export const menu: CoreMenu[] = [
     title: 'Tablero',
     type: 'item',
     icon: 'home',
-    url: 'pyt4/tablero',
+    url: 'pyt4/pyt_4_tablero',
     proyecto: 'PYT-4'
   },
   {
@@ -30,7 +30,7 @@ export const menu: CoreMenu[] = [
     title: 'Tablero',
     type: 'item',
     icon: 'home',
-    url: 'pyt21/tablero',
+    url: 'pyt21/pyt_21_tablero',
     proyecto: 'PYT-21'
   },
   {
