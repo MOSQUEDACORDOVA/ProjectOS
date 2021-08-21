@@ -1,6 +1,7 @@
 <!-- Ecommerce Item -->
 <div class="item-img text-center">
-  <a [routerLink]="'/apps/e-commerce/details/' + product.id">
+  <!--<a [routerLink]="'/apps/e-commerce/details/' + product.id">-->
+  <a >
     <img class="img-fluid card-img-top" [src]="product.image" alt="img-placeholder" />
   </a>
 </div>
@@ -20,7 +21,8 @@
     </div>
   </div>
   <h6 class="item-name">
-    <a class="text-body" [routerLink]="'/apps/e-commerce/details/' + product.id"> {{ product.name }}</a>
+    <!--[routerLink]="'/apps/e-commerce/details/' + product.id"-->
+    <a class="text-body" > {{ product.name }}</a>
     <span class="card-text item-company"
       >De <a href="javascript:void(0)" class="company-name">{{ product.brand }}</a></span
     >
