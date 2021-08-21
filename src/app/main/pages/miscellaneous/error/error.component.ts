@@ -5,6 +5,7 @@ import { Subject } from 'rxjs';
 
 import { CoreConfigService } from '@core/services/config.service';
 
+import { PersonalizadoService } from 'app/personalizado/personalizado.service';
 
 @Component({
   selector: 'app-error',
@@ -22,7 +23,7 @@ export class ErrorComponent implements OnInit {
    *
    * @param {CoreConfigService} _coreConfigService
    */
-  constructor(private _coreConfigService: CoreConfigService) {
+  constructor(public PREFERENCIAS: PersonalizadoService, private _coreConfigService: CoreConfigService) {
     this._unsubscribeAll = new Subject();
 
     // Configure the layout

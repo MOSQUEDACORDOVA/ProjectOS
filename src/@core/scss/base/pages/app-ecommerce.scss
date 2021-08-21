@@ -242,10 +242,10 @@ $search-bar-height: 48px;
 
     .ecommerce-card {
       overflow: hidden;
-
+      .item-img a {width: 100%;background-color: #ccc;}
       // Item Image
       .item-img {
-        padding-top: 0.5rem;
+        //padding-top: 0.5rem;
         min-height: 15.85rem;
         display: flex;
         align-items: center;
@@ -373,7 +373,6 @@ $search-bar-height: 48px;
 
           .item-cost {
             .item-price {
-              color: $primary;
               margin-bottom: 0;
             }
           }

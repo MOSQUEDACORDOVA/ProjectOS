@@ -25,7 +25,7 @@ export const coreConfig: CoreConfig = {
   },
   layout: {
     skin  : PREFERENCIAS.SKIN,                        // default, dark, bordered, semi-dark
-    type  : 'vertical',                       // vertical, horizontal
+    type  : PREFERENCIAS.LAYOUT_TYPE,                       // vertical, horizontal
     animation : 'fadeIn',                     // fadeInLeft, zoomIn , fadeIn, none
     menu : {
       hidden               : false,           // Boolean: true, false

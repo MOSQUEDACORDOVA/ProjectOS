@@ -15,6 +15,9 @@ if(dominio=="localhost" || dominio=="projectos-666.web.app"){
     case 'pyt24.mosquedacordova.com' || 'minner.com': 
     sessionStorage.setItem('SS_proyecto_actual', 'PYT-24');
     break
+    case 'pyt27.mosquedacordova.com' || 'dawi11.com': 
+    sessionStorage.setItem('SS_proyecto_actual', 'PYT-27');
+    break
   }
 }
 export const DOM_PA=dominio_actual;
@@ -68,6 +71,8 @@ export class PersonalizadoService {
   public MOSTRAR_LOGO;
   public AUT_PERSONALIZADA;
   public BACKGROUND;
+  public LAYOUT_TYPE;
+  public CARRITO;
 
   constructor() { 
     this.SeleccionarProyecto();
@@ -98,6 +103,8 @@ export class PersonalizadoService {
         var mostrar_logo=false;
         var autenticacion_personalizada=true;
         var background="background:linear-gradient(to bottom, #001867 0%, #010c70 51%, #0092ae 100%);";
+        var layout_type="vertical";
+        var carrito=false;
       break
       case 'PYT-21': 
         var nombre="CBFX Capital";
@@ -119,6 +126,8 @@ export class PersonalizadoService {
         var mostrar_logo=true;
         var autenticacion_personalizada=false;
         var background="";
+        var layout_type="vertical";
+        var carrito=false;
       break
       case 'PYT-24': 
         var nombre="Miner";
@@ -139,6 +148,8 @@ export class PersonalizadoService {
         var mostrar_logo=true;
         var autenticacion_personalizada=false;
         var background="";
+        var layout_type="vertical";
+        var carrito=false;
       break
       case 'PYT-25': 
         var nombre="ProjectOS";
@@ -149,8 +160,8 @@ export class PersonalizadoService {
         var logo_png="assets/images/logo/logo.png";
         var icono_svg="assets/images/logo/logo.svg";
         var RutaPrincipal="tablero/proyectos";
-        menu_collapse=true;
-        var ModuloPrincipal="tablero";
+        menu_collapse=false;
+        var ModuloPrincipal="pyt25";
         var Registro_personalizado=false;
         var produccion=false;
         var skin="default";
@@ -160,6 +171,31 @@ export class PersonalizadoService {
         var mostrar_logo=true;
         var autenticacion_personalizada=false;
         var background="";
+        var layout_type="vertical";
+        var carrito=false;
+      break
+      case 'PYT-27': 
+        var nombre="Dawi11";
+        var titulo="Dawi11";
+        var descripcion="Dawi11";
+        var keywords="Dawi11";
+        var favicon="assets/images/ico/favicon.ico";
+        var logo_png="assets/images/logo/pyt_27_logo.svg";
+        var icono_svg="assets/images/logo/pyt_27_logo.svg";
+        var RutaPrincipal="apps/e-commerce/shop";
+        menu_collapse=true;
+        var ModuloPrincipal="pyt27";
+        var Registro_personalizado=false;
+        var produccion=false;
+        var skin="default";
+        var modo_oscuro=false;
+        var toggle=true;
+        var mostrar_nombre=false;
+        var mostrar_logo=true;
+        var autenticacion_personalizada=false;
+        var background="";
+        var layout_type="horizontal";
+        var carrito=true;
       break
       default: 
         var nombre="localhost";
@@ -180,6 +216,8 @@ export class PersonalizadoService {
         var mostrar_logo=true;
         var autenticacion_personalizada=false;
         var background="";
+        var layout_type="vertical";
+        var carrito=false;
       break
     }
     this.IDE_PA=identificador;
@@ -203,5 +241,7 @@ export class PersonalizadoService {
     this.MOSTRAR_LOGO= mostrar_logo;
     this.AUT_PERSONALIZADA= autenticacion_personalizada;
     this.BACKGROUND= background;
+    this.LAYOUT_TYPE = layout_type;
+    this.CARRITO = carrito;
   }
 }

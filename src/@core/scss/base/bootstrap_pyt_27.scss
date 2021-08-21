@@ -1,0 +1,16 @@
+// ================================================================================================
+//  File Name: bootstrap.scss
+//  Description: Include bootstrap core from node_modules
+//  ----------------------------------------------------------------------------------------------
+//  Item Name: Vuexy - Vuejs, React, Angular, HTML & Laravel Admin Dashboard Template
+//  Author: PIXINVENT
+//  Author URL: http://www.themeforest.net/user/pixinvent
+// ================================================================================================
+
+@import 'bootstrap-extended/include_pyt_27'; // Bootstrap includes
+@import 'bootstrap/scss/bootstrap'; // Bootstrap core
+
+.horizontal-menu .header-navbar.navbar-horizontal ul#main-menu-navigation > li.active > a{
+    background: linear-gradient(118deg, #000, rgba(200, 39, 107, 0.7)) !important;
+    box-shadow: 0px 0px 6px 1px rgb(200 39 107 / 30%) !important;
+}

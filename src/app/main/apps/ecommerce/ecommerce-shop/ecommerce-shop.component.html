@@ -17,7 +17,7 @@
   <!--/ Sidebar filters -->
 
   <div class="content-detached content-right">
-    <div class="content-body">
+    <div class="content-body ">
       <!-- E-commerce Head Section Starts -->
       <section id="ecommerce-header">
         <div class="row">
@@ -30,9 +30,9 @@
                   data-toggle="collapse"
                   (click)="toggleSidebar('ecommerce-sidebar')"
                 >
-                  <span class="navbar-toggler-icon d-block d-lg-none"><i data-feather="menu"></i></span>
+                  <span class="navbar-toggler-icon d-block d-lg-none"><i data-feather="more-horizontal"></i></span>
                 </button>
-                <div class="search-results">{{ (products | filter: searchText:'name').length }} results found</div>
+                <div class="search-results">{{ (products | filter: searchText:'name').length }} resultados</div>
               </div>
               <div class="view-options d-flex">
                 <div class="btn-group dropdown-sort" ngbDropdown>
@@ -45,12 +45,12 @@
                     aria-expanded="false"
                     rippleEffect
                   >
-                    <span class="active-sorting">Featured</span>
+                    <span class="active-sorting">Orden</span>
                   </button>
                   <div ngbDropdownMenu>
-                    <a ngbDropdownItem href="javascript:void(0);" (click)="sortProduct('featured')">Featured</a>
-                    <a ngbDropdownItem href="javascript:void(0);" (click)="sortProduct('price-asc')">Lowest</a>
-                    <a ngbDropdownItem href="javascript:void(0);" (click)="sortProduct('price-desc')">Highest</a>
+                    <a ngbDropdownItem href="javascript:void(0);" (click)="sortProduct('featured')">Más nuevos</a>
+                    <a ngbDropdownItem href="javascript:void(0);" (click)="sortProduct('price-asc')">Menor precio</a>
+                    <a ngbDropdownItem href="javascript:void(0);" (click)="sortProduct('price-desc')">Mayor precio</a>
                   </div>
                 </div>
                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
@@ -83,7 +83,7 @@
                 type="text"
                 class="form-control search-product"
                 id="shop-search"
-                placeholder="Search Product"
+                placeholder="Búscalo. . ."
                 aria-label="Search..."
                 aria-describedby="shop-search"
                 [(ngModel)]="searchText"

@@ -5,6 +5,8 @@ import { takeUntil } from 'rxjs/operators';
 
 import { CoreMenuService } from '@core/components/core-menu/core-menu.service';
 
+import { PersonalizadoService } from 'app/personalizado/personalizado.service';
+
 @Component({
   selector: '[core-menu]',
   templateUrl: './core-menu.component.html',
@@ -29,7 +31,7 @@ export class CoreMenuComponent implements OnInit {
    * @param {ChangeDetectorRef} _changeDetectorRef
    * @param {CoreMenuService} _coreMenuService
    */
-  constructor(private _changeDetectorRef: ChangeDetectorRef, private _coreMenuService: CoreMenuService) {
+  constructor(public PREFERENCIAS: PersonalizadoService, private _changeDetectorRef: ChangeDetectorRef, private _coreMenuService: CoreMenuService) {
     // Set the private defaults
     this._unsubscribeAll = new Subject();
   }

@@ -89,10 +89,10 @@ export class EcommerceShopComponent implements OnInit {
       product.isInCart = this.cartList.findIndex(p => p.productId === product.id) > -1;
     });
 
-    // content header
+    /*/ content header
     this.contentHeader = {
       headerTitle: 'Shop',
-      actionButton: true,
+
       breadcrumb: {
         type: '',
         links: [
@@ -112,6 +112,6 @@ export class EcommerceShopComponent implements OnInit {
           }
         ]
       }
-    };
+    };*/
   }
 }

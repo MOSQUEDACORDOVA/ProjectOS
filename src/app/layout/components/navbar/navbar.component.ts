@@ -106,6 +106,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
     // Set the private defaults
     this._unsubscribeAll = new Subject();
+
   }
 
   // Public Methods

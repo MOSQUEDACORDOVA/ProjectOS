@@ -6,6 +6,7 @@ export interface CoreMenuItem {
     type         : 'section' | 'collapsible' | 'item';
     role?        : Array<string>;
     proyecto?        : string;
+    autenticado?    : boolean;
     translate?   : string;
     icon?        : string;
     disabled?    : boolean;

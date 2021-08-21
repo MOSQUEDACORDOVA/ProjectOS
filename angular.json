@@ -65,6 +65,10 @@
                 "bundleName": "PYT-25"
               },
               {
+                "input": "src/pyt_27.scss",
+                "bundleName": "PYT-27"
+              },
+              {
                 "input": "src/pyt_4.scss",
                 "bundleName": "PYT-4"
               }
