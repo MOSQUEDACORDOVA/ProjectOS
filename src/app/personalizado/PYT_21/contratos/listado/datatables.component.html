@@ -1,0 +1,79 @@
+<app-modals></app-modals>
+<div class="content-wrapper container-xxl p-0">
+  <div class="content-body">
+    
+    <!-- Kitchen Sink Datatables -->
+    <section id="ngx-datatable-kitchen-sink">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Contratos</h4>
+          <p class="card-text">
+            Todos los contratos están acá, pronto podrás filtrarlos y modificarlos rápidamente.
+          </p>
+
+          <input
+                  type="search"
+                  placeholder="Buscar. . ."
+                  class="form-control ml-25"
+                  (keyup)="filterUpdate($event)"
+              />
+
+        </div>
+        <ngx-datatable
+          [rows]="items | async"
+          [rowHeight]="58"
+          class="bootstrap core-bootstrap"
+          [limit]="10"
+          [columnMode]="ColumnMode.force"
+          [headerHeight]="40"
+          [footerHeight]="50"
+          [scrollbarH]="true"
+          (activate)="onActivate($event)"
+        >
+        
+        <ngx-datatable-column name="ID" prop="email" [width]="250"></ngx-datatable-column>
+        <ngx-datatable-column name="Nº" prop="email" [width]="250"></ngx-datatable-column>
+        <ngx-datatable-column name="Creación" prop="email" [width]="250"></ngx-datatable-column>
+        <ngx-datatable-column name="Activación" prop="email" [width]="250"></ngx-datatable-column>
+        <ngx-datatable-column name="Culminación" prop="email" [width]="250"></ngx-datatable-column>
+        <ngx-datatable-column name="Duración" prop="email" [width]="250"></ngx-datatable-column>
+        <ngx-datatable-column name="Monto" prop="email" [width]="250"></ngx-datatable-column>
+        <ngx-datatable-column name="Canancias" prop="email" [width]="250"></ngx-datatable-column>
+        <ngx-datatable-column name="Status" prop="telefono" [width]="120"></ngx-datatable-column>
+        <ngx-datatable-column *ngIf="isPYT_21_Admin" name="Inversionista" prop="telefono" [width]="120"></ngx-datatable-column>
+        <ngx-datatable-column name="Opciones" [width]="120" [sortable]="false">
+          <ng-template let-row="row" let-name="value"  ngx-datatable-cell-template>
+            <div class="d-flex align-items-center">
+              <!--<div ngbDropdown container="body">
+                <a
+                  ngbDropdownToggle
+                  href="javascript:void(0);"
+                  class="hide-arrow"
+                  id="dropdownBrowserState"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  <i data-feather="more-vertical" class="text-primary cursor-pointer "></i>
+                </a>
+                <div ngbDropdownMenu class="dropdown-menu-right" aria-labelledby="dropdownBrowserState">
+                  <a href="javascript:void(0)" ngbDropdownItem class="d-flex align-items-center"
+                    ><i data-feather="file-text" class="mr-50"></i> Details</a
+                  >
+                  <a href="javascript:void(0)" ngbDropdownItem class="d-flex align-items-center"
+                    ><i data-feather="trash-2" class="mr-50"></i> Delete</a
+                  >
+                </div>
+              </div>
+              <a href="javascript:void(0)" ngbDropdownItem class="d-flex align-items-center" (click)="eliminar_usuario(row.IdDocumento)"
+                    ><i data-feather="trash-2"></i></a
+                  >-->
+            </div>
+          </ng-template>
+        </ngx-datatable-column>
+        </ngx-datatable>
+      </div>
+    </section>
+    <!--/ Kitchen Sink Datatables -->
+  </div>
+</div>

@@ -1,0 +1,64 @@
+<div class="content-wrapper container-xxl p-0">
+    <div class="content-body">
+  
+      <!-- Kitchen Sink Datatables -->
+      <section id="ngx-datatable-kitchen-sink">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">Ingresos</h4>
+            <input
+                    type="search"
+                    placeholder="Buscar. . ."
+                    class="form-control"
+                    (keyup)="filterUpdate($event)"
+                />
+                <!--<button class="btn btn-primary mt-1" rippleEffect>
+                  <i data-feather="plus" class="mr-0 mr-sm-1"></i
+                  ><span class="d-none d-sm-inline-block">Add New Record</span>
+                </button>-->
+          </div>
+          
+  
+          <ngx-datatable
+            [rows]="kitchenSinkRows"
+            [rowHeight]="58"
+            class="bootstrap core-bootstrap"
+            [limit]="10"
+            [columnMode]="ColumnMode.force"
+            [headerHeight]="40"
+            [footerHeight]="50"
+            [scrollbarH]="true"
+            [limit]="basicSelectedOption"
+            (activate)="onActivate($event)"
+          >
+  
+            <ngx-datatable-column name="Contrato" prop="full_name" [width]="280">
+              <ng-template let-row="row" let-name="value" ngx-datatable-cell-template>
+                #12345
+              </ng-template>
+            </ngx-datatable-column>
+            <ngx-datatable-column name="Monto" prop="full_name" [width]="280">
+                <ng-template let-row="row" let-name="value" ngx-datatable-cell-template>
+                  $100
+                </ng-template>
+              </ngx-datatable-column>
+            <ngx-datatable-column name="Tipo" prop="full_name" [width]="280">
+              <ng-template let-row="row" let-name="value" ngx-datatable-cell-template>
+                Bono
+              </ng-template>
+            </ngx-datatable-column>
+
+            <ngx-datatable-column name="Fecha" prop="full_name" [width]="280">
+                <ng-template let-row="row" let-name="value" ngx-datatable-cell-template>
+                  06/06/2022
+                </ng-template>
+              </ngx-datatable-column>
+            
+          </ngx-datatable>
+        </div>
+      </section>
+      <!--/ Kitchen Sink Datatables -->
+  
+    </div>
+  </div>
+  

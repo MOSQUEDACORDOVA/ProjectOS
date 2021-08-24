@@ -6,6 +6,8 @@ import { Pyt_21_Module } from './PYT_21/pyt_21.module';
 
 @NgModule({
   declarations: [
+  
+    
   ],
   imports: [
     CommonModule,Pyt_4_Module,Pyt_25_Module,Pyt_21_Module

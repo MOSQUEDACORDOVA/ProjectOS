@@ -77,6 +77,7 @@ export const menu: CoreMenu[] = [
     autenticado: true
   },
 
+  //PYT-21
   {
     id: 'secciones',
     type: 'section',
@@ -98,16 +99,16 @@ export const menu: CoreMenu[] = [
     title: 'Contratos',
     type: 'item',
     icon: 'trending-up',
-    url: 'pyt21/contratos',
+    url: 'pyt21/pyt_21_contratos',
     proyecto: 'PYT-21',
     autenticado: true
   },
   {
-    id: 'pty_21_tablero',
+    id: 'pyt_21_ingresos',
     title: 'Ingresos',
     type: 'item',
     icon: 'dollar-sign',
-    url: 'pyt21tablero/tablero',
+    url: 'pyt21/pyt_21_ingresos',
     proyecto: 'PYT-21',
     autenticado: true
   },
@@ -121,11 +122,11 @@ export const menu: CoreMenu[] = [
     autenticado: true
   },
   {
-    id: 'pty_21_tablero',
-    title: 'Depositos',
+    id: 'pyt_21_depositos',
+    title: 'Depósitos',
     type: 'item',
     icon: 'credit-card',
-    url: 'pyt21tablero/tablero',
+    url: 'pyt21/pyt_21_depositos',
     proyecto: 'PYT-21',
     role: ['Administrador'],
     autenticado: true
