@@ -1,0 +1,248 @@
+<div class="content-wrapper container-xxl p-0">
+  <div class="content-body">
+    <!-- Modal Form and scrolling start -->
+    <section id="form-and-scrolling-components">
+      <div class="row">
+        <div class="col-12">
+          <div>
+            <!-- Button trigger modal -->
+            <button type="button" (click)="modalOpenForm(modalForm)" class="btn btn-primary mb-50" rippleEffect>
+              Agregar contrato
+            </button>
+            <!-- Button trigger modal -->
+            <button type="button" (click)="modalOpenForm(modalAlertarPago)" class="btn btn-primary mb-50 ml-50" rippleEffect>
+              Alertar pago
+            </button>
+            
+            <!-- Modal -->
+            <ng-template #modalForm let-modal>
+              <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel1">Agregar contrato</h4>
+                <button type="button" class="close" (click)="modal.dismiss('Cross click')" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body" tabindex="0" ngbAutofocus>
+                <form class="auth-register-form mt-2" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                  <div class="form-group">
+                    <label for="register-firstName" class="form-label">Monto</label>
+                    <input
+                      type="text"
+                      formControlName="firstName"
+                      class="form-control"
+                      placeholder="100"
+                      aria-describedby="register-firstName"
+                      tabindex="1"
+                      autofocus
+                      [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }"
+                    />
+                    <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                      <div *ngIf="f.firstName.errors.required">El campo es necesario</div>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="register-coto" class="form-label">Duración</label>
+                    <input
+                      type="text"
+                      formControlName="coto"
+                      class="form-control"
+                      placeholder="Duración"
+                      aria-describedby="register-coto"
+                      tabindex="6"
+                      [ngClass]="{ 'is-invalid': submitted && f.coto.errors }"
+                    />
+                    <div *ngIf="submitted && f.coto.errors" class="invalid-feedback">
+                      <div *ngIf="f.coto.errors.required">El campo es necesario</div>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="register-lastName" class="form-label">Solicitud</label>
+                    
+                    <div class="input-group">
+                      <input
+                       class="form-control" 
+                       placeholder="yyyy-mm-dd" 
+                       name="Basic Date Picker" 
+                       [(ngModel)]="basicDPdata"
+                        ngbDatepicker 
+                        #basicDP="ngbDatepicker"
+
+                      formControlName="lastName"
+                      aria-describedby="register-lastName"
+                      tabindex="2"
+                      [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }"
+                      >
+                      <div class="input-group-append">
+                        <button class="btn btn-outline-secondary feather icon-calendar" (click)="basicDP.toggle()"
+                          type="button" rippleEffect></button>
+                      </div>
+                    </div>
+
+                    <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                      <div *ngIf="f.lastName.errors.required">El campo es necesario</div>
+                    </div>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="register-lastName" class="form-label">Activación</label>
+                    
+                    <div class="input-group">
+                      <input
+                       class="form-control" 
+                       placeholder="yyyy-mm-dd" 
+                       name="Basic Date Picker" 
+                       [(ngModel)]="basicDPdata"
+                        ngbDatepicker 
+                        #basicDP="ngbDatepicker"
+
+                      formControlName="lastName"
+                      aria-describedby="register-lastName"
+                      tabindex="2"
+                      [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }"
+                      >
+                      <div class="input-group-append">
+                        <button class="btn btn-outline-secondary feather icon-calendar" (click)="basicDP.toggle()"
+                          type="button" rippleEffect></button>
+                      </div>
+                    </div>
+
+                    <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                      <div *ngIf="f.lastName.errors.required">El campo es necesario</div>
+                    </div>
+                  </div>
+
+
+                  <!--<div class="form-group">
+                    <div class="custom-control custom-checkbox">
+                      <input class="custom-control-input" type="checkbox" id="register-privacy-policy" tabindex="4" />
+                      <label class="custom-control-label" for="register-privacy-policy">
+                        Debes aceptar nuestras <a href="javascript:void(0);">políticas de privacidad</a>
+                      </label>
+                    </div>
+                  </div>-->
+                  <button class="btn btn-primary btn-block" tabindex="26" rippleEffect *ngIf="!permitir_envio || registerForm.invalid">Regístrate</button>
+                  <button class="btn btn-primary btn-block" type="button" disabled rippleEffect *ngIf="permitir_envio && !registerForm.invalid">
+                    <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+                    <span class="ml-25 align-middle">Registrando...</span>
+                  </button>
+                </form>
+              
+                <!-- ngb-alert component -->
+                <ngb-alert [type]="'danger'" *ngIf="existencia" class="mt-1" [dismissible]="false">
+                  <div class="alert-body">
+                    <span [data-feather]="'info'" [class]="'mr-50 align-middle'"></span>
+                    <span>¡Estos datos ya existen!</span>
+                  </div>
+                </ngb-alert>
+                <!--/ ngb-alert component -->
+              </div>
+            </ng-template>
+            <!-- / Modal -->
+
+            <!-- Modal -->
+            <ng-template #modalAlertarPago let-modal>
+              <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel1">Alertar pago</h4>
+                <button type="button" class="close" (click)="modal.dismiss('Cross click')" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body" tabindex="0" ngbAutofocus>
+              
+              <!-- ngb-alert component -->
+                    <ngb-alert [dismissible]="false">
+                      <div class="alert-body"> Añade un 5% al monto de tu contrato por concepto de gastos administrativos..</div>
+                  </ngb-alert>
+              <!--/ ngb-alert component -->
+
+              <form class="auth-register-form mt-2" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                  <label for="register-tipo_cliente" class="form-label">Medio de pago</label>
+            
+                  <select 
+                    [(ngModel)]="opcionSeleccionado"
+                    class="form-control"
+                    aria-describedby="register-tipo_cliente"
+                    tabindex="20"
+                    [ngClass]="{ 'is-invalid': submitted && f.tipo_cliente.errors }"
+                    formControlName="tipo_cliente"
+                    (change)="capturar()"
+                  >
+                  <option selected>	Wallet BTC 	</option>
+                  <option>	Skrill	</option>
+                  <option>	Transferencia Bancaria	</option>
+            
+                  </select>
+            
+                  <div *ngIf="submitted && f.tipo_cliente.errors" class="invalid-feedback">
+                    <div *ngIf="f.tipo_cliente.errors.required">El tipo de cliente es necesario</div>
+                  </div>
+                </div>
+                  <div class="form-group">
+                    <label for="register-firstName" class="form-label">Número de operación</label>
+                    <input
+                      type="text"
+                      formControlName="firstName"
+                      class="form-control"
+                      placeholder="#123456789"
+                      aria-describedby="register-firstName"
+                      tabindex="1"
+                      autofocus
+                      [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }"
+                    />
+                    <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                      <div *ngIf="f.firstName.errors.required">El campo es necesario</div>
+                    </div>
+                  </div>
+
+                  <fieldset class="form-group">
+                    <label for="file-upload-single">Comprobante:</label>
+                    <div class="custom-file">
+                      <input
+                        type="file"
+                        class="custom-file-input"
+                        type="file"
+                        ng2FileSelect
+                        [uploader]="uploader"
+                        id="file-upload-single"
+                      />
+                      <label class="custom-file-label">Sube tu comprobante</label>
+                    </div>
+                  </fieldset>
+
+                  <!--<div class="form-group">
+                    <div class="custom-control custom-checkbox">
+                      <input class="custom-control-input" type="checkbox" id="register-privacy-policy" tabindex="4" />
+                      <label class="custom-control-label" for="register-privacy-policy">
+                        Debes aceptar nuestras <a href="javascript:void(0);">políticas de privacidad</a>
+                      </label>
+                    </div>
+                  </div>-->
+                  <button class="btn btn-primary btn-block" tabindex="26" rippleEffect *ngIf="!permitir_envio || registerForm.invalid">Regístrate</button>
+                  <button class="btn btn-primary btn-block" type="button" disabled rippleEffect *ngIf="permitir_envio && !registerForm.invalid">
+                    <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+                    <span class="ml-25 align-middle">Registrando...</span>
+                  </button>
+                </form>
+              
+                <!-- ngb-alert component -->
+                <ngb-alert [type]="'danger'" *ngIf="existencia" class="mt-1" [dismissible]="false">
+                  <div class="alert-body">
+                    <span [data-feather]="'info'" [class]="'mr-50 align-middle'"></span>
+                    <span>¡Estos datos ya existen!</span>
+                  </div>
+                </ngb-alert>
+                <!--/ ngb-alert component -->
+              </div>
+            </ng-template>
+            <!-- / Modal -->
+
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Modal Form and scrolling end -->
+  </div>
+</div>

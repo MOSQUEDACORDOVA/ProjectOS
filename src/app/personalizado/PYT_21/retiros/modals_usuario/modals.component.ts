@@ -118,7 +118,7 @@ export class ModalsComponent implements OnInit {
   this.submitted = true;
   this.existencia=false;
   // stop here if form is invalid
-  if (this.registerForm.invalid) {  
+  /*if (this.registerForm.invalid) {  
     this.permitir_envio = false;
     return;
   }else{
@@ -178,7 +178,7 @@ export class ModalsComponent implements OnInit {
         );
       }
     });
-  }
+  }*/
 }
 
 
@@ -190,32 +190,12 @@ export class ModalsComponent implements OnInit {
     
    //declaración de CAMPOS
    this.registerForm = this._formBuilder.group({
-    firstName: [''], //[Validators.required]
-    lastName: [''], //[Validators.required]
-    ciudad: [''], //[Validators.required]
+    firstName: ['', [Validators.required]],
+    lastName: ['', [Validators.required]],
+    ciudad: [[Validators.required]],
     estado: ['Jalisco'],
-    fraccionamiento: [''], //[Validators.required]
+    fraccionamiento: ['', [Validators.required]],
     coto: [''],
-    casa: [''], //[Validators.required]
-    calle: [''], //[Validators.required]
-    avenida: [''],
-    referencia: [''],
-    telefono: ['',[Validators.required]], //[Validators.required]
-    nombre_familiar_1: [''],
-    apellido_familiar_1: [''],
-    telefono_familiar_1: [''],
-    nombre_familiar_2: [''],
-    apellido_familiar_2: [''],
-    telefono_familiar_2: [''],
-    rfc: [''],
-    codigo_postal: [''],
-    tipo_cliente: [''], //[Validators.required]
-    cliente_nuevo: [''],
-    fecha_ultimo_pedido: [''],
-    utimos_botellones: [''],
-    sucursal: [this.mi_sucursal],
-    email: [''],
-    password: ['***************************']
   });
   }
 }
