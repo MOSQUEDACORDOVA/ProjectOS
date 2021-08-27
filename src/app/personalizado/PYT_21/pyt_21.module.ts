@@ -20,7 +20,6 @@ const routes: Routes = [
 @NgModule({
   declarations: [
   
-    
   ],
   imports: [
     CommonModule,RouterModule.forChild(routes),TableroModule,ContratosModule,IngresosModule,UsuariosModule,DepositosModule

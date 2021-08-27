@@ -138,6 +138,8 @@ export class ModalsComponent implements OnInit {
       }else{
         this._CamposService.myCallback = () => {
           this.submitted = false;
+          this.existencia=false;
+          this.permitir_envio = false;
           this.modal.close('Accept click');
           this.registerForm.reset();
         }
