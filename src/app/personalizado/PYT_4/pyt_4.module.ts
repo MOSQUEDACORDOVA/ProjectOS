@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { TableroModule } from './tablero/tablero.module';
 import { UsuariosModule } from './usuarios/usuarios.module';
+import { IngresosEgresosModule } from './ingresos-egresos/ingresos-egresos.module';
 
 import { Pyt_4_Service } from './pyt_4.service';
 
@@ -11,6 +12,7 @@ import { Pyt_4_Service } from './pyt_4.service';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from 'environments/environment';
+
 
 const routes: Routes = [
   {
@@ -21,15 +23,17 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
-    
+  
   ],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
     TableroModule,
     UsuariosModule,
+    IngresosEgresosModule,
     AngularFireModule.initializeApp(environment.firebase), 
     AngularFirestoreModule,
+
   ]
 })
 export class Pyt_4_Module { 

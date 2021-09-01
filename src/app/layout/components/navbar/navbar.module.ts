@@ -17,6 +17,9 @@ import { NavbarSearchComponent } from 'app/layout/components/navbar/navbar-searc
 import { NavbarCartComponent } from 'app/layout/components/navbar/navbar-cart/navbar-cart.component';
 import { NavbarNotificationComponent } from 'app/layout/components/navbar/navbar-notification/navbar-notification.component';
 
+//PYT-4 registrar pedido
+import { PYT_4_Registrar_Pedido_ModalsComponent } from './pyt_4_registrar_pedido/modals.component';
+
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
   wheelPropagation: false
@@ -28,9 +31,15 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     NavbarSearchComponent,
     NavbarBookmarkComponent,
     NavbarCartComponent,
-    NavbarNotificationComponent
+    NavbarNotificationComponent,
+    PYT_4_Registrar_Pedido_ModalsComponent
   ],
-  imports: [RouterModule, NgbModule, CoreCommonModule, PerfectScrollbarModule, CoreTouchspinModule],
+  imports: [RouterModule, 
+    NgbModule, 
+    CoreCommonModule, 
+    PerfectScrollbarModule, 
+    CoreTouchspinModule,
+  ],
   providers: [
     {
       provide: PERFECT_SCROLLBAR_CONFIG,

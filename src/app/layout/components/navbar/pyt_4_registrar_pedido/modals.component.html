@@ -1,0 +1,102 @@
+<li class="nav-item d-none d-lg-block mr-2" (click)="modalOpenForm(modalLG)">
+  <a class="nav-link nav-link-style btn">
+    
+    <div class="user-nav d-sm-flex d-none">
+      <span class="ficon font-medium-5 feather icon-shopping-cart mr-1"></span>
+      <span 
+        >Registrar pedido</span
+      >
+    </div>
+  </a>
+</li>
+<!-- Modal -->
+<ng-template #modalLG let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="myModalLabel1">Registro Nuevo Pedido</h4>
+    <button type="button" class="close" (click)="modal.dismiss('Cross click')" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body" tabindex="0" ngbAutofocus>
+    <form class="form">
+      <div class="row">
+        <div class="col-md-6 col-12">
+          <div class="form-group">
+            <label for="first-name-column">Cliente</label>
+            <input
+              type="text"
+              id="first-name-column"
+              class="form-control"
+              placeholder="Cliente"
+              name="fname-column"
+            />
+          </div>
+        </div>
+        <div class="col-md-6 col-12">
+          <div class="form-group">
+            <label for="last-name-column">Cantidad</label>
+            <input
+              type="text"
+              id="last-name-column"
+              class="form-control"
+              placeholder="Cantidad"
+              name="lname-column"
+            />
+          </div>
+        </div>
+        <div class="col-md-6 col-12">
+          <div class="form-group">
+            <label for="city-column">Direccion del Despacho</label>
+            <textarea class="form-control" id="basicTextarea" rows="3" placeholder="Textarea"></textarea>
+          </div>
+        </div>
+        <div class="col-md-6 col-12">
+          <div class="form-group">
+            <label for="country-floating">Country</label>
+            <input
+              type="text"
+              id="country-floating"
+              class="form-control"
+              name="country-floating"
+              placeholder="Country"
+            />
+          </div>
+        </div>
+        <div class="col-md-6 col-12">
+          <div class="form-group">
+            <label for="company-column">Company</label>
+            <input
+              type="text"
+              id="company-column"
+              class="form-control"
+              name="company-column"
+              placeholder="Company"
+            />
+          </div>
+        </div>
+        <div class="col-md-6 col-12">
+          <div class="form-group">
+            <label for="email-id-column">Email</label>
+            <input
+              type="email"
+              id="email-id-column"
+              class="form-control"
+              name="email-id-column"
+              placeholder="Email"
+            />
+          </div>
+        </div>
+        <div class="col-12">
+          <button type="submit" rippleEffect class="btn btn-primary mr-1">Pedir</button>
+          <button type="reset" rippleEffect class="btn btn-outline-secondary">Limpiar</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-danger" (click)="modal.close('Accept click')" rippleEffect>
+      Cerrar
+    </button>
+  </div>
+</ng-template>
+<!-- / Modal -->

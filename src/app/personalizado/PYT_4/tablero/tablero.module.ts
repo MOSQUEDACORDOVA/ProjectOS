@@ -17,7 +17,9 @@ const routes: Routes = [
 @NgModule({
   declarations: [TableroComponent],
   imports: [
-    CommonModule,CoreCommonModule,RouterModule.forChild(routes),NgbModule
+    CommonModule,
+    CoreCommonModule,
+    RouterModule.forChild(routes),NgbModule
   ]
 })
 export class TableroModule { }
