@@ -13,4 +13,6 @@ import { Pyt_21_Module } from './PYT_21/pyt_21.module';
     CommonModule,Pyt_4_Module,Pyt_25_Module,Pyt_21_Module
   ]
 })
-export class PersonalizadoModule { }
+export class PersonalizadoModule { 
+  //jose
+}
