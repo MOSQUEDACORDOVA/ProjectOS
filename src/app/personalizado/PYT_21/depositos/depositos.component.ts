@@ -31,7 +31,7 @@ export class DepositosComponent implements OnInit {
    @ViewChild(DatatableComponent) table: DatatableComponent;
    @ViewChild('tableRowDetails') tableRowDetails: any;
 
-   constructor(private _datatablesService: DatatablesService, private _coreTranslationService: CoreTranslationService) {
+  constructor(private _datatablesService: DatatablesService, private _coreTranslationService: CoreTranslationService) {
     this._unsubscribeAll = new Subject();
   }
 

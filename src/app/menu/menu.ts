@@ -76,7 +76,7 @@ export const menu: CoreMenu[] = [
     role: ['Director','Gerente','Logistica','Chofer'],
     autenticado: true
   },
-  {
+  /*{
     id: 'pyt_4_ingresos_egresos',
     title: 'Ingresos y egresos',
     type: 'item',
@@ -85,7 +85,7 @@ export const menu: CoreMenu[] = [
     proyecto: 'PYT-4',
     role: ['Director','Gerente'],
     autenticado: true
-  },
+  },*/
 
   //PYT-21
   {
